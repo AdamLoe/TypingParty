@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Header from "./components/Header";
-import Game from "../../src/TypingController";
+import Game from "../../src/containers/Game/TypingController";
 import Settings from "./containers/Settings";
 
 console.log("Creating Root");

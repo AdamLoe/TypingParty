@@ -9,6 +9,9 @@ let games = {
 };
 
 
+exports.gameExists = (gameID) => {
+	return (gameID in games );
+};
 
 exports.getGameIDs = () => {
 	return Object.keys(games);
@@ -46,6 +49,18 @@ exports.updatePlayerInGame = (gameID, playerID, data) => {
 	};
 };
 
+exports.addPlayerToGame = (gameID, player) => {
+	games[gameID].players = {
+		...games[gameID].players,
+		player
+	};
+	games[gameID].playerCount = games[gameID].playerCount + 1;
+};
+
+
+
+
+
 exports.resetPlayer = (id) => {
 	exports.editPlayer(id, {
 		gameID: null,
@@ -54,8 +69,15 @@ exports.resetPlayer = (id) => {
 		wpm: 0,
 	});
 };
+
 exports.getPlayer = (id) => {
 	return players[id];
+};
+exports.getPlayerBySocket = (socket) => {
+	return players[socket.id];
+};
+exports.getPlayerIDBySocket = (socket) => {
+	return socket.id;
 };
 
 exports.addPlayer = (player) => {
@@ -76,11 +98,12 @@ exports.removePlayer = (id) => {
 
 
 
-
-
 exports.logGames = () => {
 	console.log(games);
 };
+
+
+
 
 
 

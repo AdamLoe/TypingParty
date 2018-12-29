@@ -5,10 +5,15 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludePattern pattern="*__snapshots__*" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="react-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="react-redux-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="@types/jest" level="application" />
+    <orderEntry type="library" name="@types/react-redux" level="application" />
+    <orderEntry type="library" name="@types/prop-types" level="application" />
+    <orderEntry type="library" name="@types/react" level="application" />
   </component>
 </module>

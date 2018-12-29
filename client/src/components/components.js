@@ -10,20 +10,6 @@ export let Header = ({
 	</div>
 );
 
-export let Menu = ({ gotoRace, gotoCustom }) => {
-
-	return (
-		<div className="MainMenu">
-			<button onClick={gotoRace}>
-				<img src={require("./img/outline-person_outline-24px.svg")} />
-			</button>
-			<button onClick={gotoCustom}>
-				<img src={require("./img/outline-people_outline-24px.svg")} />
-			</button>
-		</div>
-	);
-};
-
 export let RaceView = ({
 	players, timeLeft, status
 }) => (

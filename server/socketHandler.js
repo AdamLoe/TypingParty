@@ -1,9 +1,13 @@
 let { startSocket, getSocket } = require("./socket");
-let {
-	initiatePlayer, gotoRace, gotoMenu, playerUpdate
-} = require("./incomingConnections");
-let handleGames = require("./gameLoop/handleGames");
 
+let initiatePlayer = require("./incoming/initiatePlayer");
+let handleGames = require("./gameLoop/handleGames");
+let playerUpdate = require("./incoming/playerUpdate");
+let getBrowser = require("./incoming/getBrowser");
+let createGame = require("./incoming/createGame");
+let joinGame = require("./incoming/joinGame");
+let leaveGame = require("./incoming/leaveGame");
+let handleMessage = require("./incoming/handleMessage");
 
 exports.socketHandler = async function(server) {
 	startSocket(server);
@@ -11,13 +15,17 @@ exports.socketHandler = async function(server) {
 
 	io.on("connection", function(socket ) {
 		initiatePlayer(socket);
+		console.log("client:", socket.id);
 
-		socket.on("gotoMenu", () => gotoMenu(socket));
-		socket.on("gotoRace", () => gotoRace(socket));
-		socket.on("playerUpdate", (data) => playerUpdate(data, socket));
+		socket.on("getBrowser", (filters) => getBrowser(socket, filters));
+		socket.on("leaveGame", (gameID) => leaveGame(socket, gameID));
+		socket.on("joinGame", (data) => joinGame(socket, data));
+		socket.on("createGame", (data) => createGame(socket, data));
+		socket.on("playerUpdate", (data) => playerUpdate(socket, data));
+		socket.on("sendMessage", (message) => handleMessage(socket, message));
 	});
 
-	setInterval(handleGames, 500);
+	setInterval(handleGames, 3000);
 };
 
 /*

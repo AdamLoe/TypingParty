@@ -1,7 +1,6 @@
 import React from "react";
 
-import api from "./api";
-
+import api from "../../actions/api";
 
 class TypingController extends React.Component {
 	constructor(props) {
@@ -126,6 +125,9 @@ class TypingController extends React.Component {
 					{ leftWords }
 				</span>
 				<input
+					autoComplete={"off"}
+					autoCorrect={"off"}
+					autoCapitalize={"off"}
 					autoFocus
 					onInput={this.inputChange}
 				/>

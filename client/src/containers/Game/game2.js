@@ -1,19 +1,25 @@
 import React from "react";
+import { connect } from "react-redux";
 
-import { Menu, Header, RaceView, RaceMenu } from "./components";
+import { Header, RaceView, RaceMenu } from "../../components/components";
+import Menu from "../Menu/Menu";
 import TypingController from "./TypingController";
 
-import api from "./api";
+import api from "../../actions/api";
 
-class Game extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			status: "MENU", // MENU, RACE, POSTGAME
-			finished: false,
-		};
+export default Game2;
+class Game2 extends React.Component {
+	state = {
+		status: "MENU", // MENU, RACE, POSTGAME
+		finished: false,
+	};
+
+	componentDidMount() {
 		api.subscribe(this.updateGameData);
-		console.log("SUBSCRIBED");
+	}
+
+	componentWillUnmount() {
+		api.unsubscribe(this.updateGameData);
 	}
 
 	// Open Menu View, Tell Server Left Race
@@ -31,10 +37,6 @@ class Game extends React.Component {
 		console.log("GOTO RACE");
 		api.gotoRace();
 		this.setState(state => ({ finished: false }));
-	};
-
-	gotoCustom = () => {
-
 	};
 
 	updateGameData = (gameData) => {
@@ -67,8 +69,6 @@ class Game extends React.Component {
 			<div className="Game">
 				{ isMenu ? (
 					<Menu
-						gotoRace={this.gotoRace}
-						gotoMenu={this.gotoMenu}
 					/>
 				): (
 					<RaceView
@@ -93,5 +93,3 @@ class Game extends React.Component {
 		);
 	}
 }
-
-export default Game;

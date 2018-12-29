@@ -1,5 +1,5 @@
 let state = require("../state");
-let { updateRoom } = require("../socket");
+let { emitRoom } = require("../socket");
 let handleStages = require("./handleStages");
 
 module.exports = () => {
@@ -19,7 +19,7 @@ let updateGame = (gameID) => {
 let sendUpdates = (gameID) => {
 	let game = state.getGame(gameID);
 	if (game !== undefined) {
-		updateRoom(
+		emitRoom(
 			gameID,
 			"updateGameData",
 			game

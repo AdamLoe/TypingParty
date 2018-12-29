@@ -14,11 +14,7 @@ module.exports = {
 			{
 				test: /\.jsx?$/,
 				loader: "babel-loader",
-				exclude: /node_modules/,
-				query: {
-					presets: ["@babel/preset-env", "@babel/preset-react"],
-					plugins: ["transform-class-properties"]
-				}
+				exclude: /node_modules/
 			},
 			{
 				test: /\.css$/,
@@ -42,6 +38,7 @@ module.exports = {
 	],
 
 	devServer: {
+		disableHostCheck: true,
 		historyApiFallback: true,
 	}
 };

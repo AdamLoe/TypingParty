@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio it matches the snapshot 1`] = `
+<div
+  className="Input InputRadio"
+>
+  <div
+    className="InputName"
+  >
+    RadioName
+  </div>
+  <button
+    className="RadioButton"
+    onClick={[Function]}
+    value="Default"
+  >
+    Default
+  </button>
+  <button
+    className="RadioButton"
+    onClick={[Function]}
+    value="Rising"
+  >
+    Rising
+  </button>
+  <button
+    className="RadioButton"
+    onClick={[Function]}
+    value="Manual"
+  >
+    Manual
+  </button>
+</div>
+`;
