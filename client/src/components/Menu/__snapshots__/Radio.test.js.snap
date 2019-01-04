@@ -7,28 +7,39 @@ exports[`Radio it matches the snapshot 1`] = `
   <div
     className="InputName"
   >
-    RadioName
+    TestName
   </div>
   <button
-    className="RadioButton"
+    className="RadioButton Default selected"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     value="Default"
   >
     Default
   </button>
   <button
-    className="RadioButton"
+    className="RadioButton Rising"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     value="Rising"
   >
     Rising
   </button>
   <button
-    className="RadioButton"
+    className="RadioButton Manual"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     value="Manual"
   >
     Manual
   </button>
+  <div
+    className="InputDescription"
+  >
+    10 Per Game
+  </div>
 </div>
 `;

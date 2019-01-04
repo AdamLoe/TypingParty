@@ -1,4 +1,5 @@
 import React from "react";
+import PT from "prop-types";
 import {connect} from "react-redux";
 
 import { closeNotification } from "../../actions/popups";
@@ -12,6 +13,10 @@ let ErrorNotification = ({ notificationMessage, closeNotification }) => (
 		</button>
 	</div>
 );
+ErrorNotification.propTypes = {
+	notificationMessage: PT.string.isRequired,
+	closeNotification: PT.func.isRequired
+};
 
 let NormalNotification = ({ notificationMessage, closeNotification }) => (
 	<div className="NormalNotification">
@@ -21,6 +26,10 @@ let NormalNotification = ({ notificationMessage, closeNotification }) => (
 		</button>
 	</div>
 );
+NormalNotification.propTypes = {
+	notificationMessage: PT.string.isRequired,
+	closeNotification: PT.func.isRequired
+};
 
 
 let LoadingModal = () => (
@@ -55,6 +64,14 @@ let Popups = ({
 		}
 	</div>
 );
+Popups.propTypes = {
+	showLoading: PT.bool.isRequired,
+	showNotification: PT.bool.isRequired,
+	notificationType: PT.string.isRequired,
+	notificationMessage: PT.string.isRequired,
+	notificationKey: PT.number.isRequired,
+	closeNotification: PT.func.isRequired
+};
 
 let mapState = (state) => {
 	let {

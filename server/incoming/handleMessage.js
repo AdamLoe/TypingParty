@@ -1,6 +1,11 @@
 let state = require("../state");
 let { emitRoom } = require("../socket");
 
+let getTime = () => {
+	let date = new Date();
+	return date.getHours() + ":" + date.getMinutes()
+};
+
 module.exports = (socket, message) => {
 	let playerID = 	state.getPlayerIDBySocket(socket);
 	let game = state.getGameByPlayerID(playerID);
@@ -10,6 +15,6 @@ module.exports = (socket, message) => {
 	emitRoom(game.id, "newMessage", {
 		id: playerID,
 		text: message,
-		time: Date.now()
+		time: getTime()
 	});
 };

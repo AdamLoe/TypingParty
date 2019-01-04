@@ -11,19 +11,17 @@ class MessageCreator extends React.Component {
 	};
 
 	onInput = (value) => {
-		console.log("onInput", value);
-		this.setState(state => ({
+		this.setState({
 			message: value
-		}))
+		})
 	};
 
 	onKeyPress = (key, value) => {
-		console.log("onKeyPress", key);
 		if (key === "Enter") {
 			sendMessage(value);
-			this.setState(state=> ({
+			this.setState( {
 				message: ""
-			}))
+			});
 		}
 	};
 
@@ -32,7 +30,7 @@ class MessageCreator extends React.Component {
 			<div className="MessageCreator">
 				<input
 					value={this.state.message}
-					onInput={(e) => this.onInput(e.target.value)}
+					onChange={(e) => this.onInput(e.target.value)}
 					onKeyPress={(e) => this.onKeyPress(e.key, e.target.value)}
 				/>
 			</div>
@@ -47,7 +45,7 @@ let Messenger = ({messages, players}) => (
 		<div className="MessageView">
 			{ messages.map( ({id, text, time}) => (
 				<Message
-					key={id}
+					key={id+time+text}
 					name={"Memer"}
 					text={text}
 					time={time}
@@ -59,14 +57,14 @@ let Messenger = ({messages, players}) => (
 );
 Messenger.propTypes = {
 	messages: PT.arrayOf(
-		PT.objectOf({
-			id: PT.number.isRequired,
+		PT.shape({
+			id: PT.string.isRequired,
 			text: PT.string.isRequired,
 			time: PT.string.isRequired
 		})
 	).isRequired,
 	players: PT.objectOf(
-		PT.objectOf({
+		PT.shape({
 			name: PT.string.isRequired
 		})
 	).isRequired

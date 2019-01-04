@@ -1,3 +1,12 @@
+/*
+	Input Handler
+	/////////
+	Abstracts away actual changing of value
+		Updates redux state, i.e. form data
+		Updates local state, for performance
+	Formats updateValue to just need any e
+	Auto updates on onComponentMount
+ */
 import React from "react";
 import { connect } from "react-redux";
 import PT from "prop-types";
@@ -8,31 +17,33 @@ import Radio from "../../components/Menu/Radio";
 
 import { updateCreator } from "../../actions";
 
-class InputHandler extends React.Component {
+export class InputHandler extends React.Component {
 	state = {
 		value: this.props.defaultValue || ""
 	};
 
 	componentDidMount() {
-		let { name } = this.props;
-		let value = this.state.value;
-		this.props.updateCreator(name, value);
+		this.update(this.state.value);
 	}
 
+	update = (value) => {
+		let { id } = this.props;
+		this.setState({value});
+		this.props.updateCreator(id, value);
+	};
+
 	updateValue = (e) => {
-		let { name } = this.props;
 		let value = e;
 		if (typeof e === "object") value = e.target.value;
 		console.log(value);
 
-		this.setState({value});
-		this.props.updateCreator(name, value);
+		this.update(e);
 	};
 
 	render() {
 		let value = this.state.value;
 		let { type } = this.props;
-		console.log(type);
+		console.log("render", type, value);
 
 		let Input;
 		if (type === "text")   Input = TextInput;
@@ -52,19 +63,20 @@ class InputHandler extends React.Component {
 InputHandler.propTypes = {
 	type: PT.string.isRequired,
 	name: PT.string.isRequired,
+	id: PT.string.isRequired,
 	updateCreator: PT.func.isRequired,
-	required: PT.bool,
-
+	defaultValue: PT.oneOfType([
+		PT.string,
+		PT.number
+	]).isRequired,
 	options: PT.arrayOf(
 		PT.arrayOf(
 			PT.string.isRequired
 		).isRequired
-	).isRequired,
-
+	),
+	required: PT.bool,
 	min: PT.number,
 	max: PT.number,
-	defaultValue: PT.number,
 };
 
-
-export default connect(() => ({}), { updateCreator })(InputHandler);
+export default connect(() => ({ }), { updateCreator })(InputHandler);

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon default snapshot 1`] = `
+<svg
+  viewBox="0 0 200 200"
+>
+  <rect
+    fill="black"
+    height="100%"
+    stroke="black"
+    width="100%"
+  />
+  <rect
+    fill="white"
+    height="100"
+    stroke="white"
+    width="100"
+    x="0"
+    y="0"
+  />
+  <rect
+    fill="white"
+    height="100"
+    stroke="white"
+    width="100"
+    x="101"
+    y="101"
+  />
+</svg>
+`;

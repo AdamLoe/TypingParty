@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 					case "updateCreator":
 						return false;
 					case "updateGameData":
-						return false;
+						return true;
 					default:
 						return true;
 				}

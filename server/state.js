@@ -9,27 +9,38 @@ let games = {
 };
 
 
+exports.isGameNameTaken = (wantedName) => {
+	let taken = false;
+	Object.keys(games).map( gameID => {
+		let { name } = games[gameID];
+		if (name === wantedName) taken = true;
+	});
+	return taken;
+};
 exports.gameExists = (gameID) => {
 	return (gameID in games );
 };
-
 exports.getGameIDs = () => {
 	return Object.keys(games);
 };
-
-exports.getGame = (gameID) => {
-	return games[gameID];
+exports.doesPasswordMatch = (gameID, password) => {
+	return games[gameID].password === password;
 };
-
+exports.getGame = (gameID) => {
+	return {
+		...games[gameID],
+		password: "Ya ain't hacking me that easy brother"
+	};
+};
 exports.getGameByPlayerID = (playerID) => {
 	let gameID = players[playerID].gameID;
-	return games[gameID];
+	return exports.getGame(gameID);
 };
+
 
 exports.addGame = (game) => {
 	games[game.id] = game;
 };
-
 exports.removeGameByID = (id) => {
 	delete games[id];
 };
@@ -40,7 +51,6 @@ exports.editGame = (id, data) => {
 		...data
 	};
 };
-
 exports.updatePlayerInGame = (gameID, playerID, data) => {
 	let index = games[gameID].players.findIndex( player => player.id === playerID);
 	games[gameID].players[index] = {
@@ -48,11 +58,12 @@ exports.updatePlayerInGame = (gameID, playerID, data) => {
 		...data
 	};
 };
-
 exports.addPlayerToGame = (gameID, player) => {
 	games[gameID].players = {
 		...games[gameID].players,
-		player
+		[player.id]: {
+			...player
+		}
 	};
 	games[gameID].playerCount = games[gameID].playerCount + 1;
 };
@@ -63,50 +74,36 @@ exports.addPlayerToGame = (gameID, player) => {
 
 exports.resetPlayer = (id) => {
 	exports.editPlayer(id, {
-		gameID: null,
-		currWord: 0,
-		progress: 0,
-		wpm: 0,
+		gameID: null
 	});
 };
-
 exports.getPlayer = (id) => {
-	return players[id];
+	return {
+		...players[id]
+	};
 };
 exports.getPlayerBySocket = (socket) => {
-	return players[socket.id];
+	return exports.getPlayer(socket.id);
 };
+
 exports.getPlayerIDBySocket = (socket) => {
 	return socket.id;
 };
 
 exports.addPlayer = (player) => {
-	players[player.id] = player;
+	players[player.id] = {
+		...player
+	};
 };
-
 exports.editPlayer = (id, player) => {
 	players[id] = {
 		...players[id],
 		...player
 	};
 };
-
 exports.removePlayer = (id) => {
 	delete players[id];
 };
-
-
-
-
-exports.logGames = () => {
-	console.log(games);
-};
-
-
-
-
-
-
 
 
 exports.load = async function() {

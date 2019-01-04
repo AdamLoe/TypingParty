@@ -16,11 +16,11 @@ module.exports = (socket) => {
 		id: socket.id,
 		name: getName(),
 		gameID: null,
-		currWord: 0,
-		progress: 0,
-		wpm: 0,
+		icon: {
+			type: "icon1",
+			primary: "white",
+			secondary: "black"
+		}
 	};
 	state.addPlayer(player);
 };
-
-

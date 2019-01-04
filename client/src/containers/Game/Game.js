@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import PT from "prop-types";
 
 import Messenger from "./Messenger";
 import Leaderboard from "./Leaderboard";
@@ -16,20 +17,22 @@ let Game = ({ raceOver }) => (
 		<div className="GameMain">
 			{ raceOver ?
 				<>
-					<RaceView />
-					<h1> Typer </h1>
+					<PostGameView />
+					<RaceMenu />
 				</>
 				:
 				<>
-					<PostGameView />
-					<RaceMenu />
+					<RaceView />
+					<h1> Typer </h1>
 				</>
 			}
 		</div>
 		<Messenger />
 	</>
 );
-
+Game.propTypes = {
+	raceOver: PT.bool.isRequired
+};
 
 let mapState = (state) => {
 	let { raceOver } = state.game;

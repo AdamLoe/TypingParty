@@ -1,4 +1,6 @@
 let state = require("../state");
+
+let sanitizeGameOptions = require("./sanitizeGameOptions");
 let getString = require("../strings");
 let joinGame = require("./joinGame");
 
@@ -11,44 +13,54 @@ let getGameID = () => {
 	return gameID;
 };
 
-let sanitizeFilters = (filters) => {
-	console.log("WARNING: NOT SANITIZING CREATOR FILTERS");
-	let {
-		Server_Name, Password, Max_Players,
-		Max_Games, Scoring_Type, Handicaps
-	} = filters;
-	return {
-		name: Server_Name || "",
-		password: Password || "",
-		maxPlayers: Max_Players || 4,
-		maxGames: Max_Games || 5,
-		scoringType: Scoring_Type || "Default",
-		handicaps: Handicaps || "Off"
-	};
-};
-
 let lobbyTime = 12;
-module.exports = (socket, filters) => {
+module.exports = (socket, options) => {
+	let {
+		name, password,maxPlayers,
+		maxGames, scoringType, handicaps
+	} = sanitizeGameOptions(options);
+
 	let game = {
 		id: getGameID(),
-		status: "LOBBY",
-		string: getString(),
-		players: [],
-		playerCount: 0,
+		info: {
+			name,
+			password,
+
+			status: "LOBBY",
+			string: getString(),
+
+			maxPlayers,
+			maxGames,
+
+			scoringType,
+			handicaps,
+
+			playerCount: 0,
+			currGame: 0,
+
+			host: state.getPlayerIDBySocket(socket),
+		},
+
+
 		timeLeft: lobbyTime,
 		timeEnd: Date.now() + lobbyTime * 1000,
-		host: state.getPlayerIDBySocket(socket),
 
-		currGame: 0,
+		//Holds id, name, icon, and any future data we want to show
+		players: {},
+		//Holds player id, and player score
+		//PASSED TO USER AS ARRAY
 		leaderboard: {
-
 		},
-		banList: {
+		//Ordered by which players press join first
+		//Could change dynamically throughout game if wanted
+		//User could still put themselves on top, though
+		order: [],
+		//This is what we update every tick, progress/WPM
+		gameData: {},
 
-		},
-		...sanitizeFilters(filters),
-};
-state.addGame(game);
-joinGame(socket, { gameID: game.id, password: game.password });
+		banList: {}
+	};
+	state.addGame(game);
+	joinGame(socket, { gameID: game.id, password: game.password });
 };
 

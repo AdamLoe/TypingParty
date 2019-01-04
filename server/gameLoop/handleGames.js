@@ -7,7 +7,6 @@ module.exports = () => {
 	state.getGameIDs().map( (gameID) => {
 		updateGame(gameID);
 		sendUpdates(gameID);
-        
 	});
 };
 

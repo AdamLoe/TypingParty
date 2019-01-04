@@ -78,5 +78,10 @@ let Icon = ({ type, primary, secondary }) => {
 		/>
 	);
 };
+Icon.propTypes = {
+	type: PT.string.isRequired,
+	primary: PT.string.isRequired,
+	secondary: PT.string.isRequired
+};
 
 export default Icon;

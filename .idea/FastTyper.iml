@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
-      <excludePattern pattern="*__snapshots__*" />
+      <excludePattern pattern="*__*" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -15,5 +15,8 @@
     <orderEntry type="library" name="@types/react-redux" level="application" />
     <orderEntry type="library" name="@types/prop-types" level="application" />
     <orderEntry type="library" name="@types/react" level="application" />
+    <orderEntry type="library" name="@types/react-test-renderer" level="application" />
+    <orderEntry type="library" name="@types/enzyme" level="application" />
+    <orderEntry type="library" name="@types/enzyme-adapter-react-16" level="application" />
   </component>
 </module>

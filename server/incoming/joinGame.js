@@ -1,17 +1,15 @@
 let state = require("../state");
 
+
 let doesGameExist = (game) => {
 	return game !== undefined;
 };
 let gameHasRoom = (game) => {
-	return game.playerCount < game.maxPlayers;
+	return game.info.playerCount < game.info.maxPlayers;
 };
-let doesPasswordMatch = (game, password) => {
-	return (game.password === password);
-};
-let isUserBanned = (game, player) => {
+let isUserBanned = (game, playerID) => {
 	let { banList } = game;
-	return (player.id in banList);
+	return (playerID in banList);
 };
 
 let joinError = (socket, message) => {
@@ -22,7 +20,9 @@ let joinError = (socket, message) => {
 	});
 };
 
-let joinGame = (socket, game, player) => {
+let joinGame = (socket, game, playerID) => {
+	let player = state.getPlayer(playerID);
+
 	socket.leave(player.gameID);
 	socket.join(game.id);
 
@@ -35,18 +35,18 @@ let joinGame = (socket, game, player) => {
 };
 
 module.exports = async (socket, { gameID, password }) => {
-	let player = state.getPlayerBySocket(socket);
+	let playerID = state.getPlayerIDBySocket(socket);
 	let game = state.getGame(gameID);
 
 	if (!doesGameExist(game)) {
 		joinError(socket, "Game does not exist anymore");
 	} else if (!gameHasRoom(game)) {
 		joinError(socket, "Game is full");
-	} else if (!doesPasswordMatch(game, password)) {
+	} else if (!state.doesPasswordMatch(gameID, password)) {
 		joinError(socket, "Password does not match");
-	} else if (isUserBanned(game, player)) {
+	} else if (isUserBanned(game, playerID)) {
 		joinError(socket, "You are banned");
 	} else {
-		joinGame(socket, game, player);
+		joinGame(socket, game, playerID);
 	}
 };

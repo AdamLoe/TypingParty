@@ -1,7 +1,4 @@
-import io from "socket.io-client";
-
-console.log("STARTING SOCKET");
-let socket = io("http://192.168.1.9:2002/");
+import { getSocket } from "./socket";
 
 let handler = (dispatch, type) => {
 	return (data) => {
@@ -15,6 +12,8 @@ let handler = (dispatch, type) => {
 export let subscribe = () => {
 	return dispatch => {
 		console.log("Subscribing");
+		let socket = getSocket();
+
 		socket.on("updateGameData", handler(dispatch, "updateGameData"));
 		socket.on("updateBrowserData", handler(dispatch, "updateBrowserData"));
 		socket.on("Error", handler(dispatch, "ServerError"));
@@ -23,18 +22,23 @@ export let subscribe = () => {
 };
 
 export let unsubscribe = () => {
+	let socket = getSocket();
+
 	socket.removeListener("updateGameData");
 	socket.removeListener("updateBrowserData");
 };
 
 export let populateBrowser = (filters) => {
 	console.log("Gimme some browser data");
+	let socket = getSocket();
+
 	socket.emit("getBrowser", filters);
 };
 
 import { loadingGame } from "./popups";
 export let createGame = () => {
 	return (dispatch, getState) => {
+		let socket = getSocket();
 		let state = getState();
 		let { creator } = state;
 
@@ -43,22 +47,30 @@ export let createGame = () => {
 	};
 };
 
-export let joinGame = (gameID) => {
+export let joinGame = (gameID, password = "") => {
 	return dispatch => {
-		socket.emit("joinGame", gameID);
+		let socket = getSocket();
+
+		socket.emit("joinGame", {
+			gameID,
+			password
+		});
 		dispatch(loadingGame());
 	};
 };
 
 export let leaveGame = () => {
+	let socket = getSocket();
 	socket.emit("leaveGame", null);
 };
 
 export let playerUpdate = (data) => {
+	let socket = getSocket();
 	socket.emit("playerUpdate", data);
 };
 
 export let updateProfile = ({ name, icon }) => {
+	let socket = getSocket();
 	socket.emit("profileUpdate", {
 		name,
 		icon
@@ -66,5 +78,7 @@ export let updateProfile = ({ name, icon }) => {
 };
 
 export let sendMessage = (message) => {
+	let socket = getSocket();
+
 	socket.emit("sendMessage", message);
 };

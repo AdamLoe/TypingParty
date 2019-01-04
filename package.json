@@ -5,9 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/server 0.0.0.0",
-    "startW": "webpack -w --config client/webpack.config.js --mode production",
+    "webProd": "webpack --config client/webpack.config.js --mode production",
     "webpack": "webpack-dev-server --port 8080 --hot --config client/webpack.config.js --mode development --host 0.0.0.0",
     "test": "jest --watchAll"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.svg$": "jest-svg-transformer"
+    }
   },
   "nodemonConfig": {
     "ignore": [
@@ -19,21 +27,23 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bad-words": "^3.0.0",
     "express": "^4.16.4",
     "file-loader": "^2.0.0",
     "fs": "0.0.1-security",
     "html-webpack-plugin": "^3.2.0",
     "http": "0.0.0",
+    "jest-svg-transformer": "^1.0.0",
     "node": "^11.2.0",
     "node-persist": "^3.0.1",
     "nodemon": "^1.18.7",
     "path": "^0.12.7",
-    "react-test-renderer": "^16.7.0",
     "socket.io": "^2.1.1",
     "util": "^0.11.1",
     "uws": "^99.0.0"
   },
   "devDependencies": {
+    "react-test-renderer": "^16.7.0",
     "@babel/core": "^7.1.6",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",

@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconSelector snapshot 1`] = `
+<div
+  className="iconSelector"
+>
+  <div
+    className="selectIconBox false"
+    id="icon1"
+    onClick={[Function]}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <rect
+        fill="white"
+        height="100%"
+        stroke="white"
+        width="100%"
+      />
+      <rect
+        fill="black"
+        height="100"
+        stroke="black"
+        width="100"
+        x="0"
+        y="0"
+      />
+      <rect
+        fill="black"
+        height="100"
+        stroke="black"
+        width="100"
+        x="101"
+        y="101"
+      />
+    </svg>
+  </div>
+  <div
+    className="selectIconBox false"
+    id="icon2"
+    onClick={[Function]}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <rect
+        fill="white"
+        height="100%"
+        stroke="white"
+        width="100%"
+      />
+      <rect
+        fill="black"
+        height="85"
+        stroke="black"
+        width="85"
+        x="0"
+        y="0"
+      />
+      <rect
+        fill="black"
+        height="85"
+        stroke="black"
+        width="85"
+        x="116"
+        y="116"
+      />
+      <rect
+        fill="black"
+        height="85"
+        stroke="black"
+        width="85"
+        x="0"
+        y="116"
+      />
+      <rect
+        fill="black"
+        height="85"
+        stroke="black"
+        width="85"
+        x="116"
+        y="0"
+      />
+    </svg>
+  </div>
+  <div
+    className="selectIconBox false"
+    id="icon3"
+    onClick={[Function]}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <rect
+        fill="white"
+        height="100%"
+        stroke="white"
+        width="100%"
+      />
+      <circle
+        cx="100"
+        cy="100"
+        fill="black"
+        r="65"
+        stroke="black"
+      />
+      <circle
+        cx="100"
+        cy="100"
+        fill="white"
+        r="25"
+        stroke="white"
+      />
+    </svg>
+  </div>
+  <div
+    className="selectIconBox false"
+    id="icon4"
+    onClick={[Function]}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <rect
+        fill="white"
+        height="100%"
+        stroke="white"
+        width="100%"
+      />
+      <rect
+        fill="black"
+        height="200"
+        stroke="black"
+        width="30"
+        x="85"
+        y="0"
+      />
+      <circle
+        cx="100"
+        cy="200"
+        fill="black"
+        r="80"
+        stroke="black"
+      />
+    </svg>
+  </div>
+  <div
+    className="selectIconBox  selected "
+    id="icon5"
+    onClick={[Function]}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <rect
+        fill="white"
+        height="100%"
+        stroke="white"
+        width="100%"
+      />
+      <circle
+        cx="140"
+        cy="140"
+        fill="black"
+        r="25"
+        stroke="black"
+      />
+      <circle
+        cx="60"
+        cy="70"
+        fill="black"
+        r="25"
+        stroke="black"
+      />
+      <circle
+        cx="140"
+        cy="70"
+        fill="black"
+        r="25"
+        stroke="black"
+      />
+      <circle
+        cx="40"
+        cy="192"
+        fill="black"
+        r="25"
+        stroke="black"
+      />
+    </svg>
+  </div>
+  <div
+    className="selectIconBox false"
+    id="icon6"
+    onClick={[Function]}
+  >
+    <svg
+      viewBox="0 0 200 200"
+    >
+      <rect
+        fill="white"
+        height="100%"
+        stroke="white"
+        width="100%"
+      />
+      <rect
+        fill="black"
+        height="142"
+        stroke="black"
+        width="142"
+        x="31"
+        y="31"
+      />
+    </svg>
+  </div>
+  <div
+    className="selectIconBox false"
+    id="icon7"
+    onClick={[Function]}
+  >
+    <svg
+      transform="scale(-1, -1)"
+      viewBox="0 0 200 200"
+    >
+      <rect
+        fill="white"
+        height="100%"
+        stroke="white"
+        width="100%"
+      />
+      <polygon
+        fill="black"
+        points="100 0, 159 181, 5 69, 195 69, 41 181"
+        stroke="black"
+        strokeWidth={3}
+      />
+    </svg>
+  </div>
+</div>
+`;
