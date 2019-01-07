@@ -8,6 +8,17 @@ let handler = (dispatch, type) => {
 		});
 	};
 };
+let packetHandler = (dispatch) => {
+	return (data) => {
+		let { packetIndex, packet } = data;
+	}
+};
+export let packetSubscribe = () =>{
+	return dispatch => {
+		let socket = getSocket();
+		socket.on("newPacket", packetHandler(dispatch));
+	}
+};
 
 export let subscribe = () => {
 	return dispatch => {
@@ -15,7 +26,6 @@ export let subscribe = () => {
 		let socket = getSocket();
 
 		socket.on("updateGameData", handler(dispatch, "updateGameData"));
-		socket.on("updateBrowserData", handler(dispatch, "updateBrowserData"));
 		socket.on("Error", handler(dispatch, "ServerError"));
 		socket.on("newMessage", handler(dispatch, "newMessage"));
 	};

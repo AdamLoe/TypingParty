@@ -23,9 +23,24 @@ exports.socketHandler = async function(server) {
 		socket.on("createGame", (data) => createGame(socket, data));
 		socket.on("playerUpdate", (data) => playerUpdate(socket, data));
 		socket.on("sendMessage", (message) => handleMessage(socket, message));
+		socket.on("getPacket", (data) => {});
+		socket.on("getGameObject", () => {});
 	});
 
 	setInterval(handleGames, 3000);
+	/*
+	process.env.NODE_ENV = "production";
+	let ticks = 0;
+	setInterval(() => {
+		ticks += 1;
+		handleGames();
+	}, 1);
+	setInterval( () => {
+		console.log("tps:", ticks);
+		ticks = 0;
+	}, 1000);
+
+	 */
 };
 
 /*

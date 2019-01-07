@@ -31,9 +31,6 @@ let cutString = (name, length) => name.substring(0, length);
 let cleanString = name => filter.clean(name);
 
 let sanitizeName = (name) => {
-	console.log(isString(name));
-	console.log(notEmpty(name));
-	console.log(stringNotTaken(name));
 	if (isString(name) && notEmpty(name) && stringNotTaken(name)) {
 		return cutString(cleanString(name), maxNameLength);
 	} else {

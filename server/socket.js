@@ -10,6 +10,6 @@ exports.getSocket = () => {
 };
 
 exports.emitRoom = (id, message, data) => {
-	console.log("emitting to room", id, "with", message);
+	//console.log("emitting to room", id, "with", message);
 	io.to(id).emit(message, data);
 };

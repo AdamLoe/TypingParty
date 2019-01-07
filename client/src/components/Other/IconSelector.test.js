@@ -23,7 +23,6 @@ describe("IconSelector", () => {
 	test("update Working", () => {
 		iconList.map( (icon) => {
 			root.findByProps({ id: icon }).props.onClick();
-			console.log(type);
 			expect(type).toBe(icon);
 		});
 	});

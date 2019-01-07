@@ -1,5 +1,5 @@
 let state = require("../state");
-
+let getGameObject = require("./getGameObject");
 
 let doesGameExist = (game) => {
 	return game !== undefined;
@@ -20,8 +20,10 @@ let joinError = (socket, message) => {
 	});
 };
 
+//Here is where we send the data
 let joinGame = (socket, game, playerID) => {
 	let player = state.getPlayer(playerID);
+	console.log(player.id, "joining", game.id);
 
 	socket.leave(player.gameID);
 	socket.join(game.id);
@@ -30,8 +32,7 @@ let joinGame = (socket, game, playerID) => {
 	state.editPlayer(player.id, {
 		gameID: game.id
 	});
-
-	console.log(player.id, "joining", game.id);
+	getGameObject(socket, game.id);
 };
 
 module.exports = async (socket, { gameID, password }) => {

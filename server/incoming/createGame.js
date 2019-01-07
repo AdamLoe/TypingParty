@@ -14,53 +14,50 @@ let getGameID = () => {
 };
 
 let lobbyTime = 12;
-module.exports = (socket, options) => {
+
+let getGame = (playerID, options) => {
 	let {
 		name, password,maxPlayers,
 		maxGames, scoringType, handicaps
 	} = sanitizeGameOptions(options);
 
-	let game = {
+	return {
 		id: getGameID(),
+
 		info: {
-			name,
-			password,
+			name
+			, password,
+			host: playerID,
+
+			scoringType, handicaps,
+			maxPlayers,	maxGames,
 
 			status: "LOBBY",
 			string: getString(),
+			playerCount: 0, currGame: 0,
 
-			maxPlayers,
-			maxGames,
+			timeEnd: Date.now() + lobbyTime * 1000
 
-			scoringType,
-			handicaps,
-
-			playerCount: 0,
-			currGame: 0,
-
-			host: state.getPlayerIDBySocket(socket),
 		},
-
-
-		timeLeft: lobbyTime,
-		timeEnd: Date.now() + lobbyTime * 1000,
 
 		//Holds id, name, icon, and any future data we want to show
 		players: {},
+
 		//Holds player id, and player score
 		//PASSED TO USER AS ARRAY
-		leaderboard: {
-		},
-		//Ordered by which players press join first
-		//Could change dynamically throughout game if wanted
-		//User could still put themselves on top, though
-		order: [],
+		leaderboard: {},
+
 		//This is what we update every tick, progress/WPM
-		gameData: {},
+		gameData: {
+			timeLeft: lobbyTime
+		},
 
 		banList: {}
 	};
-	state.addGame(game);
-	joinGame(socket, { gameID: game.id, password: game.password });
 };
-
+module.exports = (socket, options) => {
+	let playerID = state.getPlayerIDBySocket(socket);
+	let game = getGame(playerID, options);
+	state.addGame(game);
+	joinGame(socket, { gameID: game.id, password: game.info.password });
+};

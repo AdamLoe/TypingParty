@@ -4,6 +4,7 @@ let handleStages = require("./handleStages");
 
 module.exports = () => {
 	//state.logGames();
+	console.log(state.getGameIDs());
 	state.getGameIDs().map( (gameID) => {
 		updateGame(gameID);
 		sendUpdates(gameID);
@@ -16,23 +17,27 @@ let updateGame = (gameID) => {
 };
 
 let sendUpdates = (gameID) => {
-	let game = state.getGame(gameID);
-	if (game !== undefined) {
-		emitRoom(
-			gameID,
-			"updateGameData",
-			game
-		);
-	}
+	let { majorVersion, minorVersion, packet } = state.flushPackets(gameID);
+	emitRoom(
+		gameID,
+		"updateGameData",
+		{
+			majorVersion,
+			minorVersion,
+			packet
+		}
+	);
 };
 
 let updateTime = (gameID) => {
-	let { timeEnd } = state.getGame(gameID);
+	let { timeEnd } = state.getGame(gameID).info;
 
 	let milli = timeEnd - Date.now();
 	let seconds = Math.floor(milli / 1000);
 
 	state.editGame(gameID, {
-		timeLeft: seconds
+		gameData: {
+			timeLeft: seconds
+		}
 	});
 };

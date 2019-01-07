@@ -15,37 +15,47 @@ let derefPlayers = (gameID) => {
 };
 
 let startRace = (gameID) => {
-	let time = 120;
+	let time = 10;
 	state.editGame(gameID, {
-		timeLeft: time,
-		timeStart: Date.now(),
-		timeEnd: Date.now() + time*1000,
-		status: "RACE"
+		info: {
+			timeEnd: Date.now() + time*1000,
+			status: "RACE"
+		},
+		gameData: {
+			timeLeft: time,
+		}
 	});
 };
 
 let endRace = (gameID) => {
 	let time = 10;
 	state.editGame(gameID, {
-		timeLeft: time,
-		timeEnd: Date.now() + time*1000,
-		status: "POSTGAME"
+		info: {
+			timeEnd: Date.now() + time*1000,
+			status: "POSTGAME"
+		},
+		gameData: {
+			timeLeft: time,
+		}
 	});
 };
 
 let endGame = (gameID) => {
+	console.log("ENDING GAME", gameID);
 	derefPlayers(gameID);
 	state.removeGameByID(gameID);
+	console.log("TRY TO GET GAME", state.getGame(gameID));
 };
 
 let handleRace = (gameID) => {
+
 };
 
 
 module.exports = (gameID) => {
-	let { timeLeft, status } = state.getGame(gameID);
+	let { status, timeEnd } = state.getGame(gameID).info;
 
-	if (timeLeft < 0) {
+	if (timeEnd < Date.now()) {
 		if (status === "LOBBY")         startRace(gameID);
 		else if (status === "RACE")     endRace(gameID);
 		else if (status === "POSTGAME") endGame(gameID);
