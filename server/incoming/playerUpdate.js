@@ -2,7 +2,12 @@ let state = require("../state");
 
 let kickPlayer = require("../helpers/kickPlayer");
 
-let getStats = (string, words, currWord, minutes) => {
+// I maybe should update wpm for everyone each tick
+
+let getStats = (string, words, currWord, timeStart) => {
+	let millis = (Date.now() - timeStart);
+	let minutes = millis / 1000 / 60;
+
 	let completed = words.slice(0, currWord).join(" ").length;
 
 	return {
@@ -12,27 +17,21 @@ let getStats = (string, words, currWord, minutes) => {
 };
 
 module.exports = (socket, data) => {
-	let { currWord, finished } = data;
-	let game = state.getGameByPlayerID(socket.id);
+	let { currWord} = data;
+
+	let playerID = state.getPlayerIDBySocket(socket);
+	let game = state.getGameByPlayerID(playerID);
 
 	if (game !== undefined ) {
 		let { maxWords, words, string, timeStart } = game;
 
-		let millis = (Date.now() - timeStart);
-		let minutes = millis / 1000 / 60;
 
-		if (finished === true) {
-			state.updatePlayerInGame(game.id, socket.id, {
-				finished,
-				progress: 100,
-				currWord: maxWords
-			});
-		} else {
-			state.updatePlayerInGame(game.id, socket.id, {
-				currWord,
-				...getStats(string, words, currWord, minutes)
-			});
-		}
+		let hasFinished = (currWord >= maxWords);
+		state.updatePlayerGameData(game.id, socket.id, {
+			finished: (hasFinished? Date.now() : false ),
+			currWord,
+			...getStats(string, words, currWord, timeStart)
+		});
 	} else {
 		kickPlayer(socket, "Server dead");
 	}

@@ -6,17 +6,15 @@ module.exports = () => {
 	//state.logGames();
 	console.log(state.getGameIDs());
 	state.getGameIDs().map( (gameID) => {
-		updateGame(gameID);
+		updateTime(gameID);
+		handleStages(gameID);
 		sendUpdates(gameID);
 	});
 };
 
-let updateGame = (gameID) => {
-	updateTime(gameID);
-	handleStages(gameID);
-};
 
 let sendUpdates = (gameID) => {
+	//Flushing packets now calls handleStages();
 	let { majorVersion, minorVersion, packet } = state.flushPackets(gameID);
 	emitRoom(
 		gameID,

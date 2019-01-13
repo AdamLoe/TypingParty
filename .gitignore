@@ -8,6 +8,9 @@ $RECYCLE.BIN/
 ehthumbs.db
 ehthumbs_vista.db
 
+.gitignore
+.gitattributes
+.package-lock.json
 /node_**
 .idea**
 .idea/workspace.xml

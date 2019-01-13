@@ -43,12 +43,9 @@ let getGame = (playerID, options) => {
 		//Holds id, name, icon, and any future data we want to show
 		players: {},
 
-		//Holds player id, and player score
-		//PASSED TO USER AS ARRAY
-		leaderboard: {},
-
-		//This is what we update every tick, progress/WPM
+		//This is what we update every tick, progress/WPM of each player
 		gameData: {
+			finished: 0,
 			timeLeft: lobbyTime
 		},
 

@@ -76,7 +76,7 @@ export let leaveGame = () => {
 
 export let playerUpdate = (data) => {
 	let socket = getSocket();
-	socket.emit("playerUpdate", data);
+	socket.emit("playerGameUpdate", data);
 };
 
 export let updateProfile = ({ name, icon }) => {

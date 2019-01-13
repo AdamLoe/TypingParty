@@ -10,7 +10,8 @@ exports.addGame = (game) => {
 	packets[game.id] = {
 		pendingPackets: [],
 		majorVersion: 0,
-		minorVersion: 0
+		minorVersion: 0,
+		shouldNewMajorVersion: false,
 	};
 };
 exports.getGame = (gameID) => {
@@ -37,9 +38,11 @@ let makeNewPacket = (gameID, data) => {
 	pendingPackets.push(data);
 };
 exports.flushPackets = (gameID) => {
-	let { pendingPackets } = packets[gameID];
-	let packet = combinePackets(pendingPackets);
-	let { majorVersion, minorVersion } = getPacketVersion({ gameID, packet });
+	if (!exports.gameExists(gameID)) return null;
+
+	let packet = exports.combinePackets(gameID);
+	let { majorVersion, minorVersion } = getNewPacketVersion({ gameID, packet });
+	updatePacketInfo({ gameID, majorVersion, minorVersion, packet });
 	applyPacket({ gameID, majorVersion, minorVersion, packet });
 	return {
 		majorVersion,
@@ -47,11 +50,13 @@ exports.flushPackets = (gameID) => {
 		packet
 	};
 };
-let combinePackets = (packets) => {
+exports.combinePackets = (gameID) => {
+	let { pendingPackets } = packets[gameID];
 	let combined = {};
-	packets.map( packet => {
+	pendingPackets.map( packet => {
 		combineObjects(combined, packet);
 	});
+	packets[gameID].pendingPackets = [combined];
 	return combined;
 };
 let combineObjects = (oldObj, newObj) => {
@@ -64,21 +69,15 @@ let combineObjects = (oldObj, newObj) => {
 	});
 	return oldObj;
 };
-let shouldNewMajorVersion = (data) => {
-	return (
-		(data.info !== undefined) ||
-		(data.leaderboard !== undefined) ||
-		(data.players !== undefined)
-	);
-};
-let getPacketVersion = ({ gameID, packet }) => {
+let getNewPacketVersion = ({ gameID, packet }) => {
 	let majorVersion = packets[gameID].majorVersion;
 	let minorVersion = packets[gameID].minorVersion + 1;
-	if (
+	let shouldMajorVersion = (
+		packets[gameID].shouldNewMajorVersion ||
 		(packet.info !== undefined) ||
-		(packet.leaderboard !== undefined) ||
 		(packet.players !== undefined)
-	) {
+	);
+	if (shouldMajorVersion) {
 		majorVersion += 1;
 		minorVersion = 0;
 	}
@@ -87,49 +86,31 @@ let getPacketVersion = ({ gameID, packet }) => {
 		minorVersion
 	};
 };
-let applyPacket = ({ gameID, majorVersion, minorVersion, packet }) => {
-	console.log("Applying packet ", majorVersion + ":" + minorVersion, "to", gameID);
-	console.log("data:", packet);
-	let { info, players, leaderboard, gameData, banList } = packet;
-	//Update packet data
+let updatePacketInfo  = ({ gameID, majorVersion, minorVersion, packet }) => {
 	packets[gameID] = {
 		...packets[gameID],
 		pendingPackets: [],
 		majorVersion, minorVersion,
+		shouldNewMajorVersion: false,
 		[majorVersion]: {
 			...packets[gameID].majorVersion,
 			[minorVersion]: packet
 		}
 	};
+};
+let applyPacket = ({ gameID, majorVersion, minorVersion, packet }) => {
+	console.log("Applying packet ", majorVersion + ":" + minorVersion, "to", gameID);
+	console.log("data:", packet);
 	//Update game object
 	//In DEV mode, we make sure that our game JSON isn't changing between ticks
 	checkGameJSON(gameID);
-	games[gameID] = {
-		...games[gameID],
-		info: {
-			...games[gameID].info,
-			...info
-		},
-		players: {
-			...games[gameID].players,
-			...players
-		},
-		leaderboard: {
-			...games[gameID].leaderboard,
-			...leaderboard
-		},
-		gameData: {
-			...games[gameID].gameData,
-			...gameData
-		},
-		banList: {
-			...games[gameID].banList,
-			...banList
-		}
-	};
+	combineObjects(games[gameID], packet);
 	saveGameJSON(gameID);
 };
-exports.getPacketVersion = (gameID) => {
+exports.setNextPacketMajor = (gameID) => {
+	packets[gameID].shouldNewMajorVersion = true;
+};
+exports.getCurrentPacketVersion = (gameID) => {
 	let { majorVersion, minorVersion } = packets[gameID];
 	return {
 		majorVersion,
@@ -142,11 +123,10 @@ exports.getLatestPacket = (gameID) => {
 		majorVersion,
 		minorVersion,
 		packet: packets[gameID][majorVersion][minorVersion]
-	}
+	};
 };
 
 exports.doesPasswordMatch = (gameID, password) => {
-	console.log("PWD CHECK:", "ser:", games[gameID].info.password, "cli:", password);
 	return games[gameID].info.password === password;
 };
 exports.isGameNameTaken = (wantedName) => {
@@ -174,7 +154,7 @@ exports.addPlayerToGame = (gameID, player) => {
 		}
 	});
 };
-exports.updatePlayerInGame = (gameID, playerID, data) => {
+exports.updatePlayerInfoInGame = ({ gameID, playerID, data }) => {
 	exports.editGame(gameID, {
 		players: {
 			[playerID]: {
@@ -183,9 +163,21 @@ exports.updatePlayerInGame = (gameID, playerID, data) => {
 		}
 	});
 };
+exports.updatePlayerGameData = (gameID, playerID, data) => {
+	exports.editGame(gameID, {
+		gameData: {
+			[playerID]: {
+				...data
+			}
+		}
+	});
+};
+exports.getGameIDByPlayerID = (playerID) => {
+	return players[playerID].gameID;
+};
 exports.getGameByPlayerID = (playerID) => {
-	let gameID = players[playerID].gameID;
-	return exports.getGame(gameID);
+	let gameID = exports.getGameIDByPlayerID( playerID );
+	return exports.getGame( gameID );
 };
 
 
@@ -225,28 +217,7 @@ exports.getPlayerIDBySocket = (socket) => {
 /*
 	DEV / USELESS STUFF
  */
-
-exports.load = async function() {
-	//console.time("loadState");
-	await storage.init();
-
-	let state;
-	state = await storage.getItem("state")
-		.then( data => data)
-		.catch( err => console.log("err", err));
-
-	//console.timeEnd("loadState");
-	return state;
-};
-exports.save = async function(state) {
-	//console.time("saveState");
-	await storage.init();
-	await storage.setItem("state", state);
-	//console.timeEnd("saveState");
-};
-
 let stringifyGame = (gameID) => JSON.stringify(games[gameID]);
-
 let checkGameJSON = (gameID) => {
 	if (
 		process.env.NODE_ENV !== "production" &&
@@ -264,13 +235,28 @@ let saveGameJSON = (gameID) => {
 		saves[gameID] = JSON.stringify(games[gameID]);
 	}
 };
+/*
+	Loading / Saving is really possible until I finally set playerID not socket.id
+	Because until then, we won't be able to tell who goes where anyways
+ */
+exports.load = async function() {
+	await storage.init();
+	let state;
+	state = await storage.getItem("state")
+		.then( data => data)
+		.catch( err => console.log("err", err));
+	return state;
+};
+exports.save = async function(state) {
+	await storage.init();
+	await storage.setItem("state", state);
+};
 exports.test = {
 	packets,
 	players,
+	games,
 	makeNewPacket,
-	combinePackets,
 	combineObjects,
-	shouldNewMajorVersion,
 	applyPacket,
 	stringifyGame,
 	checkGameJSON,

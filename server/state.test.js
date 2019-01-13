@@ -123,7 +123,9 @@ test("combinePackets", () => {
 			teeth: 63
 		}
 	};
-	expect(state.test.combinePackets(packets)).toEqual(expected);
+	state.test.packets[gameID].pendingPackets = packets;
+	expect(state.combinePackets(gameID)).toEqual(expected);
+	state.test.packets[gameID].pendingPackets = [];
 });
 test("combineObjects", () => {
 	let oldObj = {
@@ -191,7 +193,8 @@ test("addPlayerToGame", () => {
 	expect(state.getGame(gameID)).toEqual(expected);
 });
 
-test("getGameByPlayerID", () => {
-	expect(state.getGameByPlayerID(player.id).id).toBe(123);
+test("getGameIDByPlayerID", () => {
+	expect(state.getGameIDByPlayerID(player.id)).toBe(gameID);
 });
+
 test("updatePlayerInGame", () => {});

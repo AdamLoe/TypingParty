@@ -1,13 +1,36 @@
 let state = require("../state");
 
+let getGameInfo = (game) => {
+	let {
+		name,
+		scoringType,
+		handicaps,
+		maxPlayers,
+		playerCount,
+		maxGame,
+		currGame,
+		status
+	} = game.info;
+	return {
+		id: game.id,
+		name,
+		scoringType,
+		handicaps,
+		maxPlayers,
+		playerCount,
+		maxGame,
+		currGame,
+		status
+	};
+};
+
 let getGames = (filters) => {
 	let gameIDs = state.getGameIDs();
 
 	return gameIDs.map( gameID => {
 		let game = state.getGame(gameID);
-		game.password = "No hacking allowed bruther";
 
-		return game;
+		return getGameInfo(game);
 	});
 };
 

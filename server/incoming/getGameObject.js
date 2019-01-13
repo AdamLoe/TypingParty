@@ -1,8 +1,9 @@
 let state = require("../state");
 
-module.exports = (socket, gameID) => {
-	let game = state.getGame(gameID);
-	let { majorVersion, minorVersion } = state.getPacketVersion(gameID);
+module.exports = (socket) => {
+	let playerID = state.getPlayerIDBySocket(socket);
+	let game = state.getGameByPlayerID(playerID);
+	let { majorVersion, minorVersion } = state.getCurrentPacketVersion(game.id);
 
 	socket.emit("updateGameObject", {
 		majorVersion,

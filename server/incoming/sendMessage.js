@@ -8,11 +8,11 @@ let getTime = () => {
 
 module.exports = (socket, message) => {
 	let playerID = 	state.getPlayerIDBySocket(socket);
-	let game = state.getGameByPlayerID(playerID);
+	let gameID = state.getGameIDByPlayerID(playerID);
 
 	console.log("Received Message", message, "from", playerID);
 
-	emitRoom(game.id, "newMessage", {
+	emitRoom(gameID, "newMessage", {
 		id: playerID,
 		text: message,
 		time: getTime()
