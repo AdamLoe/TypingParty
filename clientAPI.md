@@ -10,7 +10,10 @@
 | **sendMessage** | messager submit |
 | **getPacket** | missed major packet version |
 | **getGameObject** | game failing / missing many packets |
+
+
 ##playerGameUpdate
+
 User should send after typing each word
 
 ```
