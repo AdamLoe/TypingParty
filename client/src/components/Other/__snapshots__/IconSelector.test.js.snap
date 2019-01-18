@@ -10,13 +10,14 @@ exports[`IconSelector snapshot 1`] = `
     onClick={[Function]}
   >
     <svg
-      viewBox="0 0 200 200"
+      className=""
+      viewBox="-10 -10 220 220"
     >
-      <rect
+      <circle
+        cx="100"
+        cy="100"
         fill="white"
-        height="100%"
-        stroke="white"
-        width="100%"
+        r="100"
       />
       <rect
         fill="black"
@@ -34,6 +35,14 @@ exports[`IconSelector snapshot 1`] = `
         x="101"
         y="101"
       />
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        r="110"
+        stroke="black"
+        strokeWidth="20"
+      />
     </svg>
   </div>
   <div
@@ -42,13 +51,14 @@ exports[`IconSelector snapshot 1`] = `
     onClick={[Function]}
   >
     <svg
-      viewBox="0 0 200 200"
+      className=""
+      viewBox="-10 -10 220 220"
     >
-      <rect
+      <circle
+        cx="100"
+        cy="100"
         fill="white"
-        height="100%"
-        stroke="white"
-        width="100%"
+        r="100"
       />
       <rect
         fill="black"
@@ -81,6 +91,14 @@ exports[`IconSelector snapshot 1`] = `
         width="85"
         x="116"
         y="0"
+      />
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        r="110"
+        stroke="black"
+        strokeWidth="20"
       />
     </svg>
   </div>
@@ -90,13 +108,14 @@ exports[`IconSelector snapshot 1`] = `
     onClick={[Function]}
   >
     <svg
-      viewBox="0 0 200 200"
+      className=""
+      viewBox="-10 -10 220 220"
     >
-      <rect
+      <circle
+        cx="100"
+        cy="100"
         fill="white"
-        height="100%"
-        stroke="white"
-        width="100%"
+        r="100"
       />
       <circle
         cx="100"
@@ -112,6 +131,14 @@ exports[`IconSelector snapshot 1`] = `
         r="25"
         stroke="white"
       />
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        r="110"
+        stroke="black"
+        strokeWidth="20"
+      />
     </svg>
   </div>
   <div
@@ -120,13 +147,14 @@ exports[`IconSelector snapshot 1`] = `
     onClick={[Function]}
   >
     <svg
-      viewBox="0 0 200 200"
+      className=""
+      viewBox="-10 -10 220 220"
     >
-      <rect
+      <circle
+        cx="100"
+        cy="100"
         fill="white"
-        height="100%"
-        stroke="white"
-        width="100%"
+        r="100"
       />
       <rect
         fill="black"
@@ -143,6 +171,14 @@ exports[`IconSelector snapshot 1`] = `
         r="80"
         stroke="black"
       />
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        r="110"
+        stroke="black"
+        strokeWidth="20"
+      />
     </svg>
   </div>
   <div
@@ -151,13 +187,14 @@ exports[`IconSelector snapshot 1`] = `
     onClick={[Function]}
   >
     <svg
-      viewBox="0 0 200 200"
+      className=""
+      viewBox="-10 -10 220 220"
     >
-      <rect
+      <circle
+        cx="100"
+        cy="100"
         fill="white"
-        height="100%"
-        stroke="white"
-        width="100%"
+        r="100"
       />
       <circle
         cx="140"
@@ -187,6 +224,14 @@ exports[`IconSelector snapshot 1`] = `
         r="25"
         stroke="black"
       />
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        r="110"
+        stroke="black"
+        strokeWidth="20"
+      />
     </svg>
   </div>
   <div
@@ -195,13 +240,14 @@ exports[`IconSelector snapshot 1`] = `
     onClick={[Function]}
   >
     <svg
-      viewBox="0 0 200 200"
+      className=""
+      viewBox="-10 -10 220 220"
     >
-      <rect
+      <circle
+        cx="100"
+        cy="100"
         fill="white"
-        height="100%"
-        stroke="white"
-        width="100%"
+        r="100"
       />
       <rect
         fill="black"
@@ -211,6 +257,14 @@ exports[`IconSelector snapshot 1`] = `
         x="31"
         y="31"
       />
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        r="110"
+        stroke="black"
+        strokeWidth="20"
+      />
     </svg>
   </div>
   <div
@@ -219,20 +273,28 @@ exports[`IconSelector snapshot 1`] = `
     onClick={[Function]}
   >
     <svg
-      transform="scale(-1, -1)"
-      viewBox="0 0 200 200"
+      className=""
+      viewBox="-10 -10 220 220"
     >
-      <rect
+      <circle
+        cx="100"
+        cy="100"
         fill="white"
-        height="100%"
-        stroke="white"
-        width="100%"
+        r="100"
       />
       <polygon
         fill="black"
         points="100 0, 159 181, 5 69, 195 69, 41 181"
         stroke="black"
         strokeWidth={3}
+      />
+      <circle
+        cx="100"
+        cy="100"
+        fill="none"
+        r="110"
+        stroke="black"
+        strokeWidth="20"
       />
     </svg>
   </div>

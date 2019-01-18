@@ -1,0 +1,262 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+html {
+}
+
+.Game {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.HeaderMenu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.HeaderTitle {
+  width: 150px;
+  height: 60px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 10px;
+}
+.HeaderTitle:hover {
+  background: lightgray;
+  cursor: pointer;
+}
+
+.UserProfile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ProfileMini {
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+  border-bottom-left-radius: 10px;
+  padding: 5px 20px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ProfileMini:hover {
+  cursor: pointer;
+  background: lightgrey;
+}
+
+.ProfileEditor {
+  width: 200px;
+
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+  border-bottom-left-radius: 10px;
+  padding: 5px 20px;
+}
+
+.ProfileEditor img {
+  float: right;
+  padding: 5px;
+}
+
+.ProfileEditor img:hover {
+  background: lightgrey;
+  cursor: pointer;
+}
+
+.ProfileEditor input {
+  padding: 10px;
+  width: 80%;
+}
+
+svg {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  border: 3px solid;
+}
+
+.selected {
+  background: green;
+}
+
+.iconSelector {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.colorSelector {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.colorSelector {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.selectColorBox {
+  padding: 3px;
+}
+
+.Color {
+  border-radius: 30px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+}
+
+.MenuButtons {
+  font-family: "Segoe UI Semibold";
+  font-size: 40px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 10px;
+}
+
+.MenuButtons button {
+  padding: 30px;
+  border-style: solid;
+  border-color: white;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MenuButtons button:hover {
+  background: navajowhite;
+}
+
+.Creator {
+  width: 90%;
+  max-width: 600px;
+}
+
+.Input {
+}
+
+.TypingParagraph {
+  width: 95%;
+  background: white;
+  padding: 5px;
+}
+
+.TypingParagraph span {
+  font-size: 20px;
+}
+
+.TypingParagraph .inProcess {
+  text-decoration: underline;
+}
+
+.TypingParagraph .Correct {
+  cursor: default;
+  text-decoration: underline green;
+  color: green;
+}
+
+.TypingParagraph .Incorrect {
+  background: red;
+  border-right: 1px solid;
+}
+
+.TypingParagraph .completed {
+  color: green;
+}
+
+.TypingParagraph textarea {
+  display: block;
+  width: 500px;
+}
+
+.RaceViewContainer {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.RaceHeader {
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.RaceView {
+  padding: 5px;
+  width: 100%;
+}
+
+.RacerContainer {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.RacerName {
+  text-align: center;
+  width: 10%;
+}
+.RacerWPM {
+  text-align: center;
+  width: 10%;
+}
+.RacerLane {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  background: blue;
+}
+
+.Racer {
+  position: relative;
+  background: red;
+  width: 5%;
+  height: 20px;
+}
+
+.greyedIcon {
+  opacity: 0.4;
+}

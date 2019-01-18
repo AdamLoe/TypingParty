@@ -1,0 +1,56 @@
+.Messenger {
+  width: 300px;
+  padding: 20px;
+  background: rgb(80, 80, 80);
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.MessageView {
+  background: rgb(100, 100, 100);
+  border-radius: 5px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow: auto;
+
+  font-size: 20px;
+  color: white;
+}
+
+.Message .name {
+  color: rgb(140, 140, 250);
+  padding-left: 2px;
+}
+
+.Message .text {
+  padding-left: 2px;
+}
+.MessageCreator {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.MessageCreator input {
+  color: white;
+  border-radius: 5px;
+  border: none;
+  background: rgb(120, 120, 120);
+  width: 100%;
+  padding: 10px 5px;
+}
+.MessageCreator button {
+  padding: 0;
+  width: 20px;
+  margin: 0;
+  border-radius: 0;
+}

@@ -8,10 +8,10 @@ import popups from "./popups";
 import profile from "./profile";
 
 export default combineReducers({
-	navigation,
-	creator,
-	game,
-	browser,
-	popups,
-	profile
+  navigation,
+  creator,
+  game,
+  browser,
+  popups,
+  profile
 });

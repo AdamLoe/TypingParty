@@ -3,14 +3,7 @@
   "timeLeft": 32,
   "timeEnd": 14000202340,
   "string": "Just a cast away an island lost at sea. Another lonely day, no one here but me. More loneliness than any man could bear, rescue me before I fall into despair.",
-  "playerIDs": [
-    "1104",
-    "1105",
-    "1106",
-    "1107",
-    "1108",
-    "1109"
-  ],
+  "playerIDs": ["1104", "1105", "1106", "1107", "1108", "1109"],
   "playerInfo": {
     "1104": {
       "name": "Adam",
@@ -57,6 +50,6 @@
     "1106": 63.2,
     "1107": 24.5,
     "1108": 63.2,
-    "1109": 24.5,
+    "1109": 24.5
   }
 }

@@ -3,7 +3,8 @@
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
@@ -19,9 +20,11 @@
     "sourceType": "module"
   },
   "plugins": [
-    "react", "html", "jest"
+    "react", "html", "jest", "prettier"
   ],
   "rules": {
+    "no-console": "off"
+    /*
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
@@ -46,5 +49,6 @@
     ],
     "no-console": "off",
     "no-mixed-spaces-and-tabs": "off"
+    */
   }
 }

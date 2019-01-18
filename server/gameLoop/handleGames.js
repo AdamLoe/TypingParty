@@ -1,41 +1,30 @@
 let state = require("../state");
 let { emitRoom } = require("../socket");
-let handleStages = require("./handleStages");
+let handleRace = require("./handleRace");
+let handleLobby = require("./handleLobby");
+
+let handleStages = gameID => {
+  let { status } = state.getGame(gameID).info;
+  if (status === "LOBBY") handleLobby(gameID);
+  if (status === "RACE") handleRace(gameID);
+};
 
 module.exports = () => {
-	//state.logGames();
-	console.log(state.getGameIDs());
-	state.getGameIDs().map( (gameID) => {
-		updateTime(gameID);
-		handleStages(gameID);
-		sendUpdates(gameID);
-	});
+  state.getGameIDs().map(gameID => {
+    handleStages(gameID);
+    sendUpdates(gameID);
+  });
 };
 
+let sendUpdates = gameID => {
+  //Flushing packets now calls handleStages();
+  let { majorVersion, minorVersion, packet } = state.flushPackets(gameID);
 
-let sendUpdates = (gameID) => {
-	//Flushing packets now calls handleStages();
-	let { majorVersion, minorVersion, packet } = state.flushPackets(gameID);
-	emitRoom(
-		gameID,
-		"updateGameData",
-		{
-			majorVersion,
-			minorVersion,
-			packet
-		}
-	);
-};
-
-let updateTime = (gameID) => {
-	let { timeEnd } = state.getGame(gameID).info;
-
-	let milli = timeEnd - Date.now();
-	let seconds = Math.floor(milli / 1000);
-
-	state.editGame(gameID, {
-		gameData: {
-			timeLeft: seconds
-		}
-	});
+  if (packet) {
+    emitRoom(gameID, "updateGameData", {
+      majorVersion,
+      minorVersion,
+      packet
+    });
+  }
 };

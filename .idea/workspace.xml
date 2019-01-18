@@ -1,33 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/client/src/components/Menu/Radio.test.js" line="28" />
+    <bookmark url="file://$PROJECT_DIR$/client/src/components/Menu/Radio.test.js" line="29" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abcb6650-4f13-42e7-a2ff-5e006eaf3820" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Game.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientAPI.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gameObject.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/incoming/getPacket.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/incoming/profileUpdate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serverAPI.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/containers/Game/LobbyMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_controller.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_creator.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_game.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_globals.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_leaderboard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_lobby.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_messenger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/_raceView.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/scss/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/gameLoop/endGame.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/gameLoop/handleFinished.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/gameLoop/handleLobby.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/gameLoop/handleRace.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/gameLoop/handleStatusChange.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/gameLoop/updateTime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FastTyper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FastTyper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/logger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/dist/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/configureStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/containers/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/containers/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/createNewPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/createNewPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/handleMovement.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/handleMovement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/helpers/loadState.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/helpers/loadState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/oldGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/oldGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/reducers/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/reducers/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/reducers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/old/root.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/root.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/popups.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/popups.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/function.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/BrowserItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/BrowserItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Game/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Game/Message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Menu/Radio.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Menu/Radio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Menu/Radio.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Menu/Radio.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Menu/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Menu/Slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Menu/TextInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Menu/TextInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/MenuHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/MenuHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/ColorSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/ColorSelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/Icon.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/Icon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/Icon.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/Icon.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/IconSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/IconSelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/IconSelector.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/IconSelector.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/ProfileEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/ProfileEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/ProfileMini.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/ProfileMini.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/__snapshots__/Icon.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/__snapshots__/Icon.test.js.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Other/__snapshots__/IconSelector.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Other/__snapshots__/IconSelector.test.js.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/components.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Game/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Game/Game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Game/Leaderboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Game/Leaderboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Game/Messenger.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Game/Messenger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Game/PostGameView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Game/RaceMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Game/RaceView.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Game/RaceView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Game/TypingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Game/TypingController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Game/game2.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/old/game2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Menu/Browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Menu/Browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Menu/Creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Menu/Creator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Menu/InputHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Menu/InputHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Menu/InputHandler.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Menu/InputHandler.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Menu/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Other/HeaderMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Other/HeaderMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Other/Popups.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Other/Popups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/containers/Other/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Other/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/helpers/ErrorBoundary.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helpers/ErrorBoundary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/helpers/getRandomServerName.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helpers/getRandomServerName.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/helpers/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/helpers/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/creator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/popups.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/popups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientAPI.md" beforeDir="false" afterPath="$PROJECT_DIR$/clientAPI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameObject.md" beforeDir="false" afterPath="$PROJECT_DIR$/gameObject.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/_old/findGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/_old/findGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/_old/packetExamples/FullPacket.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/_old/packetExamples/FullPacket.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/gameLoop/handleGames.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/gameLoop/handleGames.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/gameLoop/handleStages.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/gameLoop/handleStages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/gameLoop/handleStages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/helpers/kickPlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/helpers/kickPlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/helpers/log.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/helpers/log.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/incoming/createGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/createGame.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/incoming/getBrowser.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/getBrowser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/incoming/getGameObject.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/getGameObject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/incoming/handleMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/sendMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/incoming/getPacket.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/getPacket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/incoming/initiatePlayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/initiatePlayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/incoming/joinGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/joinGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/incoming/leaveGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/leaveGame.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/incoming/playerUpdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/playerUpdate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/incoming/profileUpdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/profileUpdate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/incoming/sanitizeGameOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/sanitizeGameOptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/incoming/sendMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/incoming/sendMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/socket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/socketHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/socketHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/state.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/state.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/state.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/strings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverAPI.md" beforeDir="false" afterPath="$PROJECT_DIR$/serverAPI.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,59 +141,67 @@
           <splitter split-orientation="horizontal" split-proportion="0.5">
             <split-first>
               <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/client/src/containers/Game/Game.js">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="270">
+                        <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+                        <folding>
+                          <element signature="e#0#26#0" expanded="true" />
+                        </folding>
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
                 <file pinned="false" current-in-tab="true">
-                  <entry file="file://$PROJECT_DIR$/clientAPI.md">
-                    <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                      <state split_layout="SPLIT">
-                        <first_editor relative-caret-position="342">
-                          <caret line="19" selection-start-line="19" selection-end-line="19" />
-                        </first_editor>
-                        <second_editor />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/server/gameLoop/handleStages.js">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="1746">
-                        <caret line="97" column="13" lean-forward="true" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/client/src/actions/socket.js">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state>
-                        <caret column="29" selection-start-column="29" selection-end-column="29" />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/server/incoming/profileUpdate.js">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="288">
-                        <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/server/incoming/getPacket.js">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="108">
-                        <caret line="6" selection-start-line="6" selection-end-line="6" />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/server/incoming/joinGame.js">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="576">
-                        <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+                      <state relative-caret-position="540">
+                        <caret line="30" selection-start-line="30" selection-end-line="30" />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/server/incoming/createGame.js">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="342">
+                        <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/client/src/scss/_header.scss">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="270">
+                        <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/client/src/scss/_lobby.scss">
+                    <provider selected="true" editor-type-id="text-editor" />
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/client/src/scss/_leaderboard.scss">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="144">
+                        <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="12" selection-end-column="22" />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/client/src/containers/Game/RaceView.js">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="432">
+                        <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+                        <folding>
+                          <element signature="e#0#26#0" expanded="true" />
+                        </folding>
                       </state>
                     </provider>
                   </entry>
@@ -106,71 +210,61 @@
             </split-first>
             <split-second>
               <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                <file pinned="false" current-in-tab="true">
-                  <entry file="file://$PROJECT_DIR$/serverAPI.md">
-                    <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                      <state split_layout="SPLIT">
-                        <first_editor relative-caret-position="234">
-                          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-                        </first_editor>
-                        <second_editor />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
                 <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/gameObject.md">
-                    <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                      <state split_layout="SPLIT">
-                        <first_editor relative-caret-position="540">
-                          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-                        </first_editor>
-                        <second_editor />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/client/src/reducers/game.js">
+                  <entry file="file://$PROJECT_DIR$/client/src/reducers/popups.js">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="378">
-                        <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+                      <state relative-caret-position="432">
+                        <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
                       </state>
                     </provider>
                   </entry>
                 </file>
                 <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/server/state.js">
+                  <entry file="file://$PROJECT_DIR$/client/src/reducers/navigation.js">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="432">
+                        <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/server/incoming/profileUpdate.js">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="360">
+                        <caret line="20" selection-start-line="20" selection-end-line="20" />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/client/src/scss/_creator.scss">
+                    <provider selected="true" editor-type-id="text-editor" />
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="false">
+                  <entry file="file://$PROJECT_DIR$/client/src/scss/_menu.scss">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="576">
-                        <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+                        <caret line="32" selection-start-line="32" selection-end-line="32" />
+                      </state>
+                    </provider>
+                  </entry>
+                </file>
+                <file pinned="false" current-in-tab="true">
+                  <entry file="file://$PROJECT_DIR$/client/src/scss/_raceView.scss">
+                    <provider selected="true" editor-type-id="text-editor">
+                      <state relative-caret-position="576">
+                        <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
                       </state>
                     </provider>
                   </entry>
                 </file>
                 <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/server/incoming/sendMessage.js">
+                  <entry file="file://$PROJECT_DIR$/client/src/scss/_messenger.scss">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="342">
-                        <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/server/incoming/getGameObject.js">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state>
-                        <caret column="32" selection-start-column="32" selection-end-column="32" />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/server/incoming/playerUpdate.js">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="666">
-                        <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
+                      <state relative-caret-position="108">
+                        <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
                       </state>
                     </provider>
                   </entry>
@@ -183,74 +277,65 @@
     </window>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4937211">
+    <splitter split-orientation="horizontal" split-proportion="0.49438202">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/socket.js">
+            <entry file="file://$PROJECT_DIR$/client/src/containers/Game/Leaderboard.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+                <state relative-caret-position="198">
+                  <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/incoming/getBrowser.js">
+            <entry file="file://$PROJECT_DIR$/server/incoming/createGame.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="17" column="18" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="10" />
+                <state relative-caret-position="360">
+                  <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/gameObject.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="877">
-                    <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/actions/socket.js">
+            <entry file="file://$PROJECT_DIR$/client/src/scss/_globals.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+                <state relative-caret-position="252">
+                  <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/actions/api.js">
+            <entry file="file://$PROJECT_DIR$/client/src/containers/Game/LobbyMenu.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+                <state relative-caret-position="126">
+                  <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Game.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="848">
-                    <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
-                  </first_editor>
-                  <second_editor />
+            <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="504">
+                  <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
+            <entry file="file://$PROJECT_DIR$/client/src/actions/api.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+                <state relative-caret-position="396">
+                  <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -259,38 +344,56 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/server/socketHandler.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="15" selection-start-line="15" selection-end-line="15" />
+                <state relative-caret-position="234">
+                  <caret line="13" selection-start-line="13" selection-end-line="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.eslintrc.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="450">
+                  <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/incoming/sendMessage.js">
+            <entry file="file://$PROJECT_DIR$/server/gameLoop/updateTime.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+                <state relative-caret-position="288">
+                  <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/incoming/createGame.js">
+            <entry file="file://$PROJECT_DIR$/client/src/scss/index.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="810">
-                  <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+                <state relative-caret-position="108">
+                  <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server/gameLoop/handleGames.js">
+            <entry file="file://$PROJECT_DIR$/client/src/scss/_controller.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+                <state relative-caret-position="252">
+                  <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/server/gameLoop/handleLobby.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="432">
+                  <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -306,9 +409,9 @@
         <option value="container" />
         <option value="TypeScript File" />
         <option value="Container" />
-        <option value="Component" />
         <option value="Test" />
         <option value="JavaScript File" />
+        <option value="Component" />
       </list>
     </option>
   </component>
@@ -337,57 +440,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/index.css" />
-        <option value="$PROJECT_DIR$/client/src/components/Menu/Radio.js" />
-        <option value="$PROJECT_DIR$/__mocks__/styleMock.js" />
-        <option value="$PROJECT_DIR$/__mocks__/fileMock.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/Menu/InputHandler.test.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Other/Icon.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Other/Icon.test.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Other/IconSelector.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/leaderboard.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/index.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/Game/Messenger.js" />
-        <option value="$PROJECT_DIR$/server/incoming/handleMessage.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Menu/Radio.test.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/Game/Game.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/creator.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/Other/Popups.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Menu/TextInput.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/Menu/Creator.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/Menu/InputHandler.js" />
-        <option value="$PROJECT_DIR$/server/incoming/sanitizeCreateGame.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/game.js" />
-        <option value="$PROJECT_DIR$/client/src/containers/Game/Leaderboard.js" />
-        <option value="$PROJECT_DIR$/server/incoming/initiatePlayer.js" />
-        <option value="$PROJECT_DIR$/client/src/index.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Other/IconSelector.test.js" />
-        <option value="$PROJECT_DIR$/server/incoming/joinGame.js" />
-        <option value="$PROJECT_DIR$/server/helpers/log.js" />
-        <option value="$PROJECT_DIR$/server/socket.js" />
-        <option value="$PROJECT_DIR$/server/incoming/sanitizeGameOptions.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/server/gameLoop/handleGames.js" />
-        <option value="$PROJECT_DIR$/api.md" />
-        <option value="$PROJECT_DIR$/server/incoming/getBrowser.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/api.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/socket.js" />
-        <option value="$PROJECT_DIR$/gameObject.md" />
-        <option value="$PROJECT_DIR$/server/incoming/createGame.js" />
-        <option value="$PROJECT_DIR$/serverAPI.md" />
-        <option value="$PROJECT_DIR$/server/incoming/getPacket.js" />
-        <option value="$PROJECT_DIR$/server/state.test.js" />
-        <option value="$PROJECT_DIR$/server/incoming/playerUpdate.js" />
-        <option value="$PROJECT_DIR$/server/state.js" />
-        <option value="$PROJECT_DIR$/server/incoming/profileUpdate.js" />
-        <option value="$PROJECT_DIR$/server/incoming/sendMessage.js" />
-        <option value="$PROJECT_DIR$/server/incoming/getGameObject.js" />
-        <option value="$PROJECT_DIR$/server/socketHandler.js" />
-        <option value="$PROJECT_DIR$/server/gameLoop/handleStages.js" />
-        <option value="$PROJECT_DIR$/clientAPI.md" />
-        <option value="$PROJECT_DIR$/GameLoop.md" />
         <option value="$PROJECT_DIR$/Game.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/server/gameLoop/endGame.js" />
+        <option value="$PROJECT_DIR$/server/gameLoop/handleStages.js" />
+        <option value="$PROJECT_DIR$/server/gameLoop/handleRace.js" />
+        <option value="$PROJECT_DIR$/server/gameLoop/handleGames.js" />
+        <option value="$PROJECT_DIR$/serverAPI.md" />
+        <option value="$PROJECT_DIR$/client/src/containers/App.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/popups.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/navigation.js" />
+        <option value="$PROJECT_DIR$/server/incoming/getBrowser.js" />
+        <option value="$PROJECT_DIR$/client/src/containers/Menu/Browser.js" />
+        <option value="$PROJECT_DIR$/client/src/containers/Game/LobbyMenu.js" />
+        <option value="$PROJECT_DIR$/client/src/containers/Game/RaceMenu.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/game.js" />
+        <option value="$PROJECT_DIR$/server/incoming/playerUpdate.js" />
+        <option value="$PROJECT_DIR$/server/state.js" />
+        <option value="$PROJECT_DIR$/server/state.test.js" />
+        <option value="$PROJECT_DIR$/server/gameLoop/handleStatusChange.js" />
+        <option value="$PROJECT_DIR$/server/socketHandler.js" />
+        <option value="$PROJECT_DIR$/server/gameLoop/updateTime.js" />
+        <option value="$PROJECT_DIR$/server/gameLoop/handleFinished.js" />
+        <option value="$PROJECT_DIR$/client/src/index.css" />
+        <option value="$PROJECT_DIR$/client/src/index.scss" />
+        <option value="$PROJECT_DIR$/client/webpack.config.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Menu/Slider.js" />
+        <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/client/src/scss/globals.scss" />
+        <option value="$PROJECT_DIR$/client/src/scss/menu.scss" />
+        <option value="$PROJECT_DIR$/client/src/scss/_menu.scss" />
+        <option value="$PROJECT_DIR$/client/src/scss/index.scss" />
+        <option value="$PROJECT_DIR$/client/src/scss/_controller.scss" />
+        <option value="$PROJECT_DIR$/client/src/containers/Game/Game.js" />
+        <option value="$PROJECT_DIR$/client/src/scss/_leaderboard.scss" />
+        <option value="$PROJECT_DIR$/client/src/containers/Game/Leaderboard.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Game/Message.js" />
+        <option value="$PROJECT_DIR$/gameObject.md" />
+        <option value="$PROJECT_DIR$/server/gameLoop/handleLobby.js" />
+        <option value="$PROJECT_DIR$/client/src/containers/Game/Messenger.js" />
+        <option value="$PROJECT_DIR$/client/src/scss/_messenger.scss" />
+        <option value="$PROJECT_DIR$/client/src/scss/_globals.scss" />
+        <option value="$PROJECT_DIR$/client/src/components/Other/Icon.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/clientAPI.md" />
+        <option value="$PROJECT_DIR$/client/src/actions/api.js" />
+        <option value="$PROJECT_DIR$/server/incoming/createGame.js" />
+        <option value="$PROJECT_DIR$/client/src/scss/_raceView.scss" />
+        <option value="$PROJECT_DIR$/client/src/scss/_header.scss" />
+        <option value="$PROJECT_DIR$/server/incoming/joinGame.js" />
+        <option value="$PROJECT_DIR$/client/src/containers/Game/RaceView.js" />
+        <option value="$PROJECT_DIR$/.eslintrc.json" />
       </list>
     </option>
   </component>
@@ -403,10 +506,10 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-2137" />
-    <option name="y" value="10" />
-    <option name="width" value="1932" />
-    <option name="height" value="1086" />
+    <option name="x" value="-1716" />
+    <option name="y" value="-2" />
+    <option name="width" value="1440" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -443,19 +546,20 @@
     <property name="node.js.selected.package.standard" value="D:\Github\FastTyper\node_modules\eslint" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="D:\Github\FastTyper\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="ts.external.directory.path" value="D:\programs\WebStorm 2018.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Github\FastTyper\server\incoming" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Github\FastTyper\client\public\old" />
       <recent name="D:\Github\FastTyper\server\incoming" />
       <recent name="D:\Github\FastTyper\client\src\img" />
       <recent name="D:\Github\FastTyper\client\src\containers\Game" />
       <recent name="D:\Github\FastTyper\client\src\containers\Other" />
-      <recent name="D:\Github\FastTyper\client\src\containers\Menu" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github\FastTyper\server\incoming" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -540,11 +644,20 @@
       <workItem from="1547276352340" duration="599000" />
       <workItem from="1547348646437" duration="5025000" />
       <workItem from="1547360613301" duration="3667000" />
+      <workItem from="1547450880141" duration="1700000" />
+      <workItem from="1547505143321" duration="450000" />
+      <workItem from="1547580825055" duration="18416000" />
+      <workItem from="1547634479220" duration="3137000" />
+      <workItem from="1547646912641" duration="3192000" />
+      <workItem from="1547676151259" duration="5938000" />
+      <workItem from="1547787949023" duration="8668000" />
+      <workItem from="1547801952056" duration="5147000" />
+      <workItem from="1547826691468" duration="490000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368157000" />
+    <option name="totallyTimeSpent" value="417254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="13" width="1936" height="1096" extended-state="6" />
@@ -556,10 +669,10 @@
       <window_info id="Favorites" order="3" sideWeight="0.5005192" side_tool="true" weight="0.32297155" />
       <window_info id="MaxCompute Project Explorer" order="4" sideWeight="0.49636552" weight="0.32982087" />
       <window_info id="Structure" order="5" sideWeight="0.4947589" weight="0.24939467" />
-      <window_info active="true" content_ui="combo" x="3122" y="-1042" width="656" height="2087" id="Project" order="6" sideWeight="0.642783" visible="true" weight="0.19349681" />
+      <window_info active="true" content_ui="combo" x="420" y="-1004" width="363" height="2022" id="Project" order="6" sideWeight="0.6323987" visible="true" weight="0.19349681" />
       <window_info id="Project Explorer" order="7" />
       <window_info id="Job Explorer" order="8" />
-      <window_info x="-1125" y="-547" width="603" height="486" id="Terminal" order="9" sideWeight="0.35721704" side_tool="true" visible="true" weight="0.19349681" />
+      <window_info x="-1125" y="-547" width="603" height="486" id="Terminal" order="9" sideWeight="0.36760125" side_tool="true" visible="true" weight="0.19349681" />
       <window_info anchor="bottom" id="DB Execution Console" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="2" />
@@ -614,196 +727,134 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/leaderboard.js" />
-    <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+    <entry file="file://$PROJECT_DIR$/server/gameLoop/handleGames.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/messenger.js" />
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/Messenger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/browser.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-jest/build/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/Menu/InputHandler.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Menu/TextInput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Menu/Radio.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/Other/Popups.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/Game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Other/Icon.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Other/IconSelector.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/_old/packetExamples/miniPacket.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/_old/packetExamples/FullPacket.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/helpers/log.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="88" column="11" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
+        <state relative-caret-position="198">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/incoming/initiatePlayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="270">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/RaceMenu.js" />
+    <entry file="file://$PROJECT_DIR$/server/strings.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/state.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+        <state relative-caret-position="-363">
+          <caret line="169" column="28" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="28" />
+          <folding>
+            <element signature="e#139#284#0" />
+            <element signature="e#185#281#0" />
+            <element signature="e#316#462#0" />
+            <element signature="e#373#459#0" />
+            <element signature="e#403#456#0" />
+            <element signature="e#501#552#0" />
+            <element signature="e#593#626#0" />
+            <element signature="e#666#740#0" />
+            <element signature="e#777#1171#0" />
+            <element signature="e#1123#1168#0" />
+            <element signature="e#1196#1285#0" />
+            <element signature="e#1220#1269#0" />
+            <element signature="e#1324#1528#0" />
+            <element signature="e#1420#1460#0" />
+            <element signature="e#1571#1807#0" />
+            <element signature="e#1606#1787#0" />
+            <element signature="e#1693#1743#0" />
+            <element signature="e#1749#1784#0" />
+            <element signature="e#1859#2223#0" />
+            <element signature="e#2131#2176#0" />
+            <element signature="e#2185#2220#0" />
+            <element signature="e#2301#2521#0" />
+            <element signature="e#2322#2518#0" />
+            <element signature="e#2448#2515#0" />
+            <element signature="e#2593#2896#0" />
+            <element signature="e#2710#2730#0" />
+            <element signature="e#2939#2989#0" />
+            <element signature="e#3037#3140#0" />
+            <element signature="e#3102#3137#0" />
+            <element signature="e#3180#3338#0" />
+            <element signature="e#3245#3335#0" />
+            <element signature="e#3391#3444#0" />
+            <element signature="e#3488#3646#0" />
+            <element signature="e#3545#3627#0" />
+            <element signature="e#3681#3711#0" />
+            <element signature="e#3740#3771#0" />
+            <element signature="e#4404#4441#0" />
+            <element signature="e#4485#4578#0" />
+            <element signature="e#4614#4657#0" />
+            <element signature="e#4638#4654#0" />
+            <element signature="e#4687#4721#0" />
+            <element signature="e#4697#4718#0" />
+            <element signature="e#4760#4814#0" />
+            <element signature="e#4777#4811#0" />
+            <element signature="e#4847#4871#0" />
+            <element signature="e#4904#4953#0" />
+            <element signature="e#4930#4949#0" />
+            <element signature="e#4995#5036#0" />
+            <element signature="e#5080#5102#0" />
+            <element signature="e#5106#5133#0" />
+            <element signature="e#5229#5511#0" />
+            <element signature="e#5301#5509#0" />
+            <element signature="e#5350#5506#0" />
+            <element signature="e#5544#5645#0" />
+            <element signature="e#5590#5643#0" />
+            <element signature="e#5647#5802#0" />
+            <element signature="e#5835#5994#0" />
+            <element signature="e#6033#6099#0" />
+            <element signature="e#6116#6240#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/Leaderboard.js">
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        <state relative-caret-position="2844">
+          <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/gameLoop/handleFinished.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/gameLoop/handleStatusChange.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Menu/Slider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/Menu/Creator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/incoming/sanitizeGameOptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rollup.config.js" />
-    <entry file="file://$PROJECT_DIR$/exampleGameObject.json" />
     <entry file="file://$PROJECT_DIR$/server/state.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
+        <state relative-caret-position="922">
+          <caret line="181" column="3" selection-start-line="181" selection-start-column="3" selection-end-line="181" selection-end-column="3" />
           <folding>
             <element signature="e#66#161#0" />
             <element signature="e#85#145#0" />
@@ -817,204 +868,306 @@
             <element signature="e#1014#1206#0" />
             <element signature="e#1031#1060#0" />
             <element signature="e#1238#1309#0" />
-            <element signature="e#1807#1839#0" />
-            <element signature="e#1817#1836#0" />
-            <element signature="e#2178#2255#0" />
-            <element signature="e#2494#2512#0" />
-            <element signature="e#2529#2577#0" />
-            <element signature="e#2541#2574#0" />
-            <element signature="e#2594#2643#0" />
-            <element signature="e#2606#2624#0" />
-            <element signature="e#2705#2768#0" />
-            <element signature="e#2733#2765#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/incoming/getBrowser.js">
+    <entry file="file://$PROJECT_DIR$/client/src/containers/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="18" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Other/Icon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+        <state relative-caret-position="486">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/incoming/createGame.js">
+    <entry file="file://$PROJECT_DIR$/client/src/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+        <state relative-caret-position="468">
+          <caret line="42" column="18" lean-forward="true" selection-end-line="294" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/gameLoop/handleGames.js">
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_game.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="126">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/incoming/profileUpdate.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/Game/Message.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/incoming/getPacket.js">
+    <entry file="file://$PROJECT_DIR$/server/socket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/incoming/joinGame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/incoming/getGameObject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
+        <state relative-caret-position="288">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/incoming/playerUpdate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="2" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/state.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/gameLoop/handleStages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1746">
-          <caret line="97" column="13" lean-forward="true" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/serverAPI.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="234">
-            <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/incoming/sendMessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/containers/Menu/InputHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#225#251#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/socketHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/socket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/creator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="468">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gameObject.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="877">
-            <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+          <first_editor relative-caret-position="539">
+            <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/api.js">
+    <entry file="file://$PROJECT_DIR$/client/public/old/game2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        <state>
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/socket.js">
+    <entry file="file://$PROJECT_DIR$/client/public/old/oldGame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        <state relative-caret-position="-399" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/old/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Other/Icon.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/Messenger.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clientAPI.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="342">
-            <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <first_editor relative-caret-position="306">
+            <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="848">
-            <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/Leaderboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_globals.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/LobbyMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/socketHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/gameLoop/updateTime.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_controller.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/gameLoop/handleLobby.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/Game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_lobby.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_leaderboard.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/popups.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/navigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/incoming/profileUpdate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_creator.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_menu.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_messenger.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_raceView.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/scss/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/incoming/createGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/containers/Game/RaceView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/incoming/joinGame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
         </state>
       </provider>
     </entry>

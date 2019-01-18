@@ -7,7 +7,7 @@
 | **updateGameObject** | send whole game object |
 | **updateBrowserData** | send list of games |
 | **newMessage** | send message to whole game |
-| **error** | error message
+| **serverError** | error message
 
 ##updateGameData
 Server sends this out every game tick

@@ -1,5 +1,5 @@
 import React from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import PT from "prop-types";
 
 import Messenger from "./Messenger";
@@ -7,38 +7,32 @@ import Leaderboard from "./Leaderboard";
 
 import RaceView from "./RaceView";
 //import TypingController from "./TypingController";
+let TypingController = () => <h1> Typing COntroller </h1>;
 
-import PostGameView from "./PostGameView";
-import RaceMenu from "./RaceMenu";
+import LobbyMenu from "./LobbyMenu";
 
-let Game = ({ raceOver }) => (
-	<>
-		<Leaderboard />
-		<div className="GameMain">
-			{ raceOver ?
-				<>
-					<PostGameView />
-					<RaceMenu />
-				</>
-				:
-				<>
-					<RaceView />
-					<h1> Typer </h1>
-				</>
-			}
-		</div>
-		<Messenger />
-	</>
+let Game = ({ status }) => (
+  <div className="Game">
+    <Leaderboard />
+    <div className="GameMain">
+      <RaceView />
+      {status === "LOBBY" ? <LobbyMenu /> : <TypingController />}
+    </div>
+    <Messenger />
+  </div>
 );
 Game.propTypes = {
-	raceOver: PT.bool.isRequired
+  status: PT.string.isRequired
 };
 
-let mapState = (state) => {
-	let { raceOver } = state.game;
-	return {
-		raceOver
-	};
+let mapState = state => {
+  let { status } = state.game.info;
+  return {
+    status
+  };
 };
 
-export default connect(mapState, {})(Game);
+export default connect(
+  mapState,
+  {}
+)(Game);

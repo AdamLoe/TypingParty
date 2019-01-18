@@ -19,8 +19,7 @@
   info: {...},
   players: {...},
   gameData: {...},
-  leaderboard: {...},
-  banList: {...}
+  banList: {...},
 }
 ```
 
@@ -30,7 +29,9 @@
   name: "Adam's Game",
   password: "blue",
   host: 12532 [playerID],
+  created: [Date.now()],
   status: "LOBBY",
+  hasRaceStarted: false,
   playerCount: 7,
   maxPlayers: 16,
   currGame: 3,
@@ -38,6 +39,7 @@
   scoringType: "Rising",
   handicaps: "Auto",
   string: "A wise man ran up the hill. He did not know what to do",
+  numChars: string.length,
   timeEnd: 123453 [Date.now()] 
 }
 ```
@@ -59,18 +61,20 @@
 ##gameData
 ``` 
 {
+    finished: 1,
+    timeLeft: 4,
     164: {
+        place: false,
         finished: false,
-        wpm: 83,
-        currWord: 23,
-        progress: 80.3 [percentage],
+        currChar: 20,
         score: 0,
+        readyUp: false
     },
     123: {
-        finished: 1,
-        wpm: 103,
-        currWord: 30,
-        progress: 100,
-        score: 10
+        place: 1,
+        finished: 100234 [Date.now()],
+        currChar: 30,
+        score: 10,
+        readyUp: false
     }
 }

@@ -43,18 +43,24 @@ null [no paramters needed]
 ```
 {
     gameID: 147,
-    password: "blue"
+    password: "blue",
+    name: "Adam",
+    icon: { ... }
 }
 ```
 ##createGame
 ```
 {
-    name: "Adam's Game',
-    password: "Blue",
-    maxPlayers: 12,
-    maxGames: 4,
-    scoringType: "Default",
-    handicaps: "Off"
+    options: {
+        name: "Adam's Game',
+        password: "Blue",
+        maxPlayers: 12,
+        maxGames: 4,
+        scoringType: "Default",
+        handicaps: "Off"
+    },
+    name: "Adam",
+    icon: { ... }
 }
  ```
 ##sendMessage

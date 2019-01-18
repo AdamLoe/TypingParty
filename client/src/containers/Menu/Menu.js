@@ -7,30 +7,23 @@ import MenuHeader from "../../components/MenuHeader";
 import Browser from "./Browser";
 import Creator from "./Creator";
 
-let Menu = ({
-	gotoBrowser, gotoCreator, showBrowser, showCreator
-}) => (
-	<>
-        <MenuHeader
-        	gotoBrowser={gotoBrowser}
-        	gotoCreator={gotoCreator}
-        />
-        { showBrowser &&
-			<Browser/>
-        }
-        { showCreator &&
-			<Creator/>
-        }
-	</>
+let Menu = ({ gotoBrowser, gotoCreator, showBrowser, showCreator }) => (
+  <>
+    <MenuHeader gotoBrowser={gotoBrowser} gotoCreator={gotoCreator} />
+    {showBrowser && <Browser />}
+    {showCreator && <Creator />}
+  </>
 );
 
-
-let mapState = (state) => {
-	let { showBrowser, showCreator } = state.navigation;
-	return {
-		showBrowser,
-		showCreator
-	};
+let mapState = state => {
+  let { showBrowser, showCreator } = state.navigation;
+  return {
+    showBrowser,
+    showCreator
+  };
 };
 
-export default connect(mapState, {gotoBrowser, gotoCreator})(Menu);
+export default connect(
+  mapState,
+  { gotoBrowser, gotoCreator }
+)(Menu);

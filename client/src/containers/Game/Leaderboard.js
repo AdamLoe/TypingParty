@@ -1,58 +1,80 @@
 import React from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import PT from "prop-types";
 
 import Icon from "../../components/Other/Icon";
 
-let PlayerScore = ({ name, icon, score }) => (
-	<div className="PlayerScore">
-		{ name }
-		<Icon {...icon} />
-		{ score }
-	</div>
+let PlayerScore = ({ name, icon, score, place }) => (
+  <div className="PlayerScore">
+    <div className="Place">{place}</div>
+    <div className="Player">
+      <div className="Name">{name}</div>
+      <Icon {...icon} />
+    </div>
+    <div className="Score">{score}</div>
+  </div>
 );
 PlayerScore.propTypes = {
-	name: PT.string.isRequired,
-	icon: PT.shape({
-		type: PT.string.isRequired,
-		primary: PT.string.isRequired,
-		secondary: PT.string.isRequired
-	}).isRequired,
-	score: PT.string.isRequired
+  name: PT.string.isRequired,
+  icon: PT.shape({
+    type: PT.string.isRequired,
+    primary: PT.string.isRequired,
+    secondary: PT.string.isRequired
+  }).isRequired,
+  score: PT.number.isRequired,
+  place: PT.number.isRequired
 };
-let sortTopDown = (obj) => Object.keys(obj).sort( (a,b) => obj[b] - obj[a]);
 
-let Leaderboard = ({ leaderboard, players }) => (
-	<div className="Leaderboard">
-		Leaderboard
-		{ sortTopDown(leaderboard).map( (id) =>
-			<PlayerScore
-				score={leaderboard[id]}
-				key={id}
-				name={players[id].name}
-				icon={players[id].icon}
-			/>
-		)}
-	</div>
+let Leaderboard = ({ leaderboard }) => (
+  <div className="Leaderboard">
+    {leaderboard.map(({ id, score, name, icon }, index) => (
+      <PlayerScore
+        key={id}
+        score={score}
+        name={name}
+        icon={icon}
+        place={index}
+      />
+    ))}
+  </div>
 );
 
 Leaderboard.propTypes = {
-	leaderboard: PT.objectOf(PT.number.isRequired).isRequired,
-	players: PT.objectOf(
-		PT.shape({
-			id: PT.string.isRequired,
-			name: PT.string.isRequired,
-			icon: PT.object.isRequired,
-		})
-	)
+  leaderboard: PT.arrayOf(
+    PT.shape({
+      id: PT.string.isRequired,
+      score: PT.number.isRequired,
+      name: PT.string.isRequired,
+      icon: PT.object.isRequired
+    })
+  )
 };
 
-let mapState = (state) => {
-	let { leaderboard, players } = state.game;
-	return {
-		leaderboard,
-		players
-	};
+let mapState = state => {
+  let { gameData, players } = state.game;
+
+  let leaderboard = [];
+
+  Object.keys(players)
+    .filter(playerID => playerID in gameData)
+    .map(playerID =>
+      leaderboard.push({
+        id: playerID,
+        score: gameData[playerID].score,
+        ...players[playerID]
+      })
+    );
+
+  leaderboard.sort((a, b) => a.score - b.score);
+
+  console.log(gameData, players);
+  console.log(leaderboard);
+  return {
+    leaderboard
+  };
 };
 
-export default connect(mapState, {})(Leaderboard);
+export default connect(
+  mapState,
+  {}
+)(Leaderboard);

@@ -1,0 +1,37 @@
+.RaceView {
+  padding: 5px;
+  background: grey;
+}
+
+.RacerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.RacerContainer .Lane {
+  width: 400px;
+}
+
+.RacerContainer .Wpm {
+  width: 80px;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Racer {
+  width: 130px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.Racer .Name {
+  text-align: end;
+  width: 90px;
+  padding: 3px;
+}
+
+.greyedIcon {
+  opacity: 0.4;
+}

@@ -10,7 +10,7 @@ var host = "0.0.0.0";
 
 app.set("port", port, host);
 server.listen(port, host, function() {
-	console.log("Starting server on port", port);
+  console.log("Starting server on port", port);
 });
 
 /*

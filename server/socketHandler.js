@@ -15,24 +15,23 @@ let getGameObject = require("./incoming/getGameObject");
 let handleGames = require("./gameLoop/handleGames");
 
 exports.socketHandler = async function(server) {
-	startSocket(server);
-	let io = getSocket();
+  startSocket(server);
+  let io = getSocket();
 
-	io.on("connection", function(socket ) {
-		initiatePlayer(socket);
-		console.log("client:", socket.id);
+  io.on("connection", function(socket) {
+    initiatePlayer(socket);
+    console.log("client:", socket.id);
 
-		socket.on("playerGameUpdate", (data) => playerUpdate(socket, data));
-		socket.on("profileUpdate", (data) => profileUpdate(socket, data));
-		socket.on("leaveGame", (gameID) => leaveGame(socket, gameID));
-		socket.on("joinGame", (data) => joinGame(socket, data));
-		socket.on("createGame", (data) => createGame(socket, data));
-		socket.on("getBrowser", (filters) => getBrowser(socket, filters));
-		socket.on("sendMessage", (message) => sendMessage(socket, message));
-		socket.on("getPacket", (data) => getPacket(socket, data));
-		socket.on("getGameObject", () => getGameObject(socket));
-	});
+    socket.on("playerGameUpdate", data => playerUpdate(socket, data));
+    socket.on("profileUpdate", data => profileUpdate(socket, data));
+    socket.on("leaveGame", gameID => leaveGame(socket, gameID));
+    socket.on("joinGame", data => joinGame(socket, data));
+    socket.on("createGame", data => createGame(socket, data));
+    socket.on("getBrowser", filters => getBrowser(socket, filters));
+    socket.on("sendMessage", message => sendMessage(socket, message));
+    socket.on("getPacket", data => getPacket(socket, data));
+    socket.on("getGameObject", () => getGameObject(socket));
+  });
 
-	setInterval(handleGames, 3000);
+  setInterval(handleGames, 30);
 };
-

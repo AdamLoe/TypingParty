@@ -2,13 +2,14 @@
 
 exports[`icon default snapshot 1`] = `
 <svg
-  viewBox="0 0 200 200"
+  className=""
+  viewBox="-10 -10 220 220"
 >
-  <rect
+  <circle
+    cx="100"
+    cy="100"
     fill="black"
-    height="100%"
-    stroke="black"
-    width="100%"
+    r="100"
   />
   <rect
     fill="white"
@@ -25,6 +26,14 @@ exports[`icon default snapshot 1`] = `
     width="100"
     x="101"
     y="101"
+  />
+  <circle
+    cx="100"
+    cy="100"
+    fill="none"
+    r="110"
+    stroke="black"
+    strokeWidth="20"
   />
 </svg>
 `;

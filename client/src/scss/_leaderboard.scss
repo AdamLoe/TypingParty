@@ -1,0 +1,38 @@
+.Leaderboard {
+  width: 300px;
+  padding: 20px;
+  background: lightgrey;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.PlayerScore {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PlayerScore .Place {
+  padding: 5px;
+}
+
+.PlayerScore .Player {
+  padding: 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.PlayerScore .Player .Name {
+}
+
+.PlayerScore .Player svg {
+  display: none;
+}
+
+.PlayerScore .Score {
+  padding: 5px;
+}

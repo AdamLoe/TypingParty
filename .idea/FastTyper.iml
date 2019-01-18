@@ -18,5 +18,8 @@
     <orderEntry type="library" name="@types/react-test-renderer" level="application" />
     <orderEntry type="library" name="@types/enzyme" level="application" />
     <orderEntry type="library" name="@types/enzyme-adapter-react-16" level="application" />
+    <orderEntry type="library" name="@types/prettier" level="application" />
+    <orderEntry type="library" name="@types/eslint-plugin-prettier" level="application" />
+    <orderEntry type="library" name="@types/eslint" level="application" />
   </component>
 </module>

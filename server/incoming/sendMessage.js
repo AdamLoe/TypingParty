@@ -2,19 +2,19 @@ let state = require("../state");
 let { emitRoom } = require("../socket");
 
 let getTime = () => {
-	let date = new Date();
-	return date.getHours() + ":" + date.getMinutes()
+  let date = new Date();
+  return date.getHours() + ":" + date.getMinutes();
 };
 
 module.exports = (socket, message) => {
-	let playerID = 	state.getPlayerIDBySocket(socket);
-	let gameID = state.getGameIDByPlayerID(playerID);
+  let playerID = state.getPlayerIDBySocket(socket);
+  let gameID = state.getGameIDByPlayerID(playerID);
 
-	console.log("Received Message", message, "from", playerID);
+  console.log("Received Message", message, "from", playerID);
 
-	emitRoom(gameID, "newMessage", {
-		id: playerID,
-		text: message,
-		time: getTime()
-	});
+  emitRoom(gameID, "newMessage", {
+    id: playerID,
+    text: message,
+    time: getTime()
+  });
 };

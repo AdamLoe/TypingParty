@@ -9,15 +9,15 @@ import Settings from "./containers/Settings";
 console.log("Creating Root");
 
 const Root = ({ store }) => (
-	<Provider store={store}>
-		<Router>
-			<div>
-				<Header />
-				<Route exact path="/" component={Game} />
-				<Route path="/settings" component={Settings} />
-			</div>
-		</Router>
-	</Provider>
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Header />
+        <Route exact path="/" component={Game} />
+        <Route path="/settings" component={Settings} />
+      </div>
+    </Router>
+  </Provider>
 );
 
 export default Root;

@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Game {
+  display: flex;
+  flex-direction: row;
+}
+
+.GameMain {
+  margin: 0 10;
+  padding: 10px;
+  padding-right: 10px;
+  background: rgb(140, 140, 140);
+  border: 2px solid;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+svg {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  border: 0;
+}
