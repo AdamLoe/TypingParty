@@ -67,8 +67,6 @@ let mapState = state => {
 
   leaderboard.sort((a, b) => a.score - b.score);
 
-  console.log(gameData, players);
-  console.log(leaderboard);
   return {
     leaderboard
   };

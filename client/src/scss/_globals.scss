@@ -1,13 +1,87 @@
-* {
+$app-background: rgb(14,7,49);
+$content-background: rgb(40,33, 87);
+$default-text-color: white;
+
+$opposite: white;
+
+$default-border-size: 2px;
+$default-border-color: lighten($app-background, 78);
+$default-border: $default-border-size solid $default-border-color;
+$default-font-family: "Segoe UI Semibold";
+$default-button-background: lighten($content-background, 20);
+$default-button-hover-background: lighten($default-button-background, 20);
+
+$header-height: 60px;
+$header-background: $content-background;
+$header-font-family: $default-font-family;
+$header-hover-color: lighten($content-background, 20);
+$header-title-font-size: $header-height * 3 / 8;
+$header-menu-font-size: $header-height / 4;
+$header-border-size: $default-border-size;
+$header-border: $default-border;
+$header-button-background: $default-button-background;
+$header-button-padding: 0 15px;
+$selected-color: white;
+
+$header-content-padding: 10px;
+
+$browser-background: $content-background;
+$browser-outer-borders: $default-border;
+$browser-font-size: 16px;
+$browser-inner-borders: 1px solid $default-border-color;
+$browser-item-height: 35px;
+$browser-item-left-padding: 4px;
+$browser-button-background: $default-button-background;
+$browser-button-hover-background: $default-button-hover-background;
+
+$creator-border: $default-border;
+$creator-background: $content-background;
+$creator-padding: 10px 20px;
+$creator-width: 400px;
+$creator-border-radius: 5px;
+$creator-item-margins: 8px;
+$creator-item-height: 30px;
+$creator-item-name-width: 110px;
+$creator-radio-padding: 5px 10px;
+$creator-radio-background: $default-button-background;
+$creator-radio-hover-background: $default-button-hover-background;
+$creator-create-game-padding: 10px 80px;
+$creator-create-game-background: $default-button-background;
+$creator-create-game-hover-background: $default-button-hover-background;
+
+
+html, body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  color: $default-text-color;
+  font-family: $default-font-family;
+  background: $app-background;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  color: inherit;
+  font-family: inherit;
+  background: inherit;
+
   padding: 0;
   margin: 0;
 }
 
 button {
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin: 0px 10px;
+  box-sizing: padding-box;
+  font-family: inherit;
+
+  border: none;
+  background: none;
   cursor: pointer;
+  color: $default-text-color;
+}
+
+input {
+
 }
 
 #root {
@@ -16,7 +90,14 @@ button {
   align-items: center;
 }
 
+.Menu {
+  padding-top: $header-content-padding;
+  display: flex;
+  flex-direction: row;
+}
+
 .Game {
+  padding-top: $header-content-padding;
   display: flex;
   flex-direction: row;
 }
@@ -24,7 +105,6 @@ button {
 .GameMain {
   margin: 0 10;
   padding: 10px;
-  padding-right: 10px;
   background: rgb(140, 140, 140);
   border: 2px solid;
   border-radius: 5px;
@@ -34,7 +114,6 @@ button {
 }
 
 svg {
-  background: white;
   width: 40px;
   height: 40px;
   border-radius: 30px;

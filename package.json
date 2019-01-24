@@ -8,7 +8,8 @@
     "webProd": "webpack --config client/webpack.config.js --mode production",
     "webpack": "webpack-dev-server --port 8080 --hot --config client/webpack.config.js --mode development --host 0.0.0.0",
     "test": "jest --watchAll",
-    "prodInstall": "npm install --only=prod"
+    "prodInstall": "npm install --only=prod",
+    "sass": "node-sass -w client/src/scss/index.scss client/src/scss/output.scss"
   },
   "jest": {
     "moduleNameMapper": {

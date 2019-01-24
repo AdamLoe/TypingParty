@@ -10,8 +10,6 @@ let initialState = {
   raceOver: false,
   finished: false,
 
-  isReadiedUp: false,
-
   lastMajorVersion: 0,
   missingPackets: []
 };
@@ -59,7 +57,6 @@ let exampleState = {
 
 //Dont want game to crash
 let validateGameData = data => {
-  console.log("validating", data);
   return data;
 };
 
@@ -127,16 +124,17 @@ let updateGameData = (state, data) => {
 };
 
 let updateGameObject = (state, data) => {
-  let { majorVersion, game } = data;
+  let { majorVersion, game, playerID } = data;
   return {
     ...state,
     ...validateGameData(game),
+    playerID,
     lastMajorVersion: majorVersion
   };
 };
 
 export default (state = initialState, action) => {
-  let { type, data, bool } = action;
+  let { type, data } = action;
 
   switch (type) {
     case "updateGameData":
@@ -155,11 +153,6 @@ export default (state = initialState, action) => {
           text: data.text,
           time: data.time
         })
-      };
-    case "readyUp":
-      return {
-        ...state,
-        isReadiedUp: bool
       };
     default:
       return state;

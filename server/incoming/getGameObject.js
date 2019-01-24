@@ -6,6 +6,7 @@ module.exports = socket => {
   let { majorVersion, minorVersion } = state.getCurrentPacketVersion(game.id);
 
   socket.emit("updateGameObject", {
+    playerID,
     majorVersion,
     minorVersion,
     game: game

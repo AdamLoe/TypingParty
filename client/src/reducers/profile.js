@@ -1,8 +1,7 @@
 import { getRandomIcon } from "../components/Other/Icon";
 
 let initState = {
-  shouldShowProfile: false,
-  name: "DefaultName",
+  name: "Guest",
   icon: getRandomIcon()
 };
 let exampleIcon = {
@@ -14,16 +13,6 @@ let exampleIcon = {
 export default (state = initState, action) => {
   let { type, name, icon } = action;
   switch (type) {
-    case "hideProfile":
-      return {
-        ...state,
-        shouldShowProfile: false
-      };
-    case "showProfile":
-      return {
-        ...state,
-        shouldShowProfile: true
-      };
     case "updateProfile":
       return {
         ...state,

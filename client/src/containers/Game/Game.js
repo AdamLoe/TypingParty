@@ -6,8 +6,7 @@ import Messenger from "./Messenger";
 import Leaderboard from "./Leaderboard";
 
 import RaceView from "./RaceView";
-//import TypingController from "./TypingController";
-let TypingController = () => <h1> Typing COntroller </h1>;
+import TypingController from "./TypingController";
 
 import LobbyMenu from "./LobbyMenu";
 
@@ -36,3 +35,13 @@ export default connect(
   mapState,
   {}
 )(Game);
+
+//  detect stage Change and reset
+//      Complicated for one small thing
+//      If packet miss, player would think they are readied up when not
+//
+//  get isReady from game Object
+//      Lag when pressed
+//      Need playerID (need it anyways probably)
+//
+//

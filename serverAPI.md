@@ -47,6 +47,7 @@ When a player joins, or hits error
 
 ```json 
 {
+    "playerID": 128592837,
     "majorVersion": 5,
     "minorVersion": 3,
     "game"; {
@@ -90,5 +91,12 @@ When players ask for server list
     id: [playerID],
     text: "Howdy",
     time: [Date.time()]
+}
+```
+##serverError
+```
+{
+    errorType: "JOINING",
+    message: "Game is full."
 }
 ```

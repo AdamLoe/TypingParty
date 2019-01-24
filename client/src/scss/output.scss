@@ -1,0 +1,349 @@
+html, body {
+  height: 100%;
+  background: #0e0731; }
+
+html {
+  box-sizing: border-box;
+  color: white;
+  font-family: "Segoe UI Semibold"; }
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  color: inherit;
+  font-family: inherit; }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+button {
+  box-sizing: padding-box;
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white; }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.Game {
+  display: flex;
+  flex-direction: row; }
+
+.GameMain {
+  margin: 0 10;
+  padding: 10px;
+  padding-right: 10px;
+  background: #8c8c8c;
+  border: 2px solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column; }
+
+svg {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  border: 0; }
+
+.Browser {
+  display: flex;
+  flex-direction: column;
+  background: lightgrey;
+  border-radius: 10px;
+  border: 3px solid;
+  border-color: #8c8c8c;
+  box-shadow: 3px 3px;
+  font-size: 20px; }
+
+.BrowserHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.BrowserItem {
+  height: 35px;
+  border-top: 1px solid #8c8c8c;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.BrowserColumn {
+  padding: 5px;
+  border-right: 1px solid #8c8c8c; }
+
+.Browser .ColumnLarge {
+  width: 260px; }
+
+.Browser .ColumnMedium {
+  width: 120px; }
+
+.Browser .ColumnSmall {
+  width: 70px; }
+
+.Browser button {
+  padding: 5px;
+  width: 50px;
+  height: 100%;
+  cursor: pointer; }
+
+.TypingController {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: lightblue;
+  padding: 5px;
+  align-items: center; }
+
+.TypingInput {
+  width: 95%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around; }
+
+.TypingInput Input {
+  width: 100%;
+  padding: 5px; }
+
+.TypingParagraph {
+  width: 95%;
+  padding: 5px; }
+
+.TypingParagraph span {
+  font-size: 20px; }
+
+.TypingParagraph .inProcess {
+  text-decoration: underline; }
+
+.TypingParagraph .Correct {
+  cursor: default;
+  text-decoration: underline green;
+  color: green; }
+
+.TypingParagraph .Incorrect {
+  background: red;
+  border-right: 1px solid; }
+
+.TypingParagraph .completed {
+  color: green; }
+
+.TypingParagraph textarea {
+  display: block;
+  width: 500px; }
+
+.Creator {
+  border: 2px solid white;
+  background: #282157;
+  width: 90%;
+  max-width: 600px; }
+
+.HeaderMenu {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e1e1e1;
+  background: #282157; }
+
+.HeaderTitle {
+  height: 100%;
+  width: 200px;
+  padding: 0 25px;
+  box-sizing: content-box;
+  font-size: 30px; }
+
+.HeaderTitle:hover {
+  background: #4a3da1;
+  cursor: pointer; }
+
+.MenuButtons {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.MenuButtons button {
+  font-size: 20px;
+  color: white;
+  padding: 0 15px;
+  margin-right: 5px; }
+
+.MenuButtons button:hover {
+  background: #4a3da1; }
+
+.UserProfile {
+  height: 100%; }
+
+.ProfileMini {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
+.ProfileMini:hover {
+  cursor: pointer;
+  background: lightgrey; }
+
+.ProfileEditor {
+  width: 200px;
+  border-style: solid;
+  border-width: 0 0 2px 2px;
+  border-bottom-left-radius: 10px;
+  padding: 5px 20px; }
+
+.ProfileEditor img {
+  padding: 5px; }
+
+.ProfileEditor img:hover {
+  background: lightgrey;
+  cursor: pointer; }
+
+.ProfileEditor input {
+  padding: 10px;
+  width: 80%; }
+
+.selected {
+  background: green; }
+
+.iconSelector {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap; }
+
+.colorSelector {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap; }
+
+.colorSelector {
+  padding: 5px;
+  display: flex;
+  flex-direction: row; }
+
+.selectColorBox {
+  padding: 3px; }
+
+.Color {
+  border-radius: 30px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid; }
+
+.Leaderboard {
+  width: 300px;
+  padding: 20px;
+  background: lightgrey;
+  border: 2px solid;
+  border-radius: 5px; }
+
+.PlayerScore {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.PlayerScore .Place {
+  padding: 5px; }
+
+.PlayerScore .Player {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%; }
+
+.PlayerScore .Player svg {
+  display: none; }
+
+.PlayerScore .Score {
+  padding: 5px; }
+
+.Messenger {
+  width: 300px;
+  padding: 20px;
+  background: #505050;
+  border: 2px solid;
+  border-radius: 5px; }
+
+.MessageView {
+  background: #646464;
+  border-radius: 5px;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column; }
+
+.Message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow: auto;
+  font-size: 20px;
+  color: white; }
+
+.Message .name {
+  color: #8c8cfa;
+  padding-left: 2px; }
+
+.Message .text {
+  padding-left: 2px; }
+
+.MessageCreator {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin-top: 10px;
+  width: 100%; }
+
+.MessageCreator input {
+  color: white;
+  border-radius: 5px;
+  border: none;
+  background: #787878;
+  width: 100%;
+  padding: 10px 5px; }
+
+.MessageCreator button {
+  padding: 0;
+  width: 20px;
+  margin: 0;
+  border-radius: 0; }
+
+.RaceView {
+  padding: 5px;
+  background: grey; }
+
+.RacerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.RacerContainer .Lane {
+  width: 400px; }
+
+.RacerContainer .Wpm {
+  width: 80px;
+  padding: 3px;
+  display: flex;
+  flex-direction: row; }
+
+.Racer {
+  width: 130px;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.Racer .Name {
+  text-align: end;
+  width: 90px;
+  padding: 3px; }
+
+.greyedIcon {
+  opacity: 0.4; }

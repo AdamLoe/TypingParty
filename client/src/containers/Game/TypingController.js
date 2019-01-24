@@ -1,90 +1,84 @@
 import React from "react";
+import { connect } from "react-redux";
+import PT from "prop-types";
 
-import api from "../../actions/api";
+import { playerUpdate } from "../../actions/api";
 
 class TypingController extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log("Making Typing Controller");
+  state = {
+    string: this.props.string,
+    words: this.props.string.split(" "),
 
-    let string = this.props.string;
+    currWord: 0,
+    lastWord: this.props.string.split(" ").length,
 
-    this.state = {
-      string: string,
-      finished: false,
-      words: string.split(" "),
+    started: true,
+    finished: false,
 
-      currWord: 0,
-      lastWord: string.split(" ").length - 1,
+    correctLetters: 0,
+    incorrectLetters: 0
+  };
 
-      correctLetters: 0,
-      incorrectLetters: 0
-    };
-  }
+  currWord = () => this.state.words[this.state.currWord];
 
-  finishRace() {
-    api.playerUpdate({
-      finished: true
-    });
+  shouldDisable = () => !this.state.started || this.state.finished;
+
+  hasFinishedRace = e =>
+    this.currWord() === e.target.value &&
+    this.state.currWord === this.state.lastWord;
+
+  hasFinishedWord = e =>
+    this.currWord() + " " === e.target.value &&
+    this.state.currWord !== this.state.lastWord;
+
+  finishRace = e => {
+    playerUpdate({ finished: true });
     this.setState(state => ({
       ...state,
-      finished: true
+      finished: true,
+      correctLetters: this.state.correctLetters + 1
     }));
-    this.props.finishedRace();
-  }
-
-  nextWord(e) {
     e.target.value = "";
-    let currWord = this.state.currWord + 1;
+  };
 
+  finishWord = e => {
+    playerUpdate({ currChar: 0 });
+    this.setState(state => ({
+      ...state,
+      currWord: this.state.currWord + 1,
+      correctLetters: 0,
+      incorrectLetters: 0
+    }));
+    e.target.value = "";
+  };
+
+  handleWord = e => {
+    let inputWord = e.target.value;
+    let goalWord = this.currWord();
+
+    let correct = 0;
+    for (let i = 0; i < inputWord.length; i++) {
+      if (inputWord[i] === goalWord[i]) {
+        correct += 1;
+      } else {
+        break;
+      }
+    }
     this.setState(state => {
       return {
         ...state,
-        correctLetters: 0,
-        incorrectLetters: 0,
-        currWord: currWord
+        correctLetters: correct,
+        incorrectLetters: inputWord.length - correct
       };
     });
-    api.playerUpdate({
-      currWord: currWord
-    });
-  }
+  };
 
-  inputChange = e => {
-    let { status } = this.props;
-    let { words, currWord, lastWord, finished } = this.state;
-    let shouldDisable = status === "LOBBY" || status === "POSTGAME" || finished;
-
-    if (shouldDisable) {
-      e.target.value = "";
-    } else {
-      let goalWord = words[currWord];
-      let inputWord = e.target.value;
-
-      let finishedRace = inputWord === goalWord && currWord === lastWord;
-      let finishedWord = inputWord === goalWord + " ";
-
-      if (finishedRace) {
-        this.finishRace();
-      } else if (finishedWord) {
-        this.nextWord(e);
-      } else {
-        let correct = 0;
-        for (let i = 0; i < inputWord.length; i++) {
-          if (inputWord[i] === goalWord[i]) {
-            correct += 1;
-          } else {
-            break;
-          }
-        }
-        this.setState(state => {
-          return {
-            ...state,
-            correctLetters: correct,
-            incorrectLetters: inputWord.length - correct
-          };
-        });
-      }
+  handleInput = e => {
+    if (this.shouldDisable()) e.target.value = "";
+    else {
+      if (this.hasFinishedWord(e)) this.finishWord(e);
+      else if (this.hasFinishedRace(e)) this.finishRace(e);
+      else this.handleWord(e);
     }
   };
 
@@ -103,26 +97,40 @@ class TypingController extends React.Component {
     let left = word.slice(correctLetters + incorrectLetters);
 
     return (
-      <div className="TypingParagraph">
-        <span className="completed">{completedWords}</span>
-        &nbsp;
-        <span className="inProcess">
-          <span className="Correct">{correct}</span>
-          <span className="Incorrect">{incorrect}</span>
-          {left}
-        </span>
-        &nbsp;
-        <span>{leftWords}</span>
-        <input
-          autoComplete={"off"}
-          autoCorrect={"off"}
-          autoCapitalize={"off"}
-          autoFocus
-          onInput={this.inputChange}
-        />
+      <div className="TypingController">
+        <div className="TypingParagraph">
+          <span className="completed">{completedWords}</span>
+          &nbsp;
+          <span className="inProcess">
+            <span className="Correct">{correct}</span>
+            <span className="Incorrect">{incorrect}</span>
+            {left}
+          </span>
+          &nbsp;
+          <span>{leftWords}</span>
+        </div>
+        <div className="TypingInput">
+          <input
+            autoComplete={"off"}
+            autoCorrect={"off"}
+            autoCapitalize={"off"}
+            autoFocus
+            onInput={this.handleInput}
+          />
+        </div>
       </div>
     );
   }
 }
+TypingController.propTypes = {
+  string: PT.string.isRequired
+};
 
-export default TypingController;
+let mapState = state => {
+  let { string } = state.game.info;
+  return {
+    string
+  };
+};
+
+export default connect(mapState)(TypingController);

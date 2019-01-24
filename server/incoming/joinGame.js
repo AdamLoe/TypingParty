@@ -15,7 +15,7 @@ let isUserBanned = (game, playerID) => {
 
 let joinError = (socket, message) => {
   console.log("JOINERROR:", message);
-  socket.emit("Error", {
+  socket.emit("serverError", {
     errorType: "JOINING",
     message
   });

@@ -11,7 +11,7 @@ let Creator = ({ createGame }) => (
   <div className="Creator">
     <InputHandler
       type="text"
-      name="Server_Name"
+      name="Server Name"
       id="name"
       defaultValue={getRandomServerName()}
       required={true}
@@ -20,6 +20,7 @@ let Creator = ({ createGame }) => (
     <InputHandler
       type="text"
       name="Password"
+      placeholder="Not Required"
       id="password"
       defaultValue=""
       maxLength={20}
@@ -63,7 +64,9 @@ let Creator = ({ createGame }) => (
       ]}
       defaultValue="Off"
     />
-    <button onClick={createGame}>Create Game</button>
+    <div className="CreateGame">
+      <button onClick={createGame}>Create Game</button>
+    </div>
   </div>
 );
 

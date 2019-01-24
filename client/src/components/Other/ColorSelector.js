@@ -1,4 +1,5 @@
 import React from "react";
+import PT from "prop-types";
 
 import { colorList } from "./Icon";
 
@@ -24,5 +25,9 @@ let ColorSelector = ({ update, color }) => (
     })}
   </div>
 );
+ColorSelector.propTypes = {
+  update: PT.func.isRequired,
+  color: PT.string.isRequired
+};
 
 export default ColorSelector;

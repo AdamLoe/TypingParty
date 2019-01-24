@@ -7,7 +7,7 @@ let getGameInfo = game => {
     handicaps,
     maxPlayers,
     playerCount,
-    maxGame,
+    maxGames,
     currGame,
     status,
     created
@@ -21,7 +21,7 @@ let getGameInfo = game => {
     handicaps,
     maxPlayers,
     playerCount,
-    maxGame,
+    maxGames,
     currGame
   };
 };

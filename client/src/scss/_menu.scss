@@ -1,32 +1,53 @@
-@import "globals";
+$browser-inner-borders: 1px solid rgb(140,140,140);
 
-.MenuButtons {
-  font-family: "Segoe UI Semibold";
-  font-size: 40px;
-
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  padding: 10px;
-}
-
-.MenuButtons button {
-  padding: 30px;
-  border-style: solid;
-  border-color: white;
-  background: white;
+.Browser {
   display: flex;
   flex-direction: column;
+
+  background: lightgrey;
+  border-radius: 10px;
+
+  border: 3px solid;
+  border-color: rgb(140,140,140);
+  box-shadow: 3px 3px;
+
+  font-size: 20px;
+}
+
+.BrowserHeader {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
-.MenuButtons button:hover {
-  background: navajowhite;
+.BrowserItem {
+  height: 35px;
+  border-top: $browser-inner-borders;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.Creator {
-  width: 90%;
-  max-width: 600px;
+.BrowserColumn {
+  padding: 5px;
+  border-right: $browser-inner-borders;
+}
+
+.Browser .ColumnLarge {
+  width: 260px;
+}
+
+.Browser .ColumnMedium {
+  width: 120px;
+}
+
+.Browser .ColumnSmall {
+  width: 70px;
+}
+
+.Browser button {
+  padding: 5px;
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
 }

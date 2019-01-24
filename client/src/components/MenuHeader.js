@@ -1,7 +1,7 @@
 import React from "react";
 
 let MenuHeader = ({ gotoBrowser, gotoCreator }) => (
-  <div className="MenuButtons">
+  <div className="HeaderButtons">
     <button onClick={gotoBrowser}>View Games</button>
     <button onClick={gotoCreator}>Create Game</button>
   </div>

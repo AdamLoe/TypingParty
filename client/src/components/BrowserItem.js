@@ -14,12 +14,14 @@ let BrowserItem = ({
   handicaps
 }) => (
   <div className="BrowserItem">
-    <div className="BrowserColumn">{name}</div>
-    <div className="BrowserColumn">{status}</div>
-    <div className="BrowserColumn">{playerCount + "/" + maxPlayers}</div>
-    <div className="BrowserColumn">{currGame + "/" + maxGames}</div>
-    <div className="BrowserColumn">{scoringType}</div>
-    <div className="BrowserColumn">{handicaps}</div>
+    <div className="BrowserColumn ColumnLarge">{name}</div>
+    <div className="BrowserColumn ColumnSmall">{status}</div>
+    <div className="BrowserColumn ColumnSmall">
+      {playerCount + "/" + maxPlayers}
+    </div>
+    <div className="BrowserColumn ColumnSmall">{currGame + "/" + maxGames}</div>
+    <div className="BrowserColumn ColumnMedium">{scoringType}</div>
+    <div className="BrowserColumn ColumnMedium">{handicaps}</div>
     <button onClick={() => joinGame(id)}>Join</button>
   </div>
 );

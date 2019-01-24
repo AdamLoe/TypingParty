@@ -6,9 +6,20 @@ import BrowserItem from "../../components/BrowserItem";
 
 import { joinGame } from "../../actions/api";
 
+let Header = () => (
+  <div className="BrowserHeader">
+    <div className="BrowserColumn ColumnLarge"> Name </div>
+    <div className="BrowserColumn ColumnSmall"> Status</div>
+    <div className="BrowserColumn ColumnSmall"> Players </div>
+    <div className="BrowserColumn ColumnSmall"> Games </div>
+    <div className="BrowserColumn ColumnMedium"> Scoring Type</div>
+    <div className="BrowserColumn ColumnMedium"> Handicaps </div>
+  </div>
+);
+
 let Browser = ({ games, joinGame }) => (
   <div className="Browser">
-    Browser
+    <Header />
     {games.map(game => (
       <BrowserItem joinGame={joinGame} {...game} />
     ))}

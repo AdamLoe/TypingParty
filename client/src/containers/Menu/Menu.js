@@ -1,19 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { gotoBrowser, gotoCreator } from "../../actions";
-
-import MenuHeader from "../../components/MenuHeader";
 import Browser from "./Browser";
 import Creator from "./Creator";
+import PT from "prop-types";
 
-let Menu = ({ gotoBrowser, gotoCreator, showBrowser, showCreator }) => (
-  <>
-    <MenuHeader gotoBrowser={gotoBrowser} gotoCreator={gotoCreator} />
+let Menu = ({ showBrowser, showCreator }) => (
+  <div className="Menu">
     {showBrowser && <Browser />}
     {showCreator && <Creator />}
-  </>
+  </div>
 );
+Menu.propTypes = {
+  showBrowser: PT.bool.isRequired,
+  showCreator: PT.bool.isRequired
+};
 
 let mapState = state => {
   let { showBrowser, showCreator } = state.navigation;
@@ -23,7 +24,4 @@ let mapState = state => {
   };
 };
 
-export default connect(
-  mapState,
-  { gotoBrowser, gotoCreator }
-)(Menu);
+export default connect(mapState)(Menu);

@@ -39,6 +39,8 @@ export default (state = initState, action) => {
         ...state,
         showLoading: false
       };
+    case "serverError":
+      return action.type === "";
     default:
       return state;
   }

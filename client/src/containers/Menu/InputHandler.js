@@ -37,7 +37,7 @@ export class InputHandler extends React.Component {
     if (typeof e === "object") value = e.target.value;
     console.log(value);
 
-    this.update(e);
+    this.update(value);
   };
 
   render() {
@@ -62,6 +62,7 @@ InputHandler.propTypes = {
   id: PT.string.isRequired,
   updateCreator: PT.func.isRequired,
   defaultValue: PT.oneOfType([PT.string, PT.number]).isRequired,
+  placeholder: PT.string,
   options: PT.arrayOf(PT.arrayOf(PT.string.isRequired).isRequired),
   required: PT.bool,
   min: PT.number,

@@ -31,14 +31,9 @@ export let updateCreator = (name, value) => {
   };
 };
 
-export let showProfile = () => {
+export let toggleProfile = () => {
   return {
-    type: "showProfile"
-  };
-};
-export let hideProfile = () => {
-  return {
-    type: "hideProfile"
+    type: "toggleProfile"
   };
 };
 

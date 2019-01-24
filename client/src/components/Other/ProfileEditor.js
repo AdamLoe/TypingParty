@@ -43,28 +43,28 @@ class ProfileEditor extends React.Component {
 
     return (
       <div className="ProfileEditor">
-        <img
-          alt="X"
-          src={require("../../img/outline-clear-24px.svg")}
-          onClick={hideProfile}
-        />
-        <input
-          onFocus={this.handleFocus}
-          onInput={e => this.updateProfile("name", e.target.value)}
-          onSubmit={submit}
-          defaultValue={name}
-          autoFocus={"on"}
-        />
+        <div className="ProfileEditorType">Name</div>
+        <div className="nameSelector">
+          <input
+            onFocus={this.handleFocus}
+            onInput={e => this.updateProfile("name", e.target.value)}
+            onKeyDown={e => e.key === "Enter" && submit()}
+            defaultValue={name}
+          />
+        </div>
+        <div className="ProfileEditorType">Icon Type</div>
         <IconSelector
           update={value => this.updateProfile("type", value)}
           type={type}
           primary={primary}
           secondary={secondary}
         />
+        <div className="ProfileEditorType">Primary Color</div>
         <ColorSelector
           update={value => this.updateProfile("primary", value)}
           color={primary}
         />
+        <div className="ProfileEditorType">Secondary Color</div>
         <ColorSelector
           update={value => this.updateProfile("secondary", value)}
           color={secondary}

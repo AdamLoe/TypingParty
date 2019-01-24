@@ -5,9 +5,9 @@ import PT from "prop-types";
 import { readyUp } from "../../actions";
 import { gotoMenu } from "../../actions";
 
-let LobbyMenu = ({ isReadiedUp, readyUp, gotoMenu }) => (
+let LobbyMenu = ({ isReady, readyUp, gotoMenu }) => (
   <div className="LobbyMenu">
-    <button onClick={() => readyUp(!isReadiedUp)}>Ready Up</button>
+    <button onClick={() => readyUp(!isReady)}>Ready Up</button>
     <button onClick={gotoMenu}>Leave Game</button>
   </div>
 );
@@ -15,12 +15,17 @@ let LobbyMenu = ({ isReadiedUp, readyUp, gotoMenu }) => (
 LobbyMenu.propTypes = {
   readyUp: PT.func.isRequired,
   gotoMenu: PT.func.isRequired,
-  isReadiedUp: PT.bool.isRequired
+  isReady: PT.bool.isRequired
 };
 
-let mapState = state => ({
-  isReadiedUp: state.game.isReadiedUp
-});
+let mapState = state => {
+  let myID = state.game.playerID;
+  let me = state.game.gameData[myID];
+  console.log(myID, me);
+  if (me) return { isReady: me.readyUp };
+  else return { isReady: false };
+};
+
 export default connect(
   mapState,
   { readyUp, gotoMenu }

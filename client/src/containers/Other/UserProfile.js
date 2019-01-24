@@ -1,37 +1,48 @@
 import React from "react";
 import { connect } from "react-redux";
+import PT from "prop-types";
 
 import ProfileMini from "../../components/Other/ProfileMini";
 import ProfileEditor from "../../components/Other/ProfileEditor";
 
-import { showProfile, hideProfile, submitProfile } from "../../actions";
+import { toggleProfile, submitProfile } from "../../actions";
 
 let UserProfile = ({
-  shouldShowProfile,
+  showProfile,
   name,
   icon,
-  showProfile,
-  hideProfile,
+  toggleProfile,
   submitProfile
 }) => (
   <div className="UserProfile">
-    {shouldShowProfile ? (
+    <ProfileMini toggleProfile={toggleProfile} name={name} icon={icon} />
+    {showProfile && (
       <ProfileEditor
-        hideProfile={hideProfile}
+        hideProfile={toggleProfile}
         submitProfile={submitProfile}
         name={name}
         icon={icon}
       />
-    ) : (
-      <ProfileMini showProfile={showProfile} name={name} icon={icon} />
     )}
   </div>
 );
+UserProfile.propTypes = {
+  showProfile: PT.bool.isRequired,
+  name: PT.string.isRequired,
+  icon: PT.shape({
+    type: PT.string.isRequired,
+    primary: PT.string.isRequired,
+    secondary: PT.string.isRequired
+  }).isRequired,
+  toggleProfile: PT.func.isRequired,
+  submitProfile: PT.func.isRequired
+};
 
 let mapState = state => {
-  let { shouldShowProfile, name, icon } = state.profile;
+  let { name, icon } = state.profile;
+  let { showProfile } = state.navigation;
   return {
-    shouldShowProfile,
+    showProfile,
     name,
     icon
   };
@@ -39,5 +50,5 @@ let mapState = state => {
 
 export default connect(
   mapState,
-  { showProfile, hideProfile, submitProfile }
+  { toggleProfile, submitProfile }
 )(UserProfile);

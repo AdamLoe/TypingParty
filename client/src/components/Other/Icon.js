@@ -120,11 +120,15 @@ export let colorList = [
   "green"
 ];
 let random = length => Math.floor(Math.random() * length);
-export let getRandomIcon = () => ({
-  type: iconList[random(iconList.length)],
-  primary: colorList[random(colorList.length)],
-  secondary: colorList[random(colorList.length)]
-});
+export let getRandomIcon = () => {
+  let type = iconList[random(iconList.length)];
+  let primary = colorList[random(colorList.length)];
+  let secondary = colorList[random(colorList.length)];
+  while (secondary === primary) {
+    secondary = colorList[random(colorList.length)];
+  }
+  return { type, primary, secondary };
+};
 
 let Icon = ({ type, primary, secondary, greyed = false }) => {
   if (!(type in icons)) {

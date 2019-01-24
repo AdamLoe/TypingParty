@@ -18,7 +18,7 @@ User should send after typing each word
 
 ```
 {
-    "currWord": 5
+    "currChar": 5
 }
 ```
 

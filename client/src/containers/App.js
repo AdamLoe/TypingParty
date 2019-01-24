@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <>
         <Popups />
-        <HeaderMenu />
+        <HeaderMenu showMenu={showMenu} />
         {showMenu && <Menu />}
         {showGame && <Game />}
       </>
@@ -27,8 +27,8 @@ class App extends React.Component {
   }
 }
 App.propTypes = {
-  showMenu: PT.func.isRequired,
-  showGame: PT.func.isRequired,
+  showMenu: PT.bool.isRequired,
+  showGame: PT.bool.isRequired,
   subscribe: PT.func.isRequired
 };
 

@@ -2,7 +2,8 @@ let initialState = {
   showGame: false,
   showMenu: true,
   showBrowser: false,
-  showCreator: false
+  showCreator: false,
+  showProfile: false
 };
 
 export default (state = initialState, action) => {
@@ -33,6 +34,12 @@ export default (state = initialState, action) => {
         ...state,
         showCreator: true,
         showBrowser: false
+      };
+    case "toggleProfile":
+    case "updateProfile":
+      return {
+        ...state,
+        showProfile: !state.showProfile
       };
   }
   return state;

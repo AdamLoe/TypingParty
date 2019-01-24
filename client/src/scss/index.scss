@@ -1,7 +1,10 @@
 @import "globals";
+
+@import "browser";
+@import "controller";
+@import "creator";
 @import "header";
-@import "menu";
 @import "leaderboard";
 @import "messenger";
+@import "profile";
 @import "raceView";
-@import "controller";

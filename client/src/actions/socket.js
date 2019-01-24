@@ -2,7 +2,7 @@ import io from "socket.io-client";
 
 let socket = null;
 
-let local = "http://192.168.1.9:2002/";
+let local = "http://localhost:2002/";
 let outside = "http://18.224.208.199:2002";
 
 let addr = local;
