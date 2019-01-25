@@ -1,9 +1,39 @@
+.LobbyMenu {
+  display: flex;
+  justify-content:  space-between;
+  background: $lobby-menu-background;
+}
+
+.LobbyMenu button {
+  color: $lobby-menu-button-text-color;
+  background: $lobby-menu-button-background;
+  padding: $lobby-menu-button-padding;
+  font-size: $lobby-menu-button-font-size;
+  border-radius: 0 5px 0 5px;
+  cursor: pointer;
+}
+.LobbyMenu button:hover {
+  color: white;
+  background: darkgreen;
+}
+.LobbyMenu .isReady {
+  color: white;
+  background: green;
+}
+.LobbyMenu .isReady:hover {
+  background: darkgreen;
+}
+.LobbyMenu .leaveGame:hover {
+  color: white;
+  background: red;
+}
+
 .TypingController {
-  width: 400px;
+  width: 510px;
   display: flex;
   flex-direction: column;
 
-  background: lightblue;
+  background: $content-background;
   padding: 5px;
   align-items: center;
 }
@@ -18,6 +48,7 @@
 .TypingInput Input {
   width: 100%;
   padding: 5px;
+  color: black;
 }
 
 .TypingParagraph {

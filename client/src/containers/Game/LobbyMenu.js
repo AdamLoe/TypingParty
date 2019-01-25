@@ -7,8 +7,12 @@ import { gotoMenu } from "../../actions";
 
 let LobbyMenu = ({ isReady, readyUp, gotoMenu }) => (
   <div className="LobbyMenu">
-    <button onClick={() => readyUp(!isReady)}>Ready Up</button>
-    <button onClick={gotoMenu}>Leave Game</button>
+    <button className={isReady && "isReady"} onClick={() => readyUp(!isReady)}>
+      Ready Up
+    </button>
+    <button className="LeaveGame" onClick={gotoMenu}>
+      Leave Game
+    </button>
   </div>
 );
 

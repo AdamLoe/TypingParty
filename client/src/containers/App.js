@@ -20,8 +20,10 @@ class App extends React.Component {
       <>
         <Popups />
         <HeaderMenu showMenu={showMenu} />
-        {showMenu && <Menu />}
-        {showGame && <Game />}
+        <div className="AppBody">
+          {showMenu && <Menu />}
+          {showGame && <Game />}
+        </div>
       </>
     );
   }

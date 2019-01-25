@@ -1,7 +1,7 @@
 let state = require("../state");
 
 exports.startRace = gameID => {
-  let time = 10;
+  let time = 1000;
   state.editGame(gameID, {
     info: {
       timeEnd: Date.now() + time * 1000,

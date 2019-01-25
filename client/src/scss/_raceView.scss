@@ -1,6 +1,9 @@
 .RaceView {
-  padding: 5px;
-  background: grey;
+  border: $raceview-border;
+  padding: $raceview-padding;
+  background: $raceview-background;
+  color: $raceview-font-color;
+  margin-bottom: $controller-raceview-padding;
 }
 
 .RacerContainer {

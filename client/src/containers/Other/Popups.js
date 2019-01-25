@@ -36,7 +36,7 @@ let Popups = ({
   notificationKey,
   closeNotification
 }) => (
-  <div>
+  <div className="Popups">
     {showLoading && <LoadingModal />}
     {showNotification && (
       <>

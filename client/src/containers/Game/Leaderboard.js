@@ -8,10 +8,10 @@ let PlayerScore = ({ name, icon, score, place }) => (
   <div className="PlayerScore">
     <div className="Place">{place}</div>
     <div className="Player">
-      <div className="Name">{name}</div>
       <Icon {...icon} />
+      <div className="Name">{name}</div>
     </div>
-    <div className="Score">{score}</div>
+    <div className="Score">{score}pts</div>
   </div>
 );
 PlayerScore.propTypes = {
@@ -33,7 +33,7 @@ let Leaderboard = ({ leaderboard }) => (
         score={score}
         name={name}
         icon={icon}
-        place={index}
+        place={index + 1}
       />
     ))}
   </div>

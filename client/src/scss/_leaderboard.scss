@@ -1,8 +1,8 @@
 .Leaderboard {
-  width: 300px;
-  padding: 20px;
-  background: lightgrey;
-  border: 2px solid;
+  padding: $leaderboard-padding;
+  background: $leaderboard-background;
+  border: $default-border;
+  font-size: $leaderboard-font-size;
   border-radius: 5px;
 }
 
@@ -11,28 +11,34 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: $leaderboard-item-space;
 }
 
 .PlayerScore .Place {
-  padding: 5px;
+  width: $leaderboard-place-width;
+  display: flex;
+  justify-content: space-around;
 }
 
 .PlayerScore .Player {
-  padding: 5px;
-
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  width: 100%;
+  align-items: center;
+  width: $leaderboard-player-width;
+  padding-left: $leaderboard-player-left-padding;
 }
 
 .PlayerScore .Player .Name {
+  padding-left: $default-icon-name-spacing;
 }
 
 .PlayerScore .Player svg {
-  display: none;
+  height: $leaderboard-icon-size;
+  width: $leaderboard-icon-size;
 }
 
 .PlayerScore .Score {
-  padding: 5px;
+  width: $leaderboard-score-width;
+  display: flex;
+  justify-content: flex-end;
 }

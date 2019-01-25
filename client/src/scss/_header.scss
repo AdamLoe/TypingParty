@@ -11,13 +11,11 @@
 }
 
 .HeaderTitle {
-  height: 100%;
-  width:  200px;
-
-  padding: 0 25px;
-  box-sizing: content-box;
-
   font-size: $header-title-font-size;
+  padding: $header-title-padding;
+
+  height: 100%;
+  box-sizing: content-box;
 }
 
 .HeaderTitle:hover {
@@ -68,5 +66,5 @@
 }
 
 .ProfileMiniName {
-  padding-right: 5px;
+  padding-right: $default-icon-name-spacing;
 }

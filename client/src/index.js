@@ -3,7 +3,6 @@ import { render } from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 
-import "./scss/index.scss";
 import App from "./containers/App";
 
 import rootReducer from "./reducers";
@@ -37,3 +36,5 @@ render(
   </Provider>,
   document.getElementById("root")
 );
+
+import "./scss/index.scss";
