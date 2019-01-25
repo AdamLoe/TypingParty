@@ -3,6 +3,7 @@
   background: $creator-background;
   padding: $creator-padding;
   border-radius: $creator-border-radius;
+  flex-grow: 0;
 }
 
 .Input {
@@ -22,11 +23,15 @@
 }
 
 .InputText input {
+  background: $creator-background;
   height: inherit;
   width: 220px;
   padding-left: 5px;
   flex-grow: 1;
 }
+.InputText input::placeholder {
+  color: $creator-input-placeholder;
+};
 
 .InputSlider {
   margin-bottom: $creator-item-margins*2;
@@ -35,6 +40,21 @@
 .InputSlider .rc-slider {
   width: 220px;
   flex-grow: 1;
+}
+.rc-slider-rail {
+  //ackground: white;
+}
+.rc-slider-track {
+  //background: green;
+}
+.rc-slider-handle {
+  //border-color: red;
+};
+.rc-slider-mark-text {
+  color: $creator-slider-text;
+}
+.rc-slider-mark-text-active {
+  color: $creator-slider-text-active;
 }
 
 .InputRadio {

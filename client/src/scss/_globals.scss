@@ -1,34 +1,66 @@
-$app-background: rgb(14,7,49);
-$content-background: rgb(40,33, 87);
+$red: rgb(188, 0, 18);
+$blue: rgb(18, 27, 135);
+$purple: rgb(94, 5, 129);
+
+$darkred: darken($red, 20);
+$darkpurple: darken($purple, 10);
+$lightblue: lighten($blue, 35);
+$darkgrey: darken(gray, 25);
+
+$g1: desaturate( darken($lightblue, 20) , 55);
+$g2: desaturate( darken($blue, 12) , 40);
+
+$gradient1: linear-gradient($g1, $g2);
+$gradient2: linear-gradient($g2 0%, $g1 3%);
+/*
+ $g1 69%,
+        green 70%, yellow 71%, blue 72%, white 73%, black 74%,
+        red 75%, white 76%, blue 77%,
+        $g1 78%
+ */
+$gradient: $gradient2;
+
+$app-background: $gradient; //rgb(14,7,49);
+$content-background: $darkgrey;//rgb(40,33, 87);
+$header-background-top: $darkpurple;
+$header-background-bottom: lighten($darkpurple, 8);
+$header-background: linear-gradient(
+  $header-background-top 0%,
+        $header-background-bottom 40%
+);
+
+$default-border-size: 0px;
+$default-border-color: lighten($content-background, 70);
+$default-border: $default-border-size solid $default-border-color;
+
+$header-border: 0px solid darken($g2, 0);
+
 $default-text-color: white;
 
 $opposite: white;
 
-$default-border-size: 2px;
-$default-border-color: lighten($app-background, 78);
-$default-border: $default-border-size solid $default-border-color;
 $default-font-family: "Segoe UI Semibold";
-$default-button-background: lighten($content-background, 20);
+$default-button-background: lighten($content-background, 10);
 $default-button-hover-background: lighten($default-button-background, 20);
+$default-icon-name-spacing: 5px;
 
-$header-height: 60px;
-$header-background: $content-background;
+$header-height: 70px;
 $header-font-family: $default-font-family;
 $header-hover-color: lighten($content-background, 20);
-$header-title-font-size: $header-height * 3 / 8;
+$header-title-font-size: $header-height * 7 / 16;
+$header-title-padding: 0 40px;
 $header-menu-font-size: $header-height / 4;
 $header-border-size: $default-border-size;
-$header-border: $default-border;
 $header-button-background: $default-button-background;
 $header-button-padding: 0 15px;
 $selected-color: white;
 
-$header-content-padding: 10px;
+$header-content-padding: 30px;
 
 $browser-background: $content-background;
 $browser-outer-borders: $default-border;
 $browser-font-size: 16px;
-$browser-inner-borders: 1px solid $default-border-color;
+$browser-inner-borders-size: 3px;
 $browser-item-height: 35px;
 $browser-item-left-padding: 4px;
 $browser-button-background: $default-button-background;
@@ -48,6 +80,34 @@ $creator-radio-hover-background: $default-button-hover-background;
 $creator-create-game-padding: 10px 80px;
 $creator-create-game-background: $default-button-background;
 $creator-create-game-hover-background: $default-button-hover-background;
+$creator-slider-text: mix(white, $content-background, 60);
+$creator-slider-text-active: white;
+$creator-input-placeholder: mix(white, $content-background, 60);
+
+$leaderboard-icon-size: 30px;
+$leaderboard-font-size: 18px;
+$leaderboard-padding: 10px 15px;
+$leaderboard-background: $content-background;
+$leaderboard-border: $default-border;
+$leaderboard-item-space: 2px;
+$leaderboard-player-left-padding: 8px;
+$leaderboard-player-width: 150px;
+$leaderboard-place-width: 20px;
+$leaderboard-score-width: 55px;
+
+$raceview-background: $content-background;
+$raceview-border: $default-border;
+$raceview-padding: 10px 15px;
+$raceview-font-color: white;
+
+$controller-raceview-padding: 10px;
+
+$lobby-menu-background: none;
+$lobby-menu-button-text-color: lighten(red, 15);
+$lobby-menu-button-background: $content-background;
+$lobby-menu-button-font-size: 20px;
+$lobby-menu-button-padding: 10px 20px;
+
 
 
 html, body {
@@ -58,13 +118,11 @@ html {
   box-sizing: border-box;
   color: $default-text-color;
   font-family: $default-font-family;
-  background: $app-background;
 }
 *, *:before, *:after {
   box-sizing: inherit;
   color: inherit;
   font-family: inherit;
-  background: inherit;
 
   padding: 0;
   margin: 0;
@@ -85,29 +143,33 @@ input {
 }
 
 #root {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.AppBody {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-grow: 1;
+  background: $app-background;
+}
 
 .Menu {
   padding-top: $header-content-padding;
-  display: flex;
-  flex-direction: row;
 }
 
 .Game {
   padding-top: $header-content-padding;
   display: flex;
   flex-direction: row;
+  align-items: start;
 }
 
 .GameMain {
-  margin: 0 10;
-  padding: 10px;
-  background: rgb(140, 140, 140);
-  border: 2px solid;
-  border-radius: 5px;
+  padding: 0 10px;
 
   display: flex;
   flex-direction: column;
