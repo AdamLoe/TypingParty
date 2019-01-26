@@ -1,46 +1,54 @@
 .Messenger {
+  height: 300px;
   width: 300px;
-  padding: 20px;
+  padding: $messenger-padding;
   background: $content-background;
   border: $default-border;
-  border-radius: 5px;
-}
-
-.MessageView {
-  background: rgb(100, 100, 100);
-  border-radius: 5px;
-  padding: 20px 10px;
+  border-radius: 0; //$content-border-radius;
   display: flex;
   flex-direction: column;
 }
 
-.Message {
+.MessageView {
+  background: $message-view-background;
+  border-radius: $content-border-radius;
+  padding: $message-view-padding;
+  font-size: $message-view-font-size;
+  border-bottom-left-radius: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  flex-grow: 1;
   overflow: auto;
+  overflow-scrolling: auto;
+}
 
-  font-size: 20px;
+.Message {
+  flex-shrink: 0;
+
   color: white;
 }
 
 .Message .name {
-  color: rgb(140, 140, 250);
+  //color: rgb(140, 140, 250);
   padding-left: 2px;
 }
 
 .Message .text {
-  padding-left: 2px;
+  padding-left: $message-name-text-padding;
 }
+
 .MessageCreator {
+  background: $message-creator-background;
+  margin-top: $message-creator-top-padding;
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   padding: 0;
-  margin-top: 10px;
   width: 100%;
 }
 
 .MessageCreator input {
+  height: 25px;
   color: white;
   border-radius: 5px;
   border: none;
@@ -48,9 +56,28 @@
   width: 100%;
   padding: 10px 5px;
 }
+
 .MessageCreator button {
   padding: 0;
   width: 20px;
   margin: 0;
   border-radius: 0;
+}
+
+.Messenger ::-webkit-scrollbar {
+  width: $message-scrollbar-width;
+}
+/* Track */
+.Messenger ::-webkit-scrollbar-track {
+  background: $message-scrollbar-track-background;
+}
+
+/* Handle */
+.Messenger ::-webkit-scrollbar-thumb {
+  background: $message-scrollbar-thumb-background;
+}
+
+/* Handle on hover */
+.Messenger ::-webkit-scrollbar-thumb:hover {
+  background: $message-scrollbar-thumb-hover-background;
 }

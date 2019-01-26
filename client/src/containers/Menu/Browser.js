@@ -27,7 +27,7 @@ let Browser = ({ games, joinGame }) => (
 );
 Browser.propTypes = {
   games: PT.arrayOf(
-    PT.objectOf({
+    PT.shape({
       id: PT.number.isRequired,
       name: PT.string.isRequired,
       status: PT.string.isRequired,

@@ -1,8 +1,19 @@
+
+
+$theme1: (
+  "first": (
+
+  ),
+  "red": (
+
+  )
+);
+
+
 $red: rgb(188, 0, 18);
 $blue: rgb(18, 27, 135);
 $purple: rgb(94, 5, 129);
 
-$darkred: darken($red, 20);
 $darkpurple: darken($purple, 10);
 $lightblue: lighten($blue, 35);
 $darkgrey: darken(gray, 25);
@@ -23,8 +34,29 @@ $gradient2: linear-gradient($g2 0%, $g1 5%);
  */
 $gradient: $gradient2;
 
-$app-background: $gradient; //rgb(14,7,49);
+$point1: darken(darkred, 30);
+$darkred: darken(darkred, 15);
+$point4: desaturate($darkred, 30);
+$point2: mix($point1, $point4, 70);
+$point3: mix($point1, $point4, 45);
+
+$new-gradient: linear-gradient(
+                -150deg,
+        $point1 0%,
+        $point2 33%,
+        $point3 66%,
+        $point4 100%
+);
+$new-background: $new-gradient;
+$new-header-background: $point4;
+$new-header-background-color: $point4;
+
+$app-background: $gradient; //rgb(38, 38, 38); //rgb(14,7,49);
 $content-background: $darkgrey;//rgb(40,33, 87);
+$old-special-color: lighten($darkpurple, 8);
+$special-color: $old-special-color; //darkred;
+
+$content-border-radius: 0 10px 0 10px;
 
 $default-border-size: 0px;
 $default-border-color: lighten($content-background, 70);
@@ -38,22 +70,26 @@ $opposite: white;
 
 $default-font-family: "Segoe UI Semibold";
 $default-button-background: lighten($content-background, 10);
-$special-button-background: lighten($darkpurple, 8);
+$special-button-background: $special-color;
 $default-button-hover-background: lighten($default-button-background, 20);
 $default-icon-name-spacing: 5px;
 
 $header-background-top: $darkpurple;
 $header-background-bottom: lighten($darkpurple, 8);
-$header-background: linear-gradient(
+$header-gradient: linear-gradient(
                 $header-background-top 0%,
                 $header-background-bottom 40%
 );
+$header-background-color: $special-color;
+$header-background: $header-background-color;
+
 $header-button-background: $special-button-background;
 $header-height: 55px;
 $header-font-family: $default-font-family;
-$header-hover-color: lighten($content-background, 20);
-$header-title-font-size: $header-height * 7 / 16;
-$header-title-padding: 0 40px;
+$header-hover-color: lighten($header-background-color, 10);
+$header-title-width: 230px;
+$header-title-padding-top: 10px;
+$header-title-side-padding: 20px;
 $header-menu-font-size: $header-height * 5 / 16;
 $header-border-size: $default-border-size;
 $header-button-padding: 0 15px;
@@ -111,6 +147,21 @@ $lobby-menu-button-text-color: lighten(red, 15);
 $lobby-menu-button-background: $content-background;
 $lobby-menu-button-font-size: 20px;
 $lobby-menu-button-padding: 10px 20px;
+
+$messenger-padding: 10px 10px;
+$messenger-background: $content-background;
+$message-view-background: lighten($content-background, 0);
+$message-view-padding: 0;
+$message-view-font-size: 16px;
+$message-creator-background: lighten($content-background, 20);
+$message-creator-top-padding: 10px;
+$message-name-text-padding: 5px;
+
+$message-scrollbar-width: 12px;
+$message-scrollbar-track-background: #f1f1f1;
+$message-scrollbar-thumb-background: lighten($message-view-background, 10);
+$message-scrollbar-thumb-hover-background: lighten($message-view-background, 5);
+
 
 html, body {
   height: 100%;

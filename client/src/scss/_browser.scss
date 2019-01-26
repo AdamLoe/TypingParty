@@ -60,7 +60,6 @@
 /*
 */
 .Browser {
-  padding: 10px;
   background: $browser-background;
   border-radius: 0 15px 0 15px;
 }
@@ -86,7 +85,7 @@
 }
 /*
  */
-$browser-header-background: $header-background-bottom;
+$browser-header-background: $header-background-color;
 .Browser {
   background: none;
 }

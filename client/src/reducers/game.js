@@ -55,11 +55,6 @@ let exampleState = {
   ]
 };
 
-//Dont want game to crash
-let validateGameData = data => {
-  return data;
-};
-
 import { getPacket } from "../actions/api";
 
 let getMissingPackets = (lastMajorVersion, majorVersion) => {
@@ -96,6 +91,11 @@ let spreadCombine = (oldObj, newObj) => {
   return combined;
 };
 
+//Dont want game to crash
+let validateGameData = data => {
+  return data;
+};
+
 let updateGameData = (state, data) => {
   let { majorVersion, minorVersion, packet } = data;
   let { lastMajorVersion } = state;
@@ -125,11 +125,13 @@ let updateGameData = (state, data) => {
 
 let updateGameObject = (state, data) => {
   let { majorVersion, game, playerID } = data;
+  let { id } = game;
   return {
     ...state,
     ...validateGameData(game),
     playerID,
-    lastMajorVersion: majorVersion
+    lastMajorVersion: majorVersion,
+    messages: id === state.id ? state.messages : []
   };
 };
 

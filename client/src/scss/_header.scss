@@ -10,11 +10,12 @@
   align-items: center;
 }
 
-
 .HeaderTitle {
-  padding-left: 20px;
-  height: 100%;
-  width: 240px;
+  padding-left: $header-title-side-padding;
+  padding-right: $header-title-side-padding;
+  padding-top: $header-title-padding-top;
+  height: $header-height;
+  width: $header-title-width + $header-title-side-padding * 2;
   border-radius: 0;
 }
 

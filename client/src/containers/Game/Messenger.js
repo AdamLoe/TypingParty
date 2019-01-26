@@ -3,65 +3,63 @@ import PT from "prop-types";
 import { connect } from "react-redux";
 
 import { sendMessage } from "../../actions/api";
-import Message from "../../components/Game/Message";
 
-class MessageCreator extends React.Component {
-  state = {
-    message: ""
-  };
-
-  submit = value => {
-    sendMessage(value);
-    this.setState({
-      message: ""
-    });
-  };
-
-  onSubmit = () => {
-    this.submit(this.state.message);
-  };
-
-  onInput = value => {
-    this.setState({
-      message: value
-    });
-  };
-
-  onKeyPress = (key, value) => {
-    if (key === "Enter") {
-      this.submit(value);
-    }
-  };
-
-  render() {
-    return (
-      <div className="MessageCreator">
-        <input
-          value={this.state.message}
-          onChange={e => this.onInput(e.target.value)}
-          onKeyPress={e => this.onKeyPress(e.key, e.target.value)}
-        />
-        <button onClick={this.onSubmit} />
-      </div>
-    );
-  }
-}
-
-let Messenger = ({ messages, players }) => (
-  <div className="Messenger">
-    <div className="MessageView">
-      {messages.map(({ id, text, time }) => (
-        <Message
-          key={id + time + text}
-          name={players[id].name}
-          text={text}
-          time={time}
-        />
-      ))}
-    </div>
-    <MessageCreator />
+let Message = ({ primary, secondary, name, text, time, isOwner = false }) => (
+  <div className={"Message" + (isOwner ? " isOwner" : "")}>
+    <div className="Time" />
+    <span
+      className="Name"
+      style={{
+        color: primary
+      }}
+    >
+      {name + ":"}
+    </span>
+    <span className="Text">{text}</span>
   </div>
 );
+Message.propTypes = {
+  primary: PT.string.isRequired,
+  secondary: PT.string.isRequired,
+  name: PT.string.isRequired,
+  text: PT.string.isRequired,
+  time: PT.string.isRequired,
+  isOwner: PT.bool
+};
+
+let Messenger = ({ messages, players }) => {
+  setTimeout(() => {
+    var view = document.getElementsByClassName("MessageView")[0];
+    if (view) view.scrollTop = view.scrollHeight;
+  }, 10);
+
+  return (
+    <div className="Messenger">
+      <div className="MessageView">
+        {messages.map(({ id, text, time }) => (
+          <Message
+            key={id + time + text}
+            primary={players[id].icon.primary}
+            secondary={players[id].icon.secondary}
+            name={players[id].name}
+            text={text}
+            time={time}
+          />
+        ))}
+      </div>
+      <div className="MessageCreator">
+        <input
+          onKeyDown={e => {
+            if (e.key === "Enter") {
+              sendMessage(e.target.value);
+              e.target.value = "";
+            }
+          }}
+        />
+      </div>
+    </div>
+  );
+};
 Messenger.propTypes = {
   messages: PT.arrayOf(
     PT.shape({
