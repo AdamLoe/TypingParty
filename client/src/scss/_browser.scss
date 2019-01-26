@@ -56,3 +56,52 @@
 .Browser button:hover {
   background: $browser-button-hover-background
 }
+
+/*
+*/
+.Browser {
+  padding: 10px;
+  background: $browser-background;
+  border-radius: 0 15px 0 15px;
+}
+.BrowserItem {
+  padding-top: 0;
+}
+.BrowserColumn {
+  background: inherit;
+  margin-right: 0;
+}
+.BrowserHeader {
+}
+.BrowserItem:nth-child(2n) {
+  background: lighten($browser-background, 15);
+}
+.BrowserItem:nth-child(2n+1) {
+}
+.Browser button {
+  height: $browser-item-height - 2;
+  border: 1px solid lighten($browser-background, 30);
+  //width: $browser-item-height*1.5;
+  //height: $browser-item-height * .75;
+}
+/*
+ */
+$browser-header-background: $header-background-bottom;
+.Browser {
+  background: none;
+}
+.BrowserHeader {
+  background: $browser-header-background;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.BrowserItem {
+  background: $browser-background;
+  padding-left: 5px;
+}
+.BrowserItem:nth-child(2n) {
+  background: $browser-background;
+}
+.BrowserItem:nth-child(2n+1) {
+  background: lighten($browser-background, 10);
+}

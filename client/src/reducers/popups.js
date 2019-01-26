@@ -8,7 +8,9 @@ let initState = {
 };
 
 export default (state = initState, action) => {
-  switch (action.type) {
+  let { type, data } = action;
+
+  switch (type) {
     case "closeNotification":
       if (action.notificationKey === state.notificationKey) {
         return {
@@ -40,7 +42,13 @@ export default (state = initState, action) => {
         showLoading: false
       };
     case "serverError":
-      return action.type === "";
+      return {
+        ...state,
+        showLoading: false,
+        showNotification: true,
+        notificationMessage: data.message,
+        notificationType: "Error"
+      };
     default:
       return state;
   }

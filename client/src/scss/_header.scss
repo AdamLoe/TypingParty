@@ -10,12 +10,12 @@
   align-items: center;
 }
 
-.HeaderTitle {
-  font-size: $header-title-font-size;
-  padding: $header-title-padding;
 
+.HeaderTitle {
+  padding-left: 20px;
   height: 100%;
-  box-sizing: content-box;
+  width: 240px;
+  border-radius: 0;
 }
 
 .HeaderTitle:hover {
@@ -68,3 +68,9 @@
 .ProfileMiniName {
   padding-right: $default-icon-name-spacing;
 }
+.cls-1{fill:#fff;}
+.cls-2{fill:#ff40ff;}
+.cls-3{fill:#3ff;}
+.cls-4{fill:#3f3;}
+.cls-5{fill:#ffff19;}
+.cls-6{fill:#ff4c4c;}

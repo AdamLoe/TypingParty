@@ -1,15 +1,29 @@
 .Popups {
-
+  position: absolute;
 }
+
+$popup-background: white;
+$popup-font-color: black;
 
 .LoadingModal {
-
+  padding: 0 10px;
+  background: $popup-background;
+  color: $popup-font-color;
 }
 
-.ErrorNotification {
-
+.ErrorNotification, .NormalNotification {
+  padding: 0 0;
+  background: $popup-background;
+  color: $popup-font-color;
+  display: flex;
+  align-items: center;
 }
-
-.NormalNotification {
-
+.Popups svg {
+  border-radius: 0;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.Popups svg:hover {
+  background: darken($popup-background, 20);
 }

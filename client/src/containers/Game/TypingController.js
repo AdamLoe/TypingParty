@@ -10,7 +10,7 @@ class TypingController extends React.Component {
     words: this.props.string.split(" "),
 
     currWord: 0,
-    lastWord: this.props.string.split(" ").length,
+    lastWord: this.props.string.split(" ").length - 1,
 
     started: true,
     finished: false,

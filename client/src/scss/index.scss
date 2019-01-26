@@ -1,3 +1,5 @@
+
+
 @import "globals";
 
 @import "browser";
@@ -9,3 +11,10 @@
 @import "popups";
 @import "profile";
 @import "raceView";
+
+svg {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  border: 0;
+}

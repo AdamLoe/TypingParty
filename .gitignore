@@ -15,3 +15,5 @@ ehthumbs_vista.db
 .idea**
 .idea/workspace.xml
 *.xml
+*.xml
+.idea/workspace.xml
