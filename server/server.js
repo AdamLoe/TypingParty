@@ -14,15 +14,15 @@ console.log(process.env.NODE_ENV, process.env.NODE_ENV === "production");
 
 if (process.env.NODE_ENV === "production") {
   var privateKey = fs.readFileSync(
-    "/etc/letsencrypt/live/standardrequests.com/privkey.pem",
+    "/etc/letsencrypt/live/server.typingparty.com/privkey.pem",
     "utf8"
   );
   var certificate = fs.readFileSync(
-    "/etc/letsencrypt/live/standardrequests.com/cert.pem",
+    "/etc/letsencrypt/live/server.typingparty.com/cert.pem",
     "utf8"
   );
   var ca = fs.readFileSync(
-    "/etc/letsencrypt/live/standardrequests.com/chain.pem",
+    "/etc/letsencrypt/live/server.typingparty.com/chain.pem",
     "utf8"
   );
 
