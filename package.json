@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/server 0.0.0.0",
+    "prodWindows": "set NODE_ENV=production&& nodemon server/server.js",
+    "prodStart": "NODE_ENV=production nodemon server/server 0.0.0.0 ",
     "webProd": "webpack --config client/webpack.config.js --mode production",
     "webpack": "webpack-dev-server --port 8080 --hot --config client/webpack.config.js --mode development --host 0.0.0.0",
     "test": "jest --watchAll",
@@ -35,6 +37,7 @@
     "file-loader": "^2.0.0",
     "fs": "0.0.1-security",
     "http": "0.0.0",
+    "https": "^1.0.0",
     "node": "^11.2.0",
     "node-persist": "^3.0.1",
     "node-sass": "^4.11.0",

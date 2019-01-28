@@ -5,7 +5,7 @@ let socket = null;
 let local = "http://localhost:2002/";
 let outside = "http://18.224.208.199:2002";
 
-let addr = local;
+let addr = outside;
 
 export let getSocket = () => {
   if (socket === null) {
