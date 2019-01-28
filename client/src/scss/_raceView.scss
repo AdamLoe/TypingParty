@@ -12,8 +12,31 @@
   align-items: center;
 }
 
+.RaceView .Name {
+  text-align: end;
+  width: 90px;
+  padding: 3px;
+}
+
 .RacerContainer .Lane {
-  width: 400px;
+  width: 300px;
+  padding-right: 40px;
+}
+
+$racer-animation-length: 500ms;
+.Racer {
+  width: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: left 500ms linear;
+  -webkit-animation: left 500ms linear;
+  -moz-animation: left 500ms linear;
+}
+
+.greyedIcon {
+  opacity: 0.4;
 }
 
 .RacerContainer .Wpm {
@@ -23,18 +46,51 @@
   flex-direction: row;
 }
 
-.Racer {
-  width: 130px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.Racer .Name {
-  text-align: end;
-  width: 90px;
-  padding: 3px;
+.circle {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+  background: -webkit-radial-gradient(25px 25px, circle, red, #000);
+  background: -moz-radial-gradient(25px 25px, circle, red, #000);
+  background: radial-gradient(25px 25px, circle, red, #000);
+
+  /* Animation to spin and move the sphere */
+  -webkit-animation: spin 1000ms linear infinite, moveLeftToRight 5s linear infinite;
+  -moz-animation: spin 1000ms linear infinite, moveLeftToRight 5s linear infinite;
+  animation: spin 1000ms linear infinite, moveLeftToRight 5s linear infinite;
+
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+
+  position: absolute;
+  left: 0;
 }
 
-.greyedIcon {
-  opacity: 0.4;
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+/* Move sphere from left to right */
+@-moz-keyframes moveLeftToRight {
+  0%   { left: -100px; }
+  100% { left: 100%; }
+}
+@keyframes moveLeftToRight {
+  0%   { left: -100px; }
+  100% { left: 100%; }
+}
+@-webkit-keyframes moveLeftToRight {
+  0%   { left: -100px; }
+  100% { left: 100%; }
 }

@@ -1,10 +1,11 @@
 let getString = () => {
   let length = strings.length;
   let index = Math.floor(Math.random() * length);
-  return strings[index];
+  return strings[0]; //strings[index];
 };
 
 let strings = [
+  "memes v2",
   "Sometimes you are too ashamed to leave. That was true now. And sometimes you need too much to know the facts, and so humbly and stupidly you stay.",
   "Well, on a basic cellular level we're the sum total of all our ancestors' biological matter. But what if more than biological traits get passed down from generation to generation? What if I like sunflower seeds because I'm genetically predisposed to liking them?",
   "Just a cast away an island lost at sea. Another lonely day, no one here but me. More loneliness than any man could bear, rescue me before I fall into despair.",

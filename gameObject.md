@@ -30,17 +30,25 @@
   password: "blue",
   host: 12532 [playerID],
   created: [Date.now()],
-  status: "LOBBY",
-  hasRaceStarted: false,
-  playerCount: 7,
-  maxPlayers: 16,
-  currGame: 3,
-  maxGames: 8,
+  
   scoringType: "Rising",
   handicaps: "Auto",
-  string: "A wise man ran up the hill. He did not know what to do",
+  maxPlayers: 16,
+  maxGames: 8,
+  
+  status: "LOBBY",
+  string: "A wise man went...",
   numChars: string.length,
-  timeEnd: 123453 [Date.now()] 
+  playerCount: 7,
+  currGame: 3,
+  
+ 
+  hasRaceStarted: false,
+  numFinished: 0,
+  activePlayers: 0,
+  
+  timeStart: [Date.now()]
+  timeEnd: 123453 [Date.now()+45*1000] 
 }
 ```
 
@@ -61,7 +69,6 @@
 ##gameData
 ``` 
 {
-    finished: 1,
     timeLeft: 4,
     164: {
         place: false,

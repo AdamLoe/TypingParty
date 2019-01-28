@@ -6,9 +6,9 @@ import Icon from "../../components/Other/Icon";
 
 let Racer = ({ progress, wpm, greyed, name, icon }) => (
   <div className="RacerContainer">
+    <div className="Name">{name}</div>
     <div className="Lane">
-      <div className="Racer">
-        <div className="Name">{name}</div>
+      <div style={{ left: progress + "%" }} className="Racer">
         <Icon {...icon} greyed={greyed} />
       </div>
     </div>
@@ -26,9 +26,25 @@ Racer.propTypes = {
     secondary: PT.string.isRequired
   }).isRequired
 };
+let TimeLeft = ({ timeLeft, hasRaceStarted, isLobby }) =>
+  !isLobby && (
+    <div className="TimeLeft">
+      {timeLeft + (hasRaceStarted ? " RACE" : " STARTING SOON...")}
+    </div>
+  );
+TimeLeft.propTypes = {
+  timeLeft: PT.number.isRequired,
+  hasRaceStarted: PT.bool.isRequired,
+  isLobby: PT.bool.isRequired
+};
 
-let RaceView = ({ racers }) => (
+let RaceView = ({ racers, timeLeft, hasRaceStarted, isLobby }) => (
   <div className="RaceView">
+    <TimeLeft
+      timeLeft={timeLeft}
+      hasRaceStarted={hasRaceStarted}
+      isLobby={isLobby}
+    />
     {racers.map(({ id, progress, wpm, greyed, name, icon }) => (
       <Racer
         key={id}
@@ -55,13 +71,21 @@ RaceView.propTypes = {
         secondary: PT.string.isRequired
       }).isRequired
     }).isRequired
-  ).isRequired
+  ).isRequired,
+  timeLeft: PT.number.isRequired,
+  hasRaceStarted: PT.bool.isRequired,
+  isLobby: PT.bool.isRequired
 };
 
 let mapState = state => {
   let { gameData, players, info } = state.game;
 
-  let { status, numChars } = info;
+  let { status, numChars, timeStart, timeEnd, hasRaceStarted } = info;
+  let { timeLeft } = gameData;
+
+  let timeTotal = (timeEnd - timeStart) / 1000;
+  let timeElapsed = timeTotal - timeLeft;
+  let minElapsed = timeElapsed / 60;
 
   let isLobby = status === "LOBBY";
 
@@ -72,8 +96,11 @@ let mapState = state => {
       let { currChar, readyUp } = gameData[key];
       let { name, icon } = players[key];
 
-      let progress = currChar / numChars;
-      let wpm = 0;
+      let progress = (100 * currChar) / numChars;
+
+      let wordsTyped = currChar / 5;
+      let wpm = Math.floor(wordsTyped / minElapsed);
+
       let greyed = isLobby && !readyUp;
 
       return {
@@ -86,7 +113,10 @@ let mapState = state => {
       };
     });
   return {
-    racers
+    racers,
+    timeLeft,
+    hasRaceStarted,
+    isLobby
   };
 };
 

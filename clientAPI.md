@@ -16,9 +16,12 @@
 
 User should send after typing each word
 
-```
+``` 
 {
-    "currChar": 5
+    "currChar": 5,
+    finished: false,
+    or
+    readyUp: false,
 }
 ```
 

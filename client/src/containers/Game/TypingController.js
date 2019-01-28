@@ -8,6 +8,7 @@ class TypingController extends React.Component {
   state = {
     string: this.props.string,
     words: this.props.string.split(" "),
+    maxChars: this.props.string.length,
 
     currWord: 0,
     lastWord: this.props.string.split(" ").length - 1,
@@ -21,7 +22,8 @@ class TypingController extends React.Component {
 
   currWord = () => this.state.words[this.state.currWord];
 
-  shouldDisable = () => !this.state.started || this.state.finished;
+  shouldDisable = () =>
+    !this.props.hasRaceStarted || !this.state.started || this.state.finished;
 
   hasFinishedRace = e =>
     this.currWord() === e.target.value &&
@@ -32,7 +34,7 @@ class TypingController extends React.Component {
     this.state.currWord !== this.state.lastWord;
 
   finishRace = e => {
-    playerUpdate({ finished: true });
+    playerUpdate({ currChar: this.state.maxChars, finished: true });
     this.setState(state => ({
       ...state,
       finished: true,
@@ -42,10 +44,15 @@ class TypingController extends React.Component {
   };
 
   finishWord = e => {
-    playerUpdate({ currChar: 0 });
+    let { currWord, words } = this.state;
+
+    currWord += 1;
+    let currChar = words.slice(0, currWord).toString(" ").length;
+
+    playerUpdate({ currChar });
     this.setState(state => ({
       ...state,
-      currWord: this.state.currWord + 1,
+      currWord,
       correctLetters: 0,
       incorrectLetters: 0
     }));
@@ -123,13 +130,15 @@ class TypingController extends React.Component {
   }
 }
 TypingController.propTypes = {
-  string: PT.string.isRequired
+  string: PT.string.isRequired,
+  hasRaceStarted: PT.bool.isRequired
 };
 
 let mapState = state => {
-  let { string } = state.game.info;
+  let { string, hasRaceStarted } = state.game.info;
   return {
-    string
+    string,
+    hasRaceStarted
   };
 };
 

@@ -110,14 +110,26 @@ let updatePacketInfo = ({ gameID, majorVersion, minorVersion, packet }) => {
     }
   };
 };
+let shouldLogPacket = packet => {
+  for (let key in packet) {
+    if (key !== "gameData") return true;
+    let gameObj = packet[key];
+    for (let gameKey in gameObj) {
+      if (gameKey !== "timeLeft") return true;
+    }
+  }
+  return false;
+};
 let applyPacket = ({ gameID, majorVersion, minorVersion, packet }) => {
-  console.log(
-    "Applying packet ",
-    majorVersion + ":" + minorVersion,
-    "to",
-    gameID
-  );
-  console.log("data:", packet);
+  if (shouldLogPacket(packet)) {
+    console.log(
+      "Applying packet ",
+      majorVersion + ":" + minorVersion,
+      "to",
+      gameID
+    );
+    console.log("data:", packet);
+  }
   //Update game object
   //In DEV mode, we make sure that our game JSON isn't changing between ticks
   checkGameJSON(gameID);
@@ -167,11 +179,15 @@ exports.addPlayerToGame = (gameID, player) => {
       playerCount: games[gameID].info.playerCount + 1
     },
     players: {
-      [player.id]: player
+      [player.id]: {
+        ...player,
+        icon: {
+          ...player.icon
+        }
+      }
     },
     gameData: {
       [player.id]: {
-        place: false,
         finished: false,
         score: 0,
         currChar: 0,
@@ -251,11 +267,13 @@ exports.resetPlayer = id => {
     gameID: null
   });
 };
-exports.getPlayerBySocket = socket => {
-  return exports.getPlayer(socket.id);
-};
 exports.getPlayerIDBySocket = socket => {
+  players[socket.id].active = Date.now();
   return socket.id;
+};
+exports.isActiveSince = (playerID, secondsSince) => {
+  let lastActivity = Date.now() - players[playerID].active;
+  return lastActivity < secondsSince;
 };
 
 /*

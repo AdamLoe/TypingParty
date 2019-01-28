@@ -16,6 +16,7 @@ let raceUpdate = ({ socket, currChar }) => {
   let playerID = state.getPlayerIDBySocket(socket);
   let game = state.getGameByPlayerID(playerID);
 
+  if (game === null) console.log(playerID, state.test.games);
   if (game !== undefined) {
     let { string, numChars } = game.info;
 
@@ -30,11 +31,11 @@ let raceUpdate = ({ socket, currChar }) => {
 };
 
 module.exports = (socket, data) => {
-  let { readyUp, currWord } = data;
+  let { readyUp, currChar } = data;
   if (readyUp !== undefined) {
     lobbyUpdate({ socket, readyUp });
   }
-  if (currWord !== undefined) {
-    raceUpdate({ socket, currWord });
+  if (currChar !== undefined) {
+    raceUpdate({ socket, currChar });
   }
 };

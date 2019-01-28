@@ -1,8 +1,7 @@
-#Game
+#Client
 
-##Basic Game Setup
 
-####Core Game Modules
+##Modules
 **RaceView**:
 Shows Progress & WPM  
 **TypingController**:
@@ -13,21 +12,17 @@ Shows Scores
 Lobby Chat Room  
 **ProfileEditor**:
 Player can update Name / Icon
-####Menu Modules 
+
 **GameBrowser**: 
 Shows list of games  
 **GameCreator**:
 Creator with multiple options
-####Optional Modules
+
 **RaceEditor**:
 Host can edit game in lobby  
 **LobbyController**:
 ReadyUp/Leave (Eventually players 
 will be able to do more here)
-
-##Game Loop
-Each of the core game module is displayed 
-by default in each game mode, with exceptions
 
 ###Lobby
 Upon game creation or race ending,

@@ -1,6 +1,5 @@
-
-
 @import "globals";
+@import "classes";
 
 @import "browser";
 @import "controller";
@@ -12,9 +11,3 @@
 @import "profile";
 @import "raceView";
 
-svg {
-  width: 40px;
-  height: 40px;
-  border-radius: 30px;
-  border: 0;
-}

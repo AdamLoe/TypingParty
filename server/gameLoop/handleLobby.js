@@ -1,30 +1,6 @@
 let state = require("../state");
 
-let getString = require("../strings");
-let startPreRace = gameID => {
-  let time = 10;
-  let string = getString();
-  state.editGame(gameID, {
-    info: {
-      timeEnd: Date.now() + time * 1000,
-      status: "RACE",
-      hasRaceStarted: false,
-      string,
-      numChars: string.length
-    },
-    gameData: {
-      timeLeft: time
-    }
-  });
-  state.loopUpdatePlayersInGameData(gameID, (player, playerID) => {
-    return {
-      place: false,
-      finished: false,
-      currChar: 0,
-      readyUp: false
-    };
-  });
-};
+let { startPreRace } = require("./handleStatusChange");
 
 let neededReadyPercentage = 0.66;
 module.exports = gameID => {

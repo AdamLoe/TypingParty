@@ -61,7 +61,6 @@ test("removeGameByID", () => {
 test("getPlayer", () => {});
 test("editPlayer", () => {});
 test("resetPlayer", () => {});
-test("getPlayerBySocket", () => {});
 test("getPlayerIDBySocket", () => {});
 test("banPlayer", () => {});
 

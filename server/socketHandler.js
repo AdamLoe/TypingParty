@@ -13,6 +13,7 @@ let getPacket = require("./incoming/getPacket");
 let getGameObject = require("./incoming/getGameObject");
 
 let handleGames = require("./gameLoop/handleGames");
+let handleInactive = require("./gameLoop/handleInactive");
 
 exports.socketHandler = async function(server) {
   startSocket(server);
@@ -33,5 +34,9 @@ exports.socketHandler = async function(server) {
     socket.on("getGameObject", () => getGameObject(socket));
   });
 
-  setInterval(handleGames, 30);
+  let gameIntervalLength = 1000 / 10;
+  let inactiveIntervalLength = 1000;
+
+  setInterval(handleGames, gameIntervalLength);
+  setInterval(handleInactive, inactiveIntervalLength);
 };
