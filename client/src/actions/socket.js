@@ -3,9 +3,12 @@ import io from "socket.io-client";
 let socket = null;
 
 let local = "http://localhost:2002/";
-let outside = "http://18.224.208.199:2002";
+let outside = "https://server.typingparty.com";
 
-let addr = outside;
+let addr = local;
+if (process.env.NODE_ENV === "production") {
+  addr = outside;
+}
 
 export let getSocket = () => {
   if (socket === null) {
