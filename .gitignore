@@ -13,6 +13,7 @@ ehthumbs_vista.db
 .package-lock.json
 /node_**
 .idea**
+.idea/**
 .idea/workspace.xml
 *.xml
 *.xml
@@ -21,5 +22,5 @@ ehthumbs_vista.db
 *.xml
 client/public/dist/index.js
 package-lock.json
-
+**.xml
 .**
