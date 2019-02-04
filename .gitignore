@@ -24,3 +24,5 @@ client/public/dist/index.js
 package-lock.json
 **.xml
 .**
+/.**
+/.*
