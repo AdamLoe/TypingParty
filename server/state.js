@@ -188,6 +188,7 @@ exports.addPlayerToGame = (gameID, player) => {
     },
     gameData: {
       [player.id]: {
+        place: false,
         finished: false,
         score: 0,
         currChar: 0,
@@ -249,7 +250,8 @@ exports.addPlayer = player => {
 };
 exports.getPlayer = id => {
   return {
-    ...players[id]
+    ...players[id],
+    active: undefined
   };
 };
 exports.editPlayer = (id, player) => {
