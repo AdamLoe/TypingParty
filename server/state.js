@@ -270,7 +270,10 @@ exports.resetPlayer = id => {
   });
 };
 exports.getPlayerIDBySocket = socket => {
-  players[socket.id].active = Date.now();
+  players[socket.id] = {
+    ...players[socket.id],
+    active: Date.now()
+  };
   return socket.id;
 };
 exports.isActiveSince = (playerID, secondsSince) => {
