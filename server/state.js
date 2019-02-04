@@ -192,7 +192,8 @@ exports.addPlayerToGame = (gameID, player) => {
         finished: false,
         score: 0,
         currChar: 0,
-        readyUp: false
+        readyUp: false,
+        isActive: true
       }
     }
   });
@@ -245,15 +246,28 @@ exports.loopUpdatePlayersInGameData = (gameID, func) => {
 
 exports.addPlayer = player => {
   players[player.id] = {
-    ...player
+    ...player,
+    lastActive: Date.now(),
+    isActive: true
   };
 };
-exports.getPlayer = id => {
+exports.getPlayer = playerID => {
+  let { name, icon, id, gameID } = players[playerID];
   return {
-    ...players[id],
-    active: undefined
+    name,
+    icon,
+    id,
+    gameID
   };
 };
+exports.getPlayerActivity = playerID => {
+  let { lastActive, isActive } = players[playerID];
+  return {
+    lastActive,
+    isActive
+  };
+};
+
 exports.editPlayer = (id, player) => {
   players[id] = {
     ...players[id],
@@ -272,7 +286,7 @@ exports.resetPlayer = id => {
 exports.getPlayerIDBySocket = socket => {
   players[socket.id] = {
     ...players[socket.id],
-    active: Date.now()
+    lastActive: Date.now()
   };
   return socket.id;
 };

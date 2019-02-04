@@ -191,7 +191,8 @@ test("addPlayerToGame", () => {
       finished: false,
       currChar: 0,
       score: 0,
-      readyUp: false
+      readyUp: false,
+      isActive: true
     }
   };
 

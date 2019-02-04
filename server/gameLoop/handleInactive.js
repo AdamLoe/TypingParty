@@ -1,20 +1,37 @@
 let state = require("../state");
 
-let handleInactive = gameID => {
-  let game = state.getGame(gameID);
+let inactiveSeconds = 60;
 
-  //Check inactive players
-  //Check Empty Games
-  //We need to be able to mark players as inactive
-  //Inactive players should be eventually kicked
-  //We could just give them a join button
-  //Would allow them to still look at the game
-  //But not take up readyUp/finishedPlayers/maxPlayers slots
-  //Very important, users should not
+let setPlayersInactive = gameID => {
+  let { players } = state.getGame(gameID);
+
+  Object.keys(players).map(playerID => {
+    let { lastActive, isActive } = state.getPlayerActivity(playerID);
+
+    let shouldBeActive = lastActive < Date.now() + inactiveSeconds * 1000;
+    if (isActive !== shouldBeActive) {
+      isActive = !isActive;
+      state.updatePlayerGameData(gameID, playerID, { isActive });
+      state.editPlayer(playerID, { isActive });
+    }
+  });
+};
+
+let handleInactiveGame = gameID => {
+  let activePlayers = 0;
+
+  state.loopPlayersInGameData(gameID, player => {
+    if (player.isActive) activePlayers += 1;
+  });
+
+  if (activePlayers === 0) {
+    console.log(gameID, "has no active players");
+  }
 };
 
 module.exports = () => {
   state.getGameIDs().map(gameID => {
-    handleInactive(gameID);
+    setPlayersInactive(gameID);
+    handleInactiveGame(gameID);
   });
 };
