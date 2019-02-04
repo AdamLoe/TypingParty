@@ -107,13 +107,13 @@ class TypingController extends React.Component {
       <div className="TypingController">
         <div className="TypingParagraph">
           <span className="completed">{completedWords}</span>
-          &nbsp;
+          {"\u00A0"}
           <span className="inProcess">
             <span className="Correct">{correct}</span>
             <span className="Incorrect">{incorrect}</span>
             {left}
           </span>
-          &nbsp;
+          {"\u00A0"}
           <span>{leftWords}</span>
         </div>
         <div className="TypingInput">

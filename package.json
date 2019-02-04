@@ -7,6 +7,7 @@
     "start": "nodemon server/server 0.0.0.0",
     "prodStart": "NODE_ENV=production nodemon server/server 0.0.0.0 ",
     "forever": "forever start server/server.js",
+    "stop": "forever stopall",
     "prodWindows": "set NODE_ENV=production&& nodemon server/server.js",
     "webProd": "webpack --config client/webpack.config.js --mode production",
     "webpack": "webpack-dev-server --port 8080 --hot --config client/webpack.config.js --mode development --host 0.0.0.0",

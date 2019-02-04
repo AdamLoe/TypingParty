@@ -1,7 +1,7 @@
 let getString = () => {
   let length = strings.length;
   let index = Math.floor(Math.random() * length);
-  return strings[0]; //strings[index];
+  return strings[index];
 };
 
 let strings = [
