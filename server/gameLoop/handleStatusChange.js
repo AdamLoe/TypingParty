@@ -32,6 +32,7 @@ exports.startRace = gameID => {
   let time = 1000;
   state.editGame(gameID, {
     info: {
+      timeStart: Date.now(),
       timeEnd: Date.now() + time * 1000,
       status: "RACE",
       hasRaceStarted: true,
