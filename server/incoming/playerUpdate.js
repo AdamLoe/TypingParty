@@ -1,8 +1,6 @@
 let state = require("../state");
 
-let kickPlayer = require("../helpers/kickPlayer");
-
-// I maybe should update wpm for everyone each tick
+let checkInValidGame = require("./checkInValidGame");
 
 let lobbyUpdate = ({ socket, readyUp }) => {
   let playerID = state.getPlayerIDBySocket(socket);
@@ -16,26 +14,23 @@ let raceUpdate = ({ socket, currChar }) => {
   let playerID = state.getPlayerIDBySocket(socket);
   let game = state.getGameByPlayerID(playerID);
 
-  if (game === null) console.log(playerID, state.test.games);
-  if (game !== undefined) {
-    let { string, numChars } = game.info;
+  let { string, numChars } = game.info;
 
-    let hasFinished = currChar >= numChars;
-    state.updatePlayerGameData(game.id, socket.id, {
-      finished: hasFinished ? Date.now() : false,
-      currChar
-    });
-  } else {
-    kickPlayer(socket, "Server dead");
-  }
+  let hasFinished = currChar >= numChars;
+  state.updatePlayerGameData(game.id, socket.id, {
+    finished: hasFinished ? Date.now() : false,
+    currChar
+  });
 };
 
 module.exports = (socket, data) => {
-  let { readyUp, currChar } = data;
-  if (readyUp !== undefined) {
-    lobbyUpdate({ socket, readyUp });
-  }
-  if (currChar !== undefined) {
-    raceUpdate({ socket, currChar });
+  if (checkInValidGame(socket)) {
+    let { readyUp, currChar } = data;
+    if (readyUp !== undefined) {
+      lobbyUpdate({ socket, readyUp });
+    }
+    if (currChar !== undefined) {
+      raceUpdate({ socket, currChar });
+    }
   }
 };

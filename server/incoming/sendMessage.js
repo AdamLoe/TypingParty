@@ -1,5 +1,6 @@
 let state = require("../state");
 let { emitRoom } = require("../socket");
+let checkInValidGame = require("./checkInValidGame");
 
 let getTime = () => {
   let date = new Date();
@@ -7,14 +8,16 @@ let getTime = () => {
 };
 
 module.exports = (socket, message) => {
-  let playerID = state.getPlayerIDBySocket(socket);
-  let gameID = state.getGameIDByPlayerID(playerID);
+  if (checkInValidGame(socket)) {
+    let playerID = state.getPlayerIDBySocket(socket);
+    let gameID = state.getGameIDByPlayerID(playerID);
 
-  console.log("Received Message", message, "from", playerID);
+    console.log("Received Message", message, "from", playerID);
 
-  emitRoom(gameID, "newMessage", {
-    id: playerID,
-    text: message,
-    time: getTime()
-  });
+    emitRoom(gameID, "newMessage", {
+      id: playerID,
+      text: message,
+      time: getTime()
+    });
+  }
 };

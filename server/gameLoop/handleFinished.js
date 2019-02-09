@@ -1,5 +1,7 @@
 let state = require("../state");
 
+let { endRace } = require("./handleStatusChange");
+
 let getFinishedPlayers = gameData =>
   Object.keys(gameData)
     .filter(playerID => gameData[playerID].finished)
@@ -51,9 +53,8 @@ module.exports = gameID => {
       });
     }
 
-    console.log(numFinished, activePlayers);
     if (numFinished === activePlayers) {
-      console.log("Gonna Finish");
+      endRace(gameID);
     }
   }
 };

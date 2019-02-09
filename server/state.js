@@ -111,14 +111,14 @@ let updatePacketInfo = ({ gameID, majorVersion, minorVersion, packet }) => {
   };
 };
 let shouldLogPacket = packet => {
-  for (let key in packet) {
+  Object.keys(packet).map(key => {
     if (key !== "gameData") return true;
     let gameObj = packet[key];
     for (let gameKey in gameObj) {
       if (gameKey !== "timeLeft") return true;
     }
-  }
-  return false;
+    return false;
+  });
 };
 let applyPacket = ({ gameID, majorVersion, minorVersion, packet }) => {
   if (shouldLogPacket(packet)) {
