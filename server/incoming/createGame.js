@@ -35,14 +35,16 @@ let getGame = (playerID, options) => {
 
       scoringType,
       handicaps,
-      maxPlayers,
-      maxGames,
 
       status: "LOBBY",
       string: "",
       numChars: 0,
+
       playerCount: 0,
-      currGame: 0,
+      maxPlayers,
+
+      currGame: 1,
+      maxGames,
 
       hasRaceStarted: false,
       numFinished: 0,

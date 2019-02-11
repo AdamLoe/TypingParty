@@ -33,15 +33,16 @@
   
   scoringType: "Rising",
   handicaps: "Auto",
-  maxPlayers: 16,
-  maxGames: 8,
   
   status: "LOBBY",
   string: "A wise man went...",
   numChars: string.length,
-  playerCount: 7,
-  currGame: 3,
   
+  playerCount: 7,
+  maxPlayers: 16,
+  
+  currGame: 3,
+  maxGames: 8,
  
   hasRaceStarted: false,
   numFinished: 0,

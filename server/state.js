@@ -117,8 +117,8 @@ let shouldLogPacket = packet => {
     for (let gameKey in gameObj) {
       if (gameKey !== "timeLeft") return true;
     }
-    return false;
   });
+  return false;
 };
 let applyPacket = ({ gameID, majorVersion, minorVersion, packet }) => {
   if (shouldLogPacket(packet)) {
