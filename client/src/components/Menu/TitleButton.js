@@ -1,15 +1,7 @@
 import React from "react";
-import { connect } from "react-redux";
 import PT from "prop-types";
 
-import { gotoBrowser, gotoCreator } from "../../actions";
-
-import { gotoMenu } from "../../actions/index.js";
-import UserProfile from "./UserProfile";
-
-import MenuHeader from "../../components/MenuHeader";
-
-let HeaderTitle = ({ onClick }) => (
+let TitleButton = ({ onClick }) => (
   <svg onClick={onClick} className="HeaderTitle" viewBox="0 0 211.91 31.17">
     <title>Asset 10</title>
     <g id="Layer_2" data-name="Layer 2">
@@ -62,26 +54,8 @@ let HeaderTitle = ({ onClick }) => (
     </g>
   </svg>
 );
-
-let HeaderMenu = ({ gotoMenu, showMenu, gotoBrowser, gotoCreator }) => (
-  <nav className="HeaderMenu">
-    <HeaderTitle onClick={gotoMenu} />
-    {showMenu && (
-      <>
-        <MenuHeader gotoBrowser={gotoBrowser} gotoCreator={gotoCreator} />
-      </>
-    )}
-    <UserProfile />
-  </nav>
-);
-HeaderMenu.propTypes = {
-  gotoBrowser: PT.func.isRequired,
-  gotoCreator: PT.func.isRequired,
-  gotoMenu: PT.func.isRequired,
-  showMenu: PT.bool.isRequired
+TitleButton.propTypes = {
+  onClick: PT.func.isRequired
 };
 
-export default connect(
-  () => ({}),
-  { gotoMenu, gotoBrowser, gotoCreator }
-)(HeaderMenu);
+export default TitleButton;

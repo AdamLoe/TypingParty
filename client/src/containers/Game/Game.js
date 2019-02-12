@@ -35,13 +35,3 @@ export default connect(
   mapState,
   {}
 )(Game);
-
-//  detect stage Change and reset
-//      Complicated for one small thing
-//      If packet miss, player would think they are readied up when not
-//
-//  get isReady from game Object
-//      Lag when pressed
-//      Need playerID (need it anyways probably)
-//
-//

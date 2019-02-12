@@ -45,7 +45,7 @@ module.exports = gameID => {
         state.editGame(gameID, {
           gameData: {
             [player.id]: {
-              finished: numFinished + index + 1,
+              place: numFinished + index + 1,
               score: game.gameData[player.id].score + 10
             }
           }

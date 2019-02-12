@@ -1,8 +1,8 @@
 import React from "react";
 import PT from "prop-types";
 
-import IconSelector from "../../components/Other/IconSelector";
-import ColorSelector from "../../components/Other/ColorSelector";
+import IconSelector from "./IconSelector";
+import ColorSelector from "./ColorSelector";
 
 class ProfileEditor extends React.Component {
   state = {

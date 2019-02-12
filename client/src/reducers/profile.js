@@ -1,4 +1,4 @@
-import { getRandomIcon } from "../components/Other/Icon";
+import { getRandomIcon } from "../components/Profile/Icon";
 
 let initState = {
   name: "Guest",

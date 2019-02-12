@@ -2,30 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import PT from "prop-types";
 
-import Icon from "../../components/Other/Icon";
+import Racer from "../../components/Game/Racer";
 
-let Racer = ({ progress, wpm, greyed, name, icon }) => (
-  <div className="RacerContainer">
-    <div className="Name">{name}</div>
-    <div className="Lane">
-      <div style={{ left: progress + "%" }} className="Racer">
-        <Icon {...icon} greyed={greyed} />
-      </div>
-    </div>
-    <div className="Wpm">{wpm + " WPM"}</div>
-  </div>
-);
-Racer.propTypes = {
-  progress: PT.number.isRequired,
-  wpm: PT.number.isRequired,
-  greyed: PT.bool.isRequired,
-  name: PT.string.isRequired,
-  icon: PT.shape({
-    type: PT.string.isRequired,
-    primary: PT.string.isRequired,
-    secondary: PT.string.isRequired
-  }).isRequired
-};
 let TimeLeft = ({ timeLeft, hasRaceStarted, isLobby }) =>
   !isLobby && (
     <div className="TimeLeft">
@@ -80,8 +58,7 @@ RaceView.propTypes = {
 let mapState = state => {
   let { gameData, players, info } = state.game;
 
-  let { status, numChars, timeStart, timeEnd, hasRaceStarted } = info;
-  let { timeLeft } = gameData;
+  let { status, numChars, timeStart, timeEnd, hasRaceStarted, timeLeft } = info;
 
   let timeTotal = (timeEnd - timeStart) / 1000;
   let timeElapsed = timeTotal - timeLeft;

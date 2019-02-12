@@ -17,7 +17,6 @@ module.exports = () => {
 };
 
 let sendUpdates = gameID => {
-  //Flushing packets now calls handleStages();
   let { majorVersion, minorVersion, packet } = state.flushPackets(gameID);
 
   if (packet) {

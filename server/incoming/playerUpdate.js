@@ -18,8 +18,8 @@ let raceUpdate = ({ socket, currChar }) => {
 
   let hasFinished = currChar >= numChars;
   state.updatePlayerGameData(game.id, socket.id, {
-    finished: hasFinished ? Date.now() : false,
-    currChar
+    currChar,
+    ...(hasFinished && { finished: Date.now() })
   });
 };
 

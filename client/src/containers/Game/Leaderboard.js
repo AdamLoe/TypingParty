@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PT from "prop-types";
 
-import Icon from "../../components/Other/Icon";
+import Icon from "../../components/Profile/Icon";
 
 let PlayerScore = ({ name, icon, score, place }) => (
   <div className="PlayerScore">

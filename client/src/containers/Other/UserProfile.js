@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import PT from "prop-types";
 
-import ProfileMini from "../../components/Other/ProfileMini";
-import ProfileEditor from "../../components/Other/ProfileEditor";
+import ProfileMini from "../../components/Profile/ProfileMini";
+import ProfileEditor from "../../components/Profile/ProfileEditor";
 
 import { toggleProfile, submitProfile } from "../../actions";
 

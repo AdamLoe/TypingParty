@@ -5,7 +5,7 @@ import PT from "prop-types";
 import Menu from "./Menu/Menu";
 import Game from "./Game/Game";
 import Popups from "./Other/Popups";
-import HeaderMenu from "./Other/HeaderMenu";
+import HeaderMenu from "./Menu/HeaderMenu";
 
 import { subscribe } from "../actions/api";
 
@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <>
         <Popups />
-        <HeaderMenu showMenu={showMenu} />
+        <HeaderMenu showMenu={showMenu} showGame={showGame} />
         <div className="AppBody">
           {showMenu && <Menu />}
           {showGame && <Game />}
