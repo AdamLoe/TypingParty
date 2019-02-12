@@ -1,58 +1,11 @@
 let initialState = {
-  name: "",
-  timeLeft: 0,
-
   info: {},
   players: {},
   gameData: {},
   messages: [],
 
-  raceOver: false,
-  finished: false,
-
   lastMajorVersion: 0,
   missingPackets: []
-};
-
-let exampleState = {
-  //Updated on new game
-  info: {
-    status: "",
-    string: "",
-    scoringType: "",
-    handicaps: "",
-    maxPlayers: 0,
-    raceOver: false,
-    finished: false
-  },
-  //This will be updated whenever a new player leaves / joins
-  players: {
-    "123": {
-      name: "Sally",
-      icon: {
-        type: "icon1",
-        primary: "green",
-        secondary: "blue"
-      }
-    }
-  },
-
-  gameData: {
-    timeLeft: 8,
-    "123": {
-      currWord: 12,
-      score: 10,
-      finished: false
-    }
-  },
-  // This will be constantly added to
-  messages: [
-    {
-      id: "123",
-      text: "I hate memes",
-      time: "11:23"
-    }
-  ]
 };
 
 import { getPacket } from "../actions/api";
