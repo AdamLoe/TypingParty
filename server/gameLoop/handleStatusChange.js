@@ -12,11 +12,10 @@ exports.startPreRace = gameID => {
       status: "RACE",
       hasRaceStarted: false,
       string,
-      numChars: string.length
-    },
-    gameData: {
+      numChars: string.length,
       timeLeft: time
-    }
+    },
+    gameData: {}
   });
   state.loopUpdatePlayersInGameData(gameID, (player, playerID) => {
     return {
@@ -36,18 +35,44 @@ exports.startRace = gameID => {
       timeEnd: Date.now() + time * 1000,
       status: "RACE",
       hasRaceStarted: true,
-      numFinished: 0
-    },
-    gameData: {
+      numFinished: 0,
       timeLeft: time
     }
   });
 };
 
-exports.endRace = gameID => {
+let tourneyFinished = gameID => {
+  let game = state.getGame(gameID);
+
+  state.loopUpdatePlayersInGameData(gameID, (player, playerID) => {
+    return {
+      score: 0
+    };
+  });
   state.editGame(gameID, {
     info: {
+      currGame: 0,
       status: "LOBBY"
     }
   });
+};
+
+// Increase Game #
+// Only Last Game #, Start Over
+exports.endRace = gameID => {
+  let game = state.getGame(gameID);
+
+  let { currGame, maxGames } = game.info;
+
+  currGame += 1;
+  if (currGame > maxGames) {
+    tourneyFinished(gameID);
+  } else {
+    state.editGame(gameID, {
+      info: {
+        currGame,
+        status: "LOBBY"
+      }
+    });
+  }
 };

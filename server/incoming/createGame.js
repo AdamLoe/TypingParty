@@ -51,16 +51,15 @@ let getGame = (playerID, options) => {
       activePlayers: 0,
 
       timeStart: Date.now(),
-      timeEnd: Date.now() + lobbyTime * 1000
+      timeEnd: Date.now() + lobbyTime * 1000,
+      timeLeft: lobbyTime
     },
 
     //Holds id, name, icon, and any future data we want to show
     players: {},
 
     //This is what we update every tick, progress/WPM of each player
-    gameData: {
-      timeLeft: lobbyTime
-    },
+    gameData: {},
 
     banList: {}
   };

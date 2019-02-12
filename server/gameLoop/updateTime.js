@@ -2,17 +2,16 @@ let state = require("../state");
 
 module.exports = gameID => {
   let game = state.getGame(gameID);
-  let { timeEnd } = game.info;
+  let { timeEnd, timeLeft } = game.info;
 
-  let oldTimeLeft = game.gameData.timeLeft;
-  let timeLeft = Math.floor((timeEnd - Date.now()) / 1000);
+  let newTimeLeft = Math.floor((timeEnd - Date.now()) / 1000);
 
-  if (oldTimeLeft !== timeLeft) {
+  if (newTimeLeft !== timeLeft) {
     state.editGame(gameID, {
-      gameData: {
-        timeLeft
+      info: {
+        timeLeft: newTimeLeft
       }
     });
   }
-  return timeLeft;
+  return newTimeLeft;
 };

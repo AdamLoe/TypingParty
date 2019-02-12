@@ -49,7 +49,8 @@
   activePlayers: 0,
   
   timeStart: [Date.now()]
-  timeEnd: 123453 [Date.now()+45*1000] 
+  timeEnd: 123453 [Date.now()+45*1000],
+  timeLeft: 5 [seconds]
 }
 ```
 
@@ -70,19 +71,20 @@
 ##gameData
 ``` 
 {
-    timeLeft: 4,
     164: {
         place: false,
         finished: false,
         currChar: 20,
         score: 0,
-        readyUp: false
+        readyUp: false,
+        isActive: true
     },
     123: {
         place: 1,
         finished: 100234 [Date.now()],
         currChar: 30,
         score: 10,
-        readyUp: false
+        readyUp: false,
+        isActive: true
     }
 }

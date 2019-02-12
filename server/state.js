@@ -52,6 +52,7 @@ exports.flushPackets = gameID => {
     packet
   };
 };
+
 let isEmpty = obj => {
   for (let key in obj) {
     if (obj.hasOwnProperty(key)) return false;
@@ -111,14 +112,15 @@ let updatePacketInfo = ({ gameID, majorVersion, minorVersion, packet }) => {
   };
 };
 let shouldLogPacket = packet => {
+  let shouldLog = false;
   Object.keys(packet).map(key => {
-    if (key !== "gameData") return true;
+    if (key !== "gameData") shouldLog = true;
     let gameObj = packet[key];
     for (let gameKey in gameObj) {
-      if (gameKey !== "timeLeft") return true;
+      if (gameKey !== "timeLeft") shouldLog = true;
     }
   });
-  return false;
+  return shouldLog;
 };
 let applyPacket = ({ gameID, majorVersion, minorVersion, packet }) => {
   if (shouldLogPacket(packet)) {

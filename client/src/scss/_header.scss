@@ -75,3 +75,33 @@
 .cls-4{fill:#3f3;}
 .cls-5{fill:#ffff19;}
 .cls-6{fill:#ff4c4c;}
+
+.GameDetails {
+  width: 200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.GameName {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30%;
+}
+.smallDetail {
+  height: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.smallDetail .description {
+  font-size: 70%;
+  padding-right: 5px;
+  border-bottom: 1px solid white;
+}
+
+.smallDetail .value {
+  font-size: 80%;
+}
