@@ -43,9 +43,12 @@ exports.flushPackets = gameID => {
   let packet = exports.combinePackets(gameID);
   if (isEmpty(packet)) return {};
 
-  let { majorVersion, minorVersion } = getNewPacketVersion({ gameID, packet });
+  let { majorVersion, minorVersion, isMajor } = getNewPacketVersion({
+    gameID,
+    packet
+  });
   updatePacketInfo({ gameID, majorVersion, minorVersion, packet });
-  applyPacket({ gameID, majorVersion, minorVersion, packet });
+  applyPacket({ gameID, majorVersion, minorVersion, packet, isMajor });
   return {
     majorVersion,
     minorVersion,
@@ -82,20 +85,34 @@ let combineObjects = (oldObj, newObj) => {
   });
   return oldObj;
 };
+let shouldMajor = packet =>
+  Object.keys(packet).find(key => {
+    if (key === "gameData") {
+      return Object.keys(packet[key]).find(gameKey => {
+        return gameKey === "place";
+      });
+    } else if (key === "info") {
+      return Object.keys(packet[key]).find(infoKey => {
+        return infoKey !== "timeLeft";
+      });
+    } else {
+      return true;
+    }
+  });
+
 let getNewPacketVersion = ({ gameID, packet }) => {
-  let majorVersion = packets[gameID].majorVersion;
-  let minorVersion = packets[gameID].minorVersion + 1;
-  let shouldMajorVersion =
-    packets[gameID].shouldNewMajorVersion ||
-    packet.info !== undefined ||
-    packet.players !== undefined;
-  if (shouldMajorVersion) {
+  let { majorVersion, minorVersion, shouldNewMajorVersion } = packets[gameID];
+  let isMajor = shouldNewMajorVersion || shouldMajor(packet);
+  if (isMajor) {
     majorVersion += 1;
     minorVersion = 0;
+  } else {
+    minorVersion += 1;
   }
   return {
     majorVersion,
-    minorVersion
+    minorVersion,
+    isMajor
   };
 };
 let updatePacketInfo = ({ gameID, majorVersion, minorVersion, packet }) => {
@@ -111,24 +128,11 @@ let updatePacketInfo = ({ gameID, majorVersion, minorVersion, packet }) => {
     }
   };
 };
-let shouldLogPacket = packet => {
-  let shouldLog = false;
-  Object.keys(packet).map(key => {
-    if (key !== "gameData") shouldLog = true;
-    let gameObj = packet[key];
-    for (let gameKey in gameObj) {
-      if (gameKey !== "timeLeft") shouldLog = true;
-    }
-  });
-  return shouldLog;
-};
-let applyPacket = ({ gameID, majorVersion, minorVersion, packet }) => {
-  if (shouldLogPacket(packet)) {
+let applyPacket = ({ gameID, majorVersion, minorVersion, packet, isMajor }) => {
+  if (isMajor) {
     console.log(
-      "Applying packet ",
-      majorVersion + ":" + minorVersion,
-      "to",
-      gameID
+      "Applying packet " + majorVersion + ":",
+      minorVersion + "to" + gameID
     );
     console.log("data:", packet);
   }
@@ -156,6 +160,7 @@ exports.getLatestPacket = gameID => {
     packet: packets[gameID][majorVersion][minorVersion]
   };
 };
+exports.getMissingPacket = (gameID, majorVersion, minorVersion) => {};
 
 exports.doesPasswordMatch = (gameID, password) => {
   return games[gameID].info.password === password;
