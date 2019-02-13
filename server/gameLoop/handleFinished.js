@@ -25,27 +25,28 @@ module.exports = gameID => {
   let game = state.getGame(gameID);
   let packet = state.combinePackets(gameID);
 
-  if (packet.gameData) {
-    let { numFinished, activePlayers } = game.info;
+  let { numFinished, activePlayers } = game.info;
 
+  if (packet.gameData) {
     let finishedPlayers = getSortedNewFinishedPlayers(
       packet.gameData,
       game.gameData
     );
+    numFinished += finishedPlayers.length;
 
     if (finishedPlayers.length > 0) {
       //Users should know if someone finished, but we don't normally set gameData to major
       state.setNextPacketMajor(gameID);
       state.editGame(gameID, {
         info: {
-          numFinished: numFinished + finishedPlayers.length
+          numFinished
         }
       });
       finishedPlayers.map((player, index) => {
         state.editGame(gameID, {
           gameData: {
             [player.id]: {
-              place: numFinished + index + 1,
+              place: numFinished + index,
               score: game.gameData[player.id].score + 10
             }
           }

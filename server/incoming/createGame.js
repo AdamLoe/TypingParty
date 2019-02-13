@@ -48,7 +48,7 @@ let getGame = (playerID, options) => {
 
       hasRaceStarted: false,
       numFinished: 0,
-      activePlayers: 0,
+      activePlayers: 1,
 
       timeStart: Date.now(),
       timeEnd: Date.now() + lobbyTime * 1000,
