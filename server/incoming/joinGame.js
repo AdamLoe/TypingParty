@@ -1,6 +1,7 @@
 let state = require("../state");
 let getGameObject = require("./getGameObject");
 let profileUpdate = require("./profileUpdate");
+let sendMessage = require("./sendMessage");
 
 let doesGameExist = game => {
   return game !== undefined;
