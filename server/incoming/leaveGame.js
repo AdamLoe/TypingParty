@@ -5,6 +5,11 @@ module.exports = socket => {
   let gameID = state.getGameIDByPlayerID(playerID);
 
   socket.leave(gameID);
-  if (gameID) socket.leave(gameID);
   state.resetPlayer(playerID);
+  if (gameID) {
+    socket.leave(gameID);
+    state.updatePlayerGameData(gameID, playerID, {
+      inGame: false
+    });
+  }
 };

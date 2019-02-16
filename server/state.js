@@ -93,7 +93,7 @@ let shouldMajor = packet =>
       });
     } else if (key === "info") {
       return Object.keys(packet[key]).find(infoKey => {
-        return infoKey !== "timeLeft";
+        return infoKey !== "timeLeft" && infoKey !== "lastActive";
       });
     } else {
       return true;
@@ -182,9 +182,6 @@ exports.getGameIDs = () => {
 
 exports.addPlayerToGame = (gameID, player) => {
   exports.editGame(gameID, {
-    info: {
-      playerCount: games[gameID].info.playerCount + 1
-    },
     players: {
       [player.id]: {
         ...player,
@@ -200,7 +197,8 @@ exports.addPlayerToGame = (gameID, player) => {
         score: 0,
         currChar: 0,
         readyUp: false,
-        isActive: true
+        isActive: true,
+        inGame: true
       }
     }
   });

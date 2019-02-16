@@ -1,34 +1,61 @@
 let state = require("../state");
 let deleteGame = require("./deleteGame");
 
-let inactiveSeconds = 60;
+let inactiveSeconds = 10;
 
 let setPlayersInactive = gameID => {
-  let { players } = state.getGame(gameID);
+  let { players, gameData } = state.getGame(gameID);
 
   let activePlayers = 0;
+  let playerCount = 0;
 
   Object.keys(players).map(playerID => {
     let { lastActive, isActive } = state.getPlayerActivity(playerID);
+    let { inGame } = gameData[playerID];
 
-    let shouldBeActive = lastActive < Date.now() + inactiveSeconds * 1000;
-    if (isActive !== shouldBeActive) {
-      isActive = !isActive;
+    if (inGame) {
+      let shouldBeActive = lastActive + inactiveSeconds * 1000 > Date.now();
+      if (isActive !== shouldBeActive) {
+        isActive = !isActive;
 
-      state.updatePlayerGameData(gameID, playerID, { isActive });
-      state.editPlayer(playerID, { isActive });
+        state.updatePlayerGameData(gameID, playerID, { isActive });
+        state.editPlayer(playerID, { isActive });
+      }
+      if (isActive) activePlayers += 1;
+      playerCount += 1;
     }
-    if (isActive) activePlayers += 1;
   });
 
-  return activePlayers;
+  return {
+    activePlayers,
+    playerCount
+  };
 };
 
+let deleteGameTimer = 20;
 let handleInactiveGame = gameID => {
-  let { activePlayers } = state.getGame(gameID).info;
-  let newActivePlayers = setPlayersInactive(gameID);
+  let { activePlayers, lastActive, playerCount } = state.getGame(gameID).info;
+  let {
+    activePlayers: newActivePlayers,
+    playerCount: newPlayerCount
+  } = setPlayersInactive(gameID);
+  console.log(newActivePlayers, newPlayerCount);
 
-  if (activePlayers !== newActivePlayers) {
+  let playerCountChanged = playerCount !== newPlayerCount;
+  let activePlayersChanged = activePlayers !== newActivePlayers;
+  let noActivePlayers = newActivePlayers === 0;
+
+  let gameNotActive = lastActive + deleteGameTimer * 1000 < Date.now();
+  let isGameDead = noActivePlayers && gameNotActive;
+
+  if (playerCountChanged) {
+    state.editGame(gameID, {
+      info: {
+        playerCount: newPlayerCount
+      }
+    });
+  }
+  if (activePlayersChanged) {
     state.editGame(gameID, {
       info: {
         activePlayers: newActivePlayers
@@ -36,7 +63,14 @@ let handleInactiveGame = gameID => {
     });
   }
 
-  if (activePlayers === 0 && newActivePlayers === 0) {
+  if (activePlayers > 0) {
+    state.editGame(gameID, {
+      info: {
+        lastActive: Date.now()
+      }
+    });
+  }
+  if (isGameDead) {
     deleteGame(gameID);
   }
 };

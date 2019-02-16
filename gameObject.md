@@ -51,6 +51,8 @@
   timeStart: [Date.now()]
   timeEnd: 123453 [Date.now()+45*1000],
   timeLeft: 5 [seconds]
+  
+  lastActive: [Date.now()]
 }
 ```
 
@@ -77,7 +79,8 @@
         currChar: 20,
         score: 0,
         readyUp: false,
-        isActive: true
+        isActive: true,
+        inGame: true,
     },
     123: {
         place: 1,
@@ -85,6 +88,7 @@
         currChar: 30,
         score: 10,
         readyUp: false,
-        isActive: true
+        isActive: true,
+        inGame: false
     }
 }

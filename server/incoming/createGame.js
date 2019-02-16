@@ -52,7 +52,9 @@ let getGame = (playerID, options) => {
 
       timeStart: Date.now(),
       timeEnd: Date.now() + lobbyTime * 1000,
-      timeLeft: lobbyTime
+      timeLeft: lobbyTime,
+
+      lastActive: Date.now()
     },
 
     //Holds id, name, icon, and any future data we want to show
