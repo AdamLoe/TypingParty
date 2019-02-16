@@ -35,6 +35,7 @@ let joinGame = (socket, game, playerID) => {
     gameID: game.id
   });
   getGameObject(socket, game.id);
+  setTimeout(() => sendMessage(socket, " joined the game"), 1000);
 };
 
 module.exports = async (socket, { gameID, password, name, icon }) => {
