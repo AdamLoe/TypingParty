@@ -17,12 +17,18 @@
 }
 
 .BrowserItem {
+  background: $browser-background;
   height: $browser-item-height;
   padding-top: $browser-inner-borders-size;
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-shrink: 0;
+}
+
+.BrowserEmpty {
+  justify-content: center;
+  padding-top: $browser-inner-borders-size;
 }
 
 .BrowserColumn {

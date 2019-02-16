@@ -17,11 +17,16 @@ let Header = () => (
   </div>
 );
 
-let Browser = ({ games, joinGame }) => (
+let BrowserEmptyFiller = () => (
+  <div className="BrowserItem BrowserEmpty">Nobody's playing right now :(</div>
+);
+
+let Browser = ({ games, joinGame, isBrowserEmpty }) => (
   <div className="Browser">
     <Header />
+    {isBrowserEmpty && <BrowserEmptyFiller />}
     {games.map(game => (
-      <BrowserItem joinGame={joinGame} {...game} />
+      <BrowserItem key={game.id} joinGame={joinGame} {...game} />
     ))}
   </div>
 );
@@ -40,14 +45,17 @@ Browser.propTypes = {
       maxGames: PT.number.isRequired
     })
   ),
+  isBrowserEmpty: PT.bool.isRequired,
   joinGame: PT.func.isRequired
 };
 
 let mapState = state => {
   let { games } = state.browser;
   games.sort((a, b) => b.created - a.created);
+  let isBrowserEmpty = games.length === 0;
   return {
-    games
+    games,
+    isBrowserEmpty
   };
 };
 
