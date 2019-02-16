@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import PT from "prop-types";
 
 import CountdownPopup from "./CountdownPopup";
-import EndTourneyPopup from "./EndRacePopup";
 import EndRacePopup from "./EndRacePopup";
 
 let RacePopups = ({
@@ -11,30 +10,22 @@ let RacePopups = ({
   timeLeft,
   hasRaceStarted,
   showRaceEnd,
-  showTourneyEnd
-}) => {
-  let Popup = null;
-
-  if (showCountdown)
-    Popup = (
+  isTourneyOver
+}) => (
+  <div className="RacePopup">
+    {showCountdown && (
       <CountdownPopup timeLeft={timeLeft} hasRaceStarted={hasRaceStarted} />
-    );
-  if (showRaceEnd) Popup = <EndRacePopup />;
-  if (showTourneyEnd) Popup = <EndTourneyPopup />;
-
-  if (showCountdown || showRaceEnd || showTourneyEnd) {
-    return <div className="RacePopup">{Popup}</div>;
-  } else {
-    return <></>;
-  }
-};
+    )}
+    {showRaceEnd && <EndRacePopup isTourneyOver={isTourneyOver} />}
+  </div>
+);
 
 RacePopups.propTypes = {
   showCountdown: PT.bool.isRequired,
   timeLeft: PT.number.isRequired,
   hasRaceStarted: PT.bool.isRequired,
   showRaceEnd: PT.bool.isRequired,
-  showTourneyEnd: PT.bool.isRequired
+  isTourneyOver: PT.bool
 };
 
 let isNotFirstTourney = gameData => {
@@ -46,16 +37,15 @@ let mapState = state => {
   let { status, timeLeft, hasRaceStarted, currGame } = info;
 
   let showCountdown = status === "RACE";
-  let showRaceEnd = status === "LOBBY" && currGame !== 1;
-  let showTourneyEnd =
-    status === "LOBBY" && currGame === 1 && isNotFirstTourney(gameData);
+  let showRaceEnd = status === "LOBBY";
+  let isTourneyOver = currGame === 0;
 
   return {
-    timeLeft,
     showCountdown,
+    timeLeft,
+    hasRaceStarted,
     showRaceEnd,
-    showTourneyEnd,
-    hasRaceStarted
+    isTourneyOver
   };
 };
 

@@ -4,25 +4,9 @@ import PT from "prop-types";
 
 import Racer from "../../components/Game/Racer";
 
-let TimeLeft = ({ timeLeft, hasRaceStarted, isLobby }) =>
-  !isLobby && (
-    <div className="TimeLeft">
-      {timeLeft + (hasRaceStarted ? " RACE" : " STARTING SOON...")}
-    </div>
-  );
-TimeLeft.propTypes = {
-  timeLeft: PT.number.isRequired,
-  hasRaceStarted: PT.bool.isRequired,
-  isLobby: PT.bool.isRequired
-};
-
-let RaceView = ({ racers, timeLeft, hasRaceStarted, isLobby }) => (
+let RaceView = ({ children, racers }) => (
   <div className="RaceView">
-    <TimeLeft
-      timeLeft={timeLeft}
-      hasRaceStarted={hasRaceStarted}
-      isLobby={isLobby}
-    />
+    {children}
     {racers.map(({ id, progress, wpm, greyed, name, icon }) => (
       <Racer
         key={id}
@@ -36,6 +20,7 @@ let RaceView = ({ racers, timeLeft, hasRaceStarted, isLobby }) => (
   </div>
 );
 RaceView.propTypes = {
+  children: PT.node,
   racers: PT.arrayOf(
     PT.shape({
       id: PT.string.isRequired,
@@ -49,16 +34,13 @@ RaceView.propTypes = {
         secondary: PT.string.isRequired
       }).isRequired
     }).isRequired
-  ).isRequired,
-  timeLeft: PT.number.isRequired,
-  hasRaceStarted: PT.bool.isRequired,
-  isLobby: PT.bool.isRequired
+  ).isRequired
 };
 
 let mapState = state => {
   let { gameData, players, info } = state.game;
 
-  let { status, numChars, timeStart, timeEnd, hasRaceStarted, timeLeft } = info;
+  let { status, numChars, timeStart, timeEnd, timeLeft } = info;
 
   let timeTotal = (timeEnd - timeStart) / 1000;
   let timeElapsed = timeTotal - timeLeft;
@@ -90,10 +72,7 @@ let mapState = state => {
       };
     });
   return {
-    racers,
-    timeLeft,
-    hasRaceStarted,
-    isLobby
+    racers
   };
 };
 
