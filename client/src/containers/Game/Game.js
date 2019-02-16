@@ -7,14 +7,17 @@ import Leaderboard from "./Leaderboard";
 
 import RaceView from "./RaceView";
 import TypingController from "./TypingController";
-
+import RacePopup from "./RacePopups";
 import LobbyMenu from "./LobbyMenu";
 
 let Game = ({ status }) => (
   <div className="Game">
     <Leaderboard />
     <div className="GameMain">
-      <RaceView />
+      <div className="GameView">
+        <RacePopup />
+        <RaceView />
+      </div>
       {status === "LOBBY" ? <LobbyMenu /> : <TypingController />}
     </div>
     <Messenger />

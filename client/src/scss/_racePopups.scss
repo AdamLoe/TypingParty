@@ -1,0 +1,26 @@
+.RacePopup {
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$countdown-transparency: .15;
+$countdown-background: grey;
+$countdown-color: white;
+.Countdown {
+  background: transparentize($countdown-background, $countdown-transparency);
+  color: transparentize($countdown-color, $countdown-transparency);
+  padding: 10px 15px;
+  border-radius: 10px
+}
+.Countdown {
+  transition: opacity 3000ms linear;
+  -webkit-animation: opacity 3000ms linear;
+  -moz-animation: opacity 3000ms linear;
+}
+.Countdown .Start {
+}

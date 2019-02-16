@@ -57,6 +57,11 @@ button {
   flex-direction: column;
 }
 
+.GameView {
+  position: relative;
+  margin-bottom: $controller-raceview-padding;
+}
+
 svg {
   width: 40px;
   height: 40px;
