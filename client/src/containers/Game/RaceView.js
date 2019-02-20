@@ -49,7 +49,6 @@ let mapState = state => {
   let isLobby = status === "LOBBY";
 
   let racers = Object.keys(gameData)
-    .filter(key => typeof gameData[key] === "object")
     .sort((a, b) => a - b)
     .map(key => {
       let { currChar, readyUp } = gameData[key];

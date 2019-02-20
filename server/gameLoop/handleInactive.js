@@ -39,7 +39,6 @@ let handleInactiveGame = gameID => {
     activePlayers: newActivePlayers,
     playerCount: newPlayerCount
   } = setPlayersInactive(gameID);
-  console.log(newActivePlayers, newPlayerCount);
 
   let playerCountChanged = playerCount !== newPlayerCount;
   let activePlayersChanged = activePlayers !== newActivePlayers;
