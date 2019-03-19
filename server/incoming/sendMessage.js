@@ -1,6 +1,6 @@
 let state = require("../state");
 let { emitRoom } = require("../socket");
-let checkInValidGame = require("./checkInValidGame");
+let checkInValidGame = require("../helpers/checkInValidGame");
 
 let getTime = () => {
   let date = new Date();

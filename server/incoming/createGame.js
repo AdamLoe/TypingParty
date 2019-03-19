@@ -1,6 +1,6 @@
 let state = require("../state");
 
-let sanitizeGameOptions = require("./sanitizeGameOptions");
+let sanitizeGameOptions = require("../helpers/sanitizeGameOptions");
 let joinGame = require("./joinGame");
 
 let getRandom = () => Math.floor(Math.random() * 10 ** 10).toString();
@@ -36,6 +36,7 @@ let getGame = (playerID, options) => {
       scoringType,
       handicaps,
 
+      gameMode: "",
       status: "LOBBY",
       string: "",
       numChars: 0,

@@ -9,8 +9,8 @@ let joinGame = require("./incoming/joinGame");
 let createGame = require("./incoming/createGame");
 let getBrowser = require("./incoming/getBrowser");
 let sendMessage = require("./incoming/sendMessage");
-let getPacket = require("./incoming/getPacket");
-let getGameObject = require("./incoming/getGameObject");
+let getPacket = require("./packets/getPacket");
+let getGameObject = require("./packets/getGameObject");
 
 let handleGames = require("./gameLoop/handleGames");
 let handleInactive = require("./gameLoop/handleInactive");

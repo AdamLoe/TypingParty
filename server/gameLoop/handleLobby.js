@@ -1,6 +1,6 @@
 let state = require("../state");
 
-let { startPreRace } = require("./handleStatusChange");
+let setupRace = require("../raceHandlers/setupRace");
 
 let neededReadyPercentage = 0.66;
 module.exports = gameID => {
@@ -14,6 +14,6 @@ module.exports = gameID => {
 
   let percent = readied / (readied + notReadied);
   if (percent > neededReadyPercentage) {
-    startPreRace(gameID);
+    setupRace(gameID);
   }
 };

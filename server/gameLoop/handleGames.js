@@ -1,6 +1,6 @@
 let state = require("../state");
 let { emitRoom } = require("../socket");
-let handleRace = require("./handleRace");
+let handleRace = require("../raceHandlers/handleRace");
 let handleLobby = require("./handleLobby");
 
 let handleStages = gameID => {

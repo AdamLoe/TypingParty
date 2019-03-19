@@ -1,6 +1,6 @@
 let state = require("../state");
 
-let checkInValidGame = require("./checkInValidGame");
+let checkInValidGame = require("../helpers/checkInValidGame");
 
 let lobbyUpdate = ({ socket, readyUp }) => {
   let playerID = state.getPlayerIDBySocket(socket);

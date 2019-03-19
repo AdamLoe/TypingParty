@@ -1,5 +1,5 @@
 let state = require("../state");
-let getGameObject = require("./getGameObject");
+let getGameObject = require("../packets/getGameObject");
 let profileUpdate = require("./profileUpdate");
 let sendMessage = require("./sendMessage");
 
